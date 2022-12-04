@@ -1,0 +1,2852 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta property="og:title" content="Tomodachi Town Official Website">
+    <meta name="twitter:title" content="Tomodachi Town Official Website">
+    
+    <meta name="description" content="Come join the friends of tomorrow!">
+    <meta property="og:description" content="Come join the friends of tomorrow!">
+    <meta name="twitter:description" content="Come join the friends of tomorrow!">
+    
+    <!-- <meta property="og:image" content="https://tomodachi.town/icon/img_preview.png">
+    <meta property="og:image:secure_url" content="https://tomodachi.town/icon/img_preview.png">
+    <meta name="twitter:image" content="https://tomodachi.town/icon/img_preview.png"> -->
+
+    <!-- Imporant meta information to make the page as rigid as possible on mobiles, to avoid unintentional zooming on the page itself  -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="icon/favicon.ico" sizes="any"><!-- 32×32 -->
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tomodachi Town</title>
+    
+<link rel="stylesheet" media="only screen and (max-width: 600px)" href="css/mobile_main.css" />
+<link rel="stylesheet" media="only screen and (min-width: 601px)" href="css/desktop_main.css" />
+    
+</head>
+
+
+
+
+
+<body>
+  
+  
+  
+<style>
+.preloader {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background: #000000;
+z-index: 9999;
+color: grey;
+font-family:sans-serif;
+font-size:0.7em;
+text-align: center;
+}	
+</style>
+<script>
+  window.onload = function(){ document.querySelector(".preloader").style.display = "none"; }
+</script>
+<div class="preloader">Loading...
+</div> 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+<!--  <div class="spinner-wrapper vertical-center " >
+LOADING...
+<div class="spinner vertical-center "></div>
+</div>
+  -->
+
+
+
+
+<style>
+
+
+  .spinner-wrapper {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background: linear-gradient(-45deg, #b7b7b7, #c8c6f4, #9fbfec, #aab9b6);
+  background-size: 400% 400%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .loader{
+  -webkit-perspective: 120px;
+  -moz-perspective: 120px;
+  -ms-perspective: 120px;
+  perspective: 120px;
+  width: 100px;
+  height: 100px;
+  }
+  .loader:before{
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 100px;
+  height: 100px;
+  background-image: url("b.png");
+  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* animation: flip 1s infinite;*/
+  }
+
+
+
+  @keyframes animationName {
+  /*  transition: all 0.4s ease-out;*/
+  0%   { opacity:0;    }
+  100%  { opacity:1;}
+  }
+
+  #overlayZ {
+  padding-left: 5px;
+  padding-right: 30px;
+  padding-top: 3px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left:0px;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,.4);
+  z-index: 15;
+  }
+
+  .flexbox_4 {
+  display:flex;
+  justify-content:center;
+  z-index: 19;
+  }
+
+
+
+
+  #fcf-form {
+    display:block;
+  }
+
+  .fcf-body {
+    margin: 0;
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    color: #212529;
+    text-align: left;
+    background-color: #ffffffe0;
+    padding: 30px;
+    padding-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    max-width: 100%;
+  margin-top: 2em;
+  }
+
+  .fcf-form-group {
+    margin-bottom: 1rem;
+  }
+
+  .fcf-input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .fcf-form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .fcf-form-control:focus {
+    border: 1px solid #313131;
+  }
+
+  select.fcf-form-control[size], select.fcf-form-control[multiple] {
+    height: auto;
+  }
+
+  textarea.fcf-form-control {
+    font-family: -apple-system, Arial, sans-serif;
+    height: auto;
+  }
+
+  label.fcf-label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .fcf-credit {
+    padding-top: 10px;
+    font-size: 0.9rem;
+    color: #545b62;
+  }
+
+  .fcf-credit a {
+    color: #545b62;
+    text-decoration: underline;
+  }
+
+  .fcf-credit a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .fcf-btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fcf-btn {
+        transition: none;
+    }
+  }
+
+  .fcf-btn:hover {
+    color: #212529;
+    text-decoration: none;
+  }
+
+  .fcf-btn:focus, .fcf-btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .fcf-btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .fcf-btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+
+  .fcf-btn-primary:focus, .fcf-btn-primary.focus {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  }
+
+  .fcf-btn-lg, .fcf-btn-group-lg>.fcf-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+  }
+
+  .fcf-btn-block {
+    display: block;
+    width: 100%;
+  }
+
+  .fcf-btn-block+.fcf-btn-block {
+    margin-top: 0.5rem;
+  }
+
+  input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[type="button"].fcf-btn-block {
+    width: 100%;
+  }
+
+
+</style>
+
+
+<div id="overlayZ">
+ 
+    <div class="flexbox_4">
+
+      <div onclick="closeAdditionalImageWindow()" style="font-size:2em; margin-top: 1.1em; COLOR:white; cursor:pointer">
+        &times
+      </div>
+
+
+      <div class="fcf-body">
+
+        <div id="fcf-form">
+          <h3 class="fcf-h3">Contact us</h3>
+
+          <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+              
+              <div class="fcf-form-group">
+                  <label for="Name" class="fcf-label">Your name</label>
+                  <div class="fcf-input-group">
+                      <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                  </div>
+              </div>
+
+              <div class="fcf-form-group">
+                  <label for="Email" class="fcf-label">Your email address</label>
+                  <div class="fcf-input-group">
+                      <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                  </div>
+              </div>
+
+              <div class="fcf-form-group">
+                  <label for="Message" class="fcf-label">Your message</label>
+                  <div class="fcf-input-group">
+                      <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                  </div>
+              </div>
+
+              <div class="fcf-form-group">
+                  <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+              </div>
+              
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wrapper">
+      <!-- The canvas element is used to draw the 3D scene -->
+  <canvas id="c"></canvas>
+
+
+  <a id="labels1"></a>
+    <div id="labels1_1">
+  </div>
+  <a id="labels2"></a>
+    <div id="labels2_1">
+  </div>
+  <a id="labels3"></a>
+    <div id="labels3_1">
+  </div>
+  <a id="labels4"></a>
+    <div id="labels4_1">
+  </div>
+  <a id="labels5"></a>
+    <div id="labels5_1">
+  </div>
+  <a id="labels6_2"></a>
+  <a id="labels6"></a>
+    <div id="labels6_1">
+</div>
+
+
+  <div class="flexbox_1">
+
+  <div align="center" id="DefaultCustomizeTopBase" >
+    <div id="day_icon" style="cursor:pointer" onclick="dayVersion()"><img id="day_icon_jpg" src="icon/day_on.png"></div>
+    <div id="night_icon" style="cursor:pointer" onclick="nightVersion()"><img id="night_icon_jpg" src="icon/night_off.png"></div>
+  </div>
+
+  <div style="display: none">
+    <video muted loop playsinline webkit-playsinline width="100%" height="100%" id="VideoTexture">
+      <source src="img/texture.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div id="navbar">
+    <div id="logo_icon">
+      <a href="index.html" target=“_blank”>
+        <img id="logo_icon_img" src="icon/tomologo.png">
+      </a>
+    </div>
+    <div id="hamburger_icon"><img id="hamburger_icon_img" src="icon/ham.png"></div>
+
+    <div id="submenu">
+      <div id="Twitter" style="color:#ff5f11; cursor:pointer"><h1>Social Media</h1></div>
+      <div id="Youtube" style="color:#cd0060; cursor:pointer"><h1>Youtube</h1></div>
+      <div id="MintingApp" style="color:#8e50cd; cursor:pointer"><h1>Minting App</h1></div>
+      <div id="HappiTomodachi" style="color:#6fed6d; cursor:pointer"><h1>Happi Tomodachi</h1></div>
+      <div id="Merchandise" style="color:#27b3ff; cursor:pointer"><h1>Merchandise</h1></div>
+      <div><i><br><br>Copyright Tomodachi Ai 2022</i></div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+</body>
+</html>
+<!--r132-->
+<script src="./jquery.min.js"></script>
+<script src='./three.min.js'></script>
+<script src='./GLTFLoader.js'></script>
+<script src='./OrbitControls.js'></script>
+<script src="./Tween.js"></script>
+<!-- <script src="../node_modules/dat.gui/build/dat.gui.min.js"></script> -->
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  let scene,  
+  renderer,
+  camera,
+  model, model2, model3, model4, model5, model6, model7, model8,model9,                              
+  possibleAnims,                      
+  mixer, mixer2, mixer3, mixer4, mixer5, mixer6, mixer7, mixer8, mixer9, mixer_add1, mixer_add2, mixer_add3, mixer_add4, mixer_add5, mixer_add6, mixer_add7, mixer_add8, mixer_add9, mixer_add10, mixer_add11, mixer_add12, 
+  controls,                              
+              
+  clock = new THREE.Clock(),          
+  currentlyAnimating = false,         
+  raycaster = new THREE.Raycaster(), 
+  loaderAnim = document.getElementById('js-loader');
+
+
+  const FACTORY_TOWN = 'gltf/Factory.glb';
+  const CINEMA_TOWN = 'gltf/Cinema.glb';
+  const ARCADE_TOWN = 'gltf/Arcade.glb';
+  const MALL_TOWN = 'gltf/Mall.glb';
+  const HALL_TOWN = 'gltf/TownHall.glb';
+  const MODEL_TOWN = 'gltf/mainModel.glb';
+  const MODEL_HERO_1 = 'gltf/Hero_Pill_Animation1.glb';
+  const MODEL_HERO_2 = 'gltf/Hero_Pill_Animation2.glb';
+  const MODEL_HERO_3 = 'gltf/Hero_Pill_Animation3.glb';
+  const MODEL_HERO_4 = 'gltf/Hero_Pill_Animation4.glb';
+  const MODEL_HERO_5 = 'gltf/Hero_Pill_Animation5.glb';
+  const MODEL_HERO_6 = 'gltf/Hero_Pill_Animation6.glb';
+  const MODEL_HERO_7 = 'gltf/Hero_Pill_Animation7.glb';
+  const MODEL_HERO_8 = 'gltf/Hero_Pill_Animation8.glb';
+  const MODEL_HERO_9 = 'gltf/Hero_Pill_Animation9.glb';
+  const MODEL_ADD_1 = 'gltf/Birds_Animation.glb';
+  const MODEL_ADD_2 = 'gltf/Smoke1_Animation.glb';
+  const MODEL_ADD_3 = 'gltf/Smoke2_Animation.glb';
+  const MODEL_ADD_4 = 'gltf/Smoke3_Animation.glb';
+  const MODEL_ADD_5 = 'gltf/Smoke4_Animation.glb';
+  const MODEL_ADD_6 = 'gltf/Car_animation.glb';
+  const MODEL_ADD_7 = 'gltf/Bee_animation.glb';
+  const MODEL_ADD_8 = 'gltf/Butterfly_animation.glb';
+  const MODEL_ADD_9 = 'gltf/Flags_animation.glb';
+  const MODEL_ADD_10 = 'gltf/Trees_animation.glb';
+  const MODEL_ADD_11 = 'gltf/Crab_Animation.glb';
+  const MODEL_ADD_12 = 'gltf/Cart_Animation.glb';
+
+
+  const canvas = document.querySelector('#c');
+  //const backgroundColor = 0x777777;
+
+  // Init the scene
+  scene = new THREE.Scene();
+  //scene.background = new THREE.Color(backgroundColor);
+  //scene.fog = new THREE.Fog(0x531934, 60, 100);
+
+  // Init the renderer
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true  });
+  renderer.shadowMap.enabled = false;
+  renderer.setClearColor( 0x000000, 0 );
+  renderer.setPixelRatio(window.devicePixelRatio);
+  document.body.appendChild(renderer.domElement);
+
+  // Add a camera
+  camera = new THREE.PerspectiveCamera(
+  9,
+  window.innerWidth / window.innerHeight,
+  10,
+  1000
+  );
+  camera.position.x = 159; 
+  camera.position.y = 85;
+  camera.position.z = -160;
+
+
+
+  controls = new THREE.OrbitControls(camera, canvas);
+
+  //controls//
+
+  controls.target.set(-0, -5	, 0);
+  controls.minDistance = 160;
+  controls.maxDistance = 560; //5
+  controls.maxPolarAngle = Math.PI / 2.34;
+  controls.enableKeys = false;
+  controls.enablePan = false;
+  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+  controls.dampingFactor = 0.02;
+  controls.screenSpacePanning = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+  let body1 = document.getElementById("b_icon_img");
+
+  const style1 = getComputedStyle(body1);
+  const width1 = style1.width;
+  console.log(width1);
+
+
+  if (width1 === "38px") {
+
+    controls.minDistance = 64.1;
+    controls.maxDistance = 138.4; //5
+
+    controls.target.set(-0, -9.9	, 0);
+    camera.position.x = -88.07; 
+    camera.position.y = 80.13;
+    camera.position.z = 67.42;
+
+  } else if (width1 === "72.5938px") {
+    controls.minDistance = 64.1;
+    controls.maxDistance = 98.4; //5
+
+    controls.target.set(-0, -9.9	, 0);
+    camera.position.x = -38.07; 
+    camera.position.y = 20.13;
+    camera.position.z = 37.42;
+
+
+  }
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  let textureVid = document.createElement("video")
+  textureVid.src = `img/texture.mp4`; // transform gif to mp4
+  textureVid.loop = true;
+  textureVid.play();
+
+  let videoTexture = new THREE.VideoTexture(textureVid);
+  videoTexture.format = THREE.RGBFormat;
+  videoTexture.minFilter = THREE.NearestFilter;
+  videoTexture.maxFilter = THREE.NearestFilter;
+  videoTexture.generateMipmaps = false; */
+
+  let video2 = document.getElementById('VideoTexture');
+  let videoTexture = new THREE.VideoTexture(video2);
+  videoTexture.flipY = true;
+  /*videoTexture.repeat.y = 0.46;
+  videoTexture.center.y = 0.46; */
+  let videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture, side: THREE.FrontSide, toneMapped: false });
+  video2.load();
+  video2.play();
+
+  let dayMain_txt = new THREE.TextureLoader().load('DayMainTexture.jpg');
+  dayMain_txt.flipY = false;
+
+  let nightMain_txt = new THREE.TextureLoader().load('NightMainTexture.jpg');
+  nightMain_txt.flipY = false;
+
+  let cuerpo= new THREE.TextureLoader().load('img/cuerpo.png');
+  cuerpo.flipY = false;
+
+  let pill= new THREE.TextureLoader().load('img/pill.png');
+  pill.flipY = false;
+
+  let lovu= new THREE.TextureLoader().load('img/lovu.png');
+  lovu.flipY = false;
+
+  let oni= new THREE.TextureLoader().load('img/oni.png');
+  oni.flipY = false;
+
+  let dol= new THREE.TextureLoader().load('img/dol.png');
+  dol.flipY = false;
+
+  let flo= new THREE.TextureLoader().load('img/flo.png');
+  flo.flipY = false;
+
+  let tomo= new THREE.TextureLoader().load('img/tomo.png');
+  tomo.flipY = false;
+
+  let amo= new THREE.TextureLoader().load('img/amo1.png');
+  amo.flipY = false;
+
+  let omette= new THREE.TextureLoader().load('img/omette.png');
+  omette.flipY = false;
+
+  let bird= new THREE.TextureLoader().load('img/bird.png');
+  bird.flipY = false;
+
+  let cloud1= new THREE.TextureLoader().load('img/cloud1.png');
+  cloud1.flipY = false;
+
+  let palette= new THREE.TextureLoader().load('img/palette.png');
+  palette.flipY = false;
+
+  const main_mtl = new THREE.MeshPhysicalMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+  });
+
+  const flag_mat = new THREE.MeshPhysicalMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+  });
+
+  const tree_mat = new THREE.MeshPhysicalMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+  });
+
+  const cart_mat = new THREE.MeshPhysicalMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+  });
+
+  const hall_mat = new THREE.MeshStandardMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+    emissive: 0xffffff,
+    emissiveIntensity: 0,
+  });
+
+  const mall_mat = new THREE.MeshStandardMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+    emissive: 0xffffff,
+    emissiveIntensity: 0,
+  });
+
+
+  const cinema_mat = new THREE.MeshStandardMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+    emissive: 0xffffff,
+    emissiveIntensity: 0,
+  });
+
+  const arcade_mat = new THREE.MeshStandardMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+    emissive: 0xffffff,
+    emissiveIntensity: 0,
+  });
+
+  const factory_mat = new THREE.MeshStandardMaterial({
+    map: dayMain_txt,
+    lightMapIntensity: 2,
+    color: 0xffffff,
+    //skinning: true,
+    metalness: 0.3,
+    roughness: 1,
+    emissive: 0xffffff,
+    emissiveIntensity: 0,
+  });
+
+
+/*   const app_video_mat = new THREE.MeshBasicMaterial({
+    map: videoTexture,
+  }); */
+
+  const cuerpo_mat = new THREE.MeshStandardMaterial({
+    map: cuerpo,
+    roughness: 1,
+    metalness: 0.1,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+
+  const pill_mat = new THREE.MeshStandardMaterial({
+    map: pill,
+    roughness: 1,
+    metalness: 0.1,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const lovu_mat = new THREE.MeshStandardMaterial({
+    map: lovu,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const oni_mat = new THREE.MeshStandardMaterial({
+    map: oni,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const dol_mat = new THREE.MeshStandardMaterial({
+    map: dol,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const flo_mat = new THREE.MeshStandardMaterial({
+    map: flo,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const tomo_mat = new THREE.MeshStandardMaterial({
+    map: tomo,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const amo_mat = new THREE.MeshStandardMaterial({
+    map: amo,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+    depthWrite: true,
+    side:  THREE.DoubleSide,
+  });
+
+  const omette_mat = new THREE.MeshStandardMaterial({
+    map: omette,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+    depthWrite: true,
+    side:  THREE.DoubleSide,
+  });
+
+
+  const bird_mat = new THREE.MeshStandardMaterial({
+    map: palette,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const cloud1_mat = new THREE.MeshStandardMaterial({
+    map: cloud1,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const car_mat = new THREE.MeshStandardMaterial({
+    map: palette,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const bee_mat = new THREE.MeshStandardMaterial({
+    map: palette,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const butterfly_mat = new THREE.MeshStandardMaterial({
+    map: palette,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const crab_mat = new THREE.MeshStandardMaterial({
+    map: palette,
+    roughness: 1,
+    metalness: 0.3,
+    //skinning: true,
+    transparent: true,
+    opacity: 1,
+  });
+
+  var loader = new THREE.GLTFLoader(); 
+
+  loader.load(
+    MODEL_TOWN,
+    function(gltf) {
+
+      model = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = main_mtl;
+
+      }
+
+      });
+
+
+      scene.add(model);
+
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+
+
+  let video_billboard
+  loader.load("gltf/video_billboard.glb", (gltf) => {
+    video_billboard = gltf.scene.children[0];
+    video_billboard.material = videoMaterial;
+    scene.add(video_billboard);
+  });
+
+  loader.load(
+    HALL_TOWN,
+    function(gltf) {
+
+      let model1 = gltf.scene;
+      let fileAnimations = gltf.animations;
+      model1.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow = true;
+          o.receiveShadow = true;
+          o.material = hall_mat;
+        
+        }
+      });
+      scene.add(model1);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+
+
+  loader.load(
+    MALL_TOWN,
+    function(gltf) {
+
+      let model1 = gltf.scene;
+      let fileAnimations = gltf.animations;
+      model1.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow = true;
+          o.receiveShadow = true;
+          o.material = mall_mat;
+        
+        }
+      });
+      scene.add(model1);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+
+
+  loader.load(
+    CINEMA_TOWN,
+    function(gltf) {
+
+      let model1 = gltf.scene;
+      let fileAnimations = gltf.animations;
+      model1.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow = true;
+          o.receiveShadow = true;
+          o.material = cinema_mat;
+        
+        }
+      });
+      scene.add(model1);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+
+
+  loader.load(
+    ARCADE_TOWN,
+    function(gltf) {
+
+      let model1 = gltf.scene;
+      let fileAnimations = gltf.animations;
+      model1.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow = true;
+          o.receiveShadow = true;
+          o.material = arcade_mat;
+        
+        }
+      });
+      scene.add(model1);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+
+
+  loader.load(
+    FACTORY_TOWN,
+    function(gltf) {
+
+      let model1 = gltf.scene;
+      let fileAnimations = gltf.animations;
+      model1.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow = true;
+          o.receiveShadow = true;
+          o.material = factory_mat;
+        
+        }
+      });
+      scene.add(model1);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+
+
+
+
+  {
+  var character1;
+  loader.load(
+    MODEL_HERO_1,
+    function(gltf) {
+
+      model = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = cuerpo_mat;
+      }
+
+      });
+
+      mixer = new THREE.AnimationMixer(model);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'EmptyAction.001');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'EmptyAction.001');
+      anim2 = mixer.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+
+
+      character1 = gltf.scene.children[0];
+      character1.material =  cuerpo_mat;
+      character1.material.morphTargets = true;
+
+
+      mixer.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+  {
+  var character2;
+  loader.load(
+  MODEL_HERO_2,
+  function(gltf) {
+
+    model2 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model2.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = pill_mat;
+    }
+
+    });
+
+    mixer2 = new THREE.AnimationMixer(model2);
+
+    character2 = gltf.scene.children[0];
+    character2.material =  pill_mat;
+    character2.material.morphTargets = true;
+
+    mixer2.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model2);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+
+
+
+
+
+  {
+  var character3;
+  loader.load(
+    MODEL_HERO_3,
+    function(gltf) {
+
+      model3 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model3.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = lovu_mat;
+      }
+
+      });
+
+      mixer3 = new THREE.AnimationMixer(model3);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty.lovuAction.001');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer3.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty.lovuAction.001');
+      anim2 = mixer3.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+
+
+      character3 = gltf.scene.children[0];
+      character3.material =  lovu_mat;
+      character3.material.morphTargets = true;
+
+
+      mixer3.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model3);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+  {
+  var character4;
+  loader.load(
+  MODEL_HERO_4,
+  function(gltf) {
+
+    model4 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model4.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = oni_mat;
+    }
+
+    });
+
+    mixer4 = new THREE.AnimationMixer(model4);
+
+    character4 = gltf.scene.children[0];
+    character4.material =  oni_mat;
+    character4.material.morphTargets = true;
+
+    mixer4.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model4);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+
+  {
+  var character5;
+  loader.load(
+  MODEL_HERO_5,
+  function(gltf) {
+
+    model5 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model5.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = dol_mat;
+    }
+
+    });
+
+    mixer5 = new THREE.AnimationMixer(model5);
+
+    character5 = gltf.scene.children[0];
+    character5.material =  dol_mat;
+    character5.material.morphTargets = true;
+
+    mixer5.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model5);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+
+
+  {
+  var character6;
+  loader.load(
+    MODEL_HERO_6,
+    function(gltf) {
+
+      model6 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model6.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = flo_mat;
+      }
+
+      });
+
+      mixer6 = new THREE.AnimationMixer(model6);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty.FloAction.001');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer6.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty.FloAction.001');
+      anim2 = mixer6.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      character6 = gltf.scene.children[0];
+      character6.material =  flo_mat;
+      character6.material.morphTargets = true;
+
+
+      mixer6.clipAction( gltf.animations[ 1 ] ).play();
+
+      scene.add(model6);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+  {
+  var character7;
+  loader.load(
+    MODEL_HERO_7,
+    function(gltf) {
+
+      model7 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model7.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = tomo_mat;
+      }
+
+      });
+
+      mixer7 = new THREE.AnimationMixer(model7);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty.TomoAction');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer7.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty.TomoAction');
+      anim2 = mixer7.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      character7 = gltf.scene.children[0];
+      character7.material =  tomo_mat;
+      character7.material.morphTargets = true;
+
+
+      mixer7.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model7);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+  {
+  var character8;
+  loader.load(
+  MODEL_HERO_8,
+  function(gltf) {
+
+    model8 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model8.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = amo_mat;
+    }
+
+    });
+
+    mixer8 = new THREE.AnimationMixer(model8);
+
+    character8 = gltf.scene.children[0];
+    character8.material =  amo_mat;
+    character8.material.morphTargets = true;
+
+    mixer8.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model8);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+
+
+  {
+  var character9;
+  loader.load(
+    MODEL_HERO_9,
+    function(gltf) {
+
+      model9 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model9.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = omette_mat;
+      }
+
+      });
+
+      mixer9 = new THREE.AnimationMixer(model9);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty.OmetteAction.001');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer9.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty.OmetteAction.001');
+      anim2 = mixer9.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      character9 = gltf.scene.children[0];
+      character9.material =  omette_mat;
+      character9.material.morphTargets = true;
+
+
+      mixer9.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model9);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+
+
+  {
+  var add_bird1;
+  loader.load(
+    MODEL_ADD_1,
+    function(gltf) {
+
+      model_add1 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add1.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = bird_mat;
+      }
+
+      });
+
+      mixer_add1 = new THREE.AnimationMixer(model_add1);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty.birdAction');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add1.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty.birdAction');
+      anim2 = mixer_add1.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      add_bird1 = gltf.scene.children[0];
+      add_bird1.material =  bird_mat;
+      add_bird1.material.morphTargets = true;
+
+
+      mixer_add1.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add1);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+
+  {
+  var add_cloud1;
+  loader.load(
+    MODEL_ADD_2,
+    function(gltf) {
+
+      model_add2 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add2.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = cloud1_mat;
+      }
+
+      });
+
+      mixer_add2 = new THREE.AnimationMixer(model_add2);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'cloud4_1Action');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add2.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'cloud4_1Action');
+      anim2 = mixer_add2.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      add_cloud1 = gltf.scene.children[0];
+      add_cloud1.material =  cloud1_mat;
+      add_cloud1.material.morphTargets = true;
+
+
+      mixer_add2.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add2);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+  {
+  var add_cloud2;
+  loader.load(
+    MODEL_ADD_3,
+    function(gltf) {
+
+      model_add3 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add3.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = cloud1_mat;
+      }
+
+      });
+
+      mixer_add3 = new THREE.AnimationMixer(model_add3);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'cloud4_2Action');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add3.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'cloud4_2Action');
+      anim2 = mixer_add3.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      add_cloud2 = gltf.scene.children[0];
+      add_cloud2.material =  cloud1_mat;
+      add_cloud2.material.morphTargets = true;
+
+
+      mixer_add3.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add3);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+  {
+  var add_cloud3;
+  loader.load(
+    MODEL_ADD_4,
+    function(gltf) {
+
+      model_add4 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add4.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = cloud1_mat;
+      }
+
+      });
+
+      mixer_add4 = new THREE.AnimationMixer(model_add4);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'cloud4_3Action');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add4.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'cloud4_3Action');
+      anim2 = mixer_add4.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      add_cloud3 = gltf.scene.children[0];
+      add_cloud3.material =  cloud1_mat;
+      add_cloud3.material.morphTargets = true;
+
+
+      mixer_add4.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add4);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+  {
+  var add_cloud4;
+  loader.load(
+    MODEL_ADD_5,
+    function(gltf) {
+
+      model_add5 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add5.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = cloud1_mat;
+      }
+
+      });
+
+      mixer_add5 = new THREE.AnimationMixer(model_add5);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'cloud4_4Action');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add5.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'cloud4_4Action');
+      anim2 = mixer_add5.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+
+      add_cloud4 = gltf.scene.children[0];
+      add_cloud4.material =  cloud1_mat;
+      add_cloud4.material.morphTargets = true;
+
+
+      mixer_add5.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add5);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+  {
+  loader.load(
+    MODEL_ADD_6,
+    function(gltf) {
+
+      model_add6 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add6.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = car_mat;
+      }
+
+      });
+
+      mixer_add6 = new THREE.AnimationMixer(model_add6);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'CubeAction');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add6.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'CubeAction');
+      anim2 = mixer_add6.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+
+
+      mixer_add6.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add6);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+
+
+  {
+  var add_bee;
+  loader.load(
+    MODEL_ADD_7,
+    function(gltf) {
+
+      model_add7 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add7.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = bee_mat;
+      }
+
+      });
+
+      mixer_add7 = new THREE.AnimationMixer(model_add7);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty.beeAction');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add7.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty.beeAction');
+      anim2 = mixer_add7.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+      add_bee = gltf.scene.children[0];
+      add_bee.material =  bee_mat;
+      add_bee.material.morphTargets = true;
+
+
+      mixer_add7.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add7);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+  {
+  var add_butterfly;
+  loader.load(
+    MODEL_ADD_8,
+    function(gltf) {
+
+      model_add8 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add8.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = butterfly_mat;
+      }
+
+      });
+
+      mixer_add8 = new THREE.AnimationMixer(model_add8);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty_butterflyAction');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add8.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty_butterflyAction');
+      anim2 = mixer_add8.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+    
+
+      add_butterfly = gltf.scene.children[0];
+      add_butterfly.material =  butterfly_mat;
+      add_butterfly.material.morphTargets = true;
+
+
+      mixer_add8.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add8);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+  {
+  var add_flags;
+  loader.load(
+    MODEL_ADD_9,
+  function(gltf) {
+
+    model_add9 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model_add9.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = flag_mat;
+    }
+
+    });
+
+    mixer_add9 = new THREE.AnimationMixer(model_add9);
+
+    add_flags = gltf.scene.children[0];
+    add_flags.material =  flag_mat;
+    add_flags.material.morphTargets = true;
+
+    mixer_add9.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model_add9);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+
+  {
+  var add_trees;
+  loader.load(
+    MODEL_ADD_10,
+  function(gltf) {
+
+    model_add10 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model_add10.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = tree_mat;
+    }
+
+    });
+
+    mixer_add10 = new THREE.AnimationMixer(model_add10);
+
+    add_trees = gltf.scene.children[0];
+    add_trees.material =  tree_mat;
+    add_trees.material.morphTargets = true;
+
+    mixer_add10.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model_add10);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+
+  {
+  var add_crabs;
+  loader.load(
+    MODEL_ADD_11,
+    function(gltf) {
+
+      model_add11 = gltf.scene;
+
+      let fileAnimations = gltf.animations;
+
+      model_add11.traverse(o => {
+
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+        o.material = crab_mat;
+      }
+
+      });
+
+      mixer_add11 = new THREE.AnimationMixer(model_add11);
+
+      let clips2 = fileAnimations.filter(val => val.name !== 'Empty_crabAction.001');
+      possibleAnims = clips2.map(val => {
+      let clip2 = THREE.AnimationClip.findByName(clips2, val.name);
+      clip2 = mixer_add11.clipAction(clip2);
+      return clips2;
+      });
+      let anim2Main = THREE.AnimationClip.findByName(fileAnimations, 'Empty_crabAction.001');
+      anim2 = mixer_add11.clipAction(anim2Main);
+      //idle.timeScale = 1/10;
+      anim2.play(); 
+
+      
+
+      add_crabs = gltf.scene.children[0];
+      add_crabs.material =  crab_mat;
+      add_crabs.material.morphTargets = true;
+
+      mixer_add11.clipAction( gltf.animations[ 0 ] ).play();
+
+      scene.add(model_add11);
+
+    },
+    undefined, // We don't need this function
+    function(error) {
+    console.error(error);
+    }
+  );
+  }
+
+
+  {
+  var add_cart;
+  loader.load(
+    MODEL_ADD_12,
+  function(gltf) {
+
+    model_add12 = gltf.scene;
+
+    let fileAnimations = gltf.animations;
+
+    model_add12.traverse(i => {
+
+    if (i.isMesh) {
+      i.castShadow = true;
+      i.receiveShadow = true;
+      i.material = cart_mat;
+    }
+
+    });
+
+    mixer_add12 = new THREE.AnimationMixer(model_add12);
+
+    add_cart = gltf.scene.children[0];
+    add_cart.material =  cart_mat;
+    add_cart.material.morphTargets = true;
+
+    mixer_add12.clipAction( gltf.animations[ 0 ] ).play();
+
+    scene.add(model_add12);
+
+  },
+  undefined, // We don't need this function
+  function(error) {
+  console.error(error);
+  }
+  );
+  }
+
+
+  const anchorMat = new THREE.MeshBasicMaterial({
+		transparent: true, opacity: 0,
+  });
+
+  const boxWidth = 0.5;
+  const boxHeight = 0.5;
+  const boxDepth = 0.5;
+  const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+		
+
+
+
+  const tempVLEFT = new THREE.Vector3( );
+	const labelContainerElem = document.querySelector('#labels1');
+	const elem = document.createElement('div');
+  const tempVLEFT1_1 = new THREE.Vector3( );
+  const labelContainerElem1_1 = document.querySelector('#labels1_1');
+  const elem1_1 = document.createElement('div');
+
+
+  const anchor1 = new THREE.Mesh(geometry, anchorMat);
+  anchor1.position.x = -7;
+  anchor1.position.z = -6;
+  anchor1.position.y = 15;
+  elem.textContent = '';
+  labelContainerElem.appendChild(elem);
+
+
+  const anchor1_1 = new THREE.Mesh(geometry, anchorMat);
+  anchor1_1.position.x = -4;
+  anchor1_1.position.z = -6;
+  anchor1_1.position.y = 11;
+  elem1_1.innerHTML = '<div style="position: absolute;z-index: 99;top:-2em;background-color:rgba(255, 113, 44, 0.9);width: 23em;height: 18em;border-radius: 2em;align-self: center;align-items: center;text-align: center;-webkit-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);-moz-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);color: white;font-size: 1em;justify-content: center;flex-direction: column;"><div class="closebutton" id="closelabel1_1">&times</div><h1>Tomo Town Hall</h1><p>Join the Tomodachi community!</p><div id="community_links"><a href=" https://twitter.com/tomodachi_ai?lang=en" target=“_blank”><img style="width: 4em;" src="icon/twitter_icon.png"></a><a href="https://instagram.com/tomodachi_ai/" target=“_blank”><img style="width: 4em;" src="icon/instagram_icon.png"></a><a href="https://discord.gg/bAJrJYQXEK" target=“_blank”><img style="width: 4em;" src="icon/discord_icon.png"></a></div></div>';
+  elem1_1.style.fontWeight = 'bold';
+  labelContainerElem1_1.appendChild(elem1_1);
+
+  scene.add(anchor1,  anchor1_1);
+
+
+  document.getElementById("labels1").addEventListener('click', function() {
+    elem1_1.style.display = "flex";
+    let anim1PulseHall = new TWEEN.Tween(hall_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("closelabel1_1").addEventListener('click', function() {
+    elem1_1.style.display = "none";
+    let anim1PulseHall = new TWEEN.Tween(hall_mat).to({emissiveIntensity: 0}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+
+
+
+
+  const tempVLEFT2 = new THREE.Vector3( );
+  const labelContainerElem2 = document.querySelector('#labels2');
+  const elem2 = document.createElement('div');
+  const tempVLEFT2_1 = new THREE.Vector3( );
+  const labelContainerElem2_1 = document.querySelector('#labels2_1');
+  const elem2_1 = document.createElement('div');
+
+
+  const anchor2 = new THREE.Mesh(geometry, anchorMat);
+  anchor2.position.x = 36;
+  anchor2.position.z = -2;
+  anchor2.position.y = 7;
+  elem2.textContent = '';
+  labelContainerElem2.appendChild(elem2);
+
+
+  const anchor2_1 = new THREE.Mesh(geometry, anchorMat);
+  anchor2_1.position.x = 36;
+  anchor2_1.position.z = -2;
+  anchor2_1.position.y = 5;
+  elem2_1.innerHTML = '<div style="position: absolute;z-index: 99;top:1em;background-color:rgba(45, 186, 255, 0.9);width: 23em;height:14em;border-radius: 2em;align-self: center;align-items: center;text-align: center;-webkit-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);-moz-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);color: white;font-size: 1em;justify-content: center;flex-direction: column;"><div class="closebutton" id="closelabel2_1">&times</div><h1>Tomodachi Merchandise</h1><p>In Production</p></div>';
+  elem2_1.style.fontWeight = 'bold';
+  labelContainerElem2_1.appendChild(elem2_1);
+
+  scene.add(anchor2,  anchor2_1);
+
+  
+  document.getElementById("labels2").addEventListener('click', function() {
+    elem2_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(mall_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("closelabel2_1").addEventListener('click', function() {
+    elem2_1.style.display = "none";
+    let anim1PulseMall = new TWEEN.Tween(mall_mat).to({emissiveIntensity: 0}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+
+
+  const tempVLEFT3 = new THREE.Vector3( );
+  const labelContainerElem3 = document.querySelector('#labels3');
+  const elem3 = document.createElement('div');
+  const tempVLEFT3_1 = new THREE.Vector3( );
+  const labelContainerElem3_1 = document.querySelector('#labels3_1');
+  const elem3_1 = document.createElement('div');
+
+
+  const anchor3 = new THREE.Mesh(geometry, anchorMat);
+  anchor3.position.x = 30;
+  anchor3.position.z = 25;
+  anchor3.position.y = 6;
+  elem3.textContent = '';
+  labelContainerElem3.appendChild(elem3);
+
+
+  const anchor3_1 = new THREE.Mesh(geometry, anchorMat);
+  anchor3_1.position.x = 30;
+  anchor3_1.position.z = 25;
+  anchor3_1.position.y = 4;
+  elem3_1.innerHTML = '<div style="position: absolute;z-index: 99;top:-29em;background-color:rgba(116, 54, 246, 0.9);width: 25em;height: 26em;border-radius: 2em;align-self: center;align-items: center;text-align: center;-webkit-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);-moz-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);color: white;font-size: 0.8em;justify-content: center;flex-direction: column;"><div class="closebutton" id="closelabel3_1">&times</div><h1>Mint Tomodachi Membership Pass</h1><p>Get exclusive access <br>to the Tomodachi ecosystem</p><a href="https://mint.tomodachifriends.com/" target=“_blank”><h2 style="color: white;">Mint Now</h2></a><a href="https://opensea.io/collection/tomodachifriends" target=“_blank”><h2 style="color: white;">Official OpenSea Collection</h2></a></div>';
+  elem3_1.style.fontWeight = 'bold';
+  labelContainerElem3_1.appendChild(elem3_1);
+
+  scene.add(anchor3,  anchor3_1);
+
+  
+  document.getElementById("labels3").addEventListener('click', function() {
+    elem3_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(factory_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("closelabel3_1").addEventListener('click', function() {
+    elem3_1.style.display = "none";
+    let anim1PulseMall = new TWEEN.Tween(factory_mat).to({emissiveIntensity: 0}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+
+
+  const tempVLEFT4 = new THREE.Vector3( );
+  const labelContainerElem4 = document.querySelector('#labels4');
+  const elem4 = document.createElement('div');
+  const tempVLEFT4_1 = new THREE.Vector3( );
+  const labelContainerElem4_1 = document.querySelector('#labels4_1');
+  const elem4_1 = document.createElement('div');
+
+
+  const anchor4 = new THREE.Mesh(geometry, anchorMat);
+  anchor4.position.x = -38;
+  anchor4.position.z = -18;
+  anchor4.position.y = 12;
+  elem4.textContent = '';
+  labelContainerElem4.appendChild(elem4);
+
+
+  const anchor4_1 = new THREE.Mesh(geometry, anchorMat);
+  anchor4_1.position.x = -38;
+  anchor4_1.position.z = -18;
+  anchor4_1.position.y = 9;
+  elem4_1.innerHTML = '<div style="position: absolute;z-index: 99;top:1em;background-color:rgba(42, 195, 40, 0.9);width:23em;height:12em;border-radius: 2em;align-self: center;align-items: center;text-align: center;-webkit-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);-moz-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);color: white;font-size: 0.8em;justify-content: center;flex-direction: column;"><div class="closebutton" id="closelabel4_1">&times</div><h1>Happi Tomodachi</h1><p>Coming Soon</p></div>';
+  elem4_1.style.fontWeight = 'bold';
+  labelContainerElem4_1.appendChild(elem4_1);
+
+  scene.add(anchor4,  anchor4_1);
+
+  
+  document.getElementById("labels4").addEventListener('click', function() {
+    elem4_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(arcade_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("closelabel4_1").addEventListener('click', function() {
+    elem4_1.style.display = "none";
+    let anim1PulseMall = new TWEEN.Tween(arcade_mat).to({emissiveIntensity: 0}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+
+
+
+  const tempVLEFT5 = new THREE.Vector3( );
+  const labelContainerElem5 = document.querySelector('#labels5');
+  const elem5 = document.createElement('div');
+  const tempVLEFT5_1 = new THREE.Vector3( );
+  const labelContainerElem5_1 = document.querySelector('#labels5_1');
+  const elem5_1 = document.createElement('div');
+
+
+  const anchor5 = new THREE.Mesh(geometry, anchorMat);
+  anchor5.position.x = -34;
+  anchor5.position.z = -35;
+  anchor5.position.y = 7;
+  elem5.textContent = '';
+  labelContainerElem5.appendChild(elem5);
+
+
+  const anchor5_1 = new THREE.Mesh(geometry, anchorMat);
+  anchor5_1.position.x = -34;
+  anchor5_1.position.z = -35;
+  anchor5_1.position.y = 5;
+  elem5_1.innerHTML = '<div style="position: absolute;z-index: 99;top:-21em;background-color:rgba(238, 57, 164, 0.9);width:23em;height:19em;border-radius: 2em;align-self: center;align-items: center;text-align: center;-webkit-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);-moz-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);color: white;font-size: 1em;justify-content: center;flex-direction: column;"><div class="closebutton" id="closelabel5_1">&times</div><h1>Tomodachi Studios</h1><p>Come view our animations!</p><a href="https://youtube.com/channel/UCBnr-BA77IhaYCXa-3jwZmA" target=“_blank”><img style="width: 4em;" src="icon/youtube_icon.png"></a></div>';
+  elem5_1.style.fontWeight = 'bold';
+  labelContainerElem5_1.appendChild(elem5_1);
+
+  scene.add(anchor5,  anchor5_1);
+
+  
+  document.getElementById("labels5").addEventListener('click', function() {
+    elem5_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(cinema_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("closelabel5_1").addEventListener('click', function() {
+    elem5_1.style.display = "none";
+    let anim1PulseMall = new TWEEN.Tween(cinema_mat).to({emissiveIntensity: 0}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+
+
+
+  const tempVLEFT6 = new THREE.Vector3( );
+  const labelContainerElem6 = document.querySelector('#labels6');
+  const elem6 = document.createElement('div');
+  const tempVLEFT6_1 = new THREE.Vector3( );
+  const labelContainerElem6_1 = document.querySelector('#labels6_1');
+  const elem6_1 = document.createElement('div');
+  const tempVLEFT6_2 = new THREE.Vector3( );
+  const labelContainerElem6_2 = document.querySelector('#labels6_2');
+  const elem6_2 = document.createElement('div');
+
+
+  const anchor6 = new THREE.Mesh(geometry, anchorMat);
+  anchor6.position.x = 10;
+  anchor6.position.z = -5;
+  anchor6.position.y = 2;
+  elem6.textContent = '';
+  labelContainerElem6.appendChild(elem6);
+  
+
+  const anchor6_2 = new THREE.Mesh(geometry, anchorMat);
+  anchor6_2.position.x = 10;
+  anchor6_2.position.z = -5;
+  anchor6_2.position.y = 4;
+  elem6_2.textContent = 'CLICK HERE';
+  labelContainerElem6_2.appendChild(elem6_2);
+
+
+  const anchor6_1 = new THREE.Mesh(geometry, anchorMat);
+  anchor6_1.position.x = 10;
+  anchor6_1.position.z = -6;
+  anchor6_1.position.y = -4;
+  elem6_1.innerHTML = '<div style="position: absolute;z-index: 99;top:-21em;background-color:rgba(0, 0, 0, 0.9);width:23em;height:26em;border-radius: 2em;align-self: center;align-items: center;text-align: center;-webkit-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);-moz-box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);box-shadow: 0px 0px 40px 26px rgba(66,66,66,0.58);color: white;font-size: 1em;justify-content: center;flex-direction: column;"><div class="closebutton" id="closelabel6_1">&times</div><p style="margin-left: 1em; margin-right: 1em;">Hello Friends,<br><br>Welcome to Tomodachi Town! This is our interactive 3D website where you can explore everything Tomodachi!<br><br>Please use your finger or mouse to take a look around Tomo Town and <b style="color: orange">click on the other colored bubbles</b> around the map to check out the different things we are up to.<br><br>For business inquiries please contact us at <br><br> <a href="mailto:info@tomodachifriends.com" target=“_blank” style="color:white">info@tomodachifriends.com</a></p></div>';
+  //elem6_1.style.fontWeight = 'bold';
+  labelContainerElem6_1.appendChild(elem6_1);
+
+  scene.add(anchor6,  anchor6_1, anchor6_2);
+
+  
+  document.getElementById("labels6").addEventListener('click', function() {
+    elem6_1.style.display = "flex";
+    elem6_2.style.display = "none";
+	});
+  document.getElementById("closelabel6_1").addEventListener('click', function() {
+    elem6_1.style.display = "none";
+    elem6_2.style.display = "block";
+	});
+
+
+
+var navbarstatus = 0;
+  document.getElementById("hamburger_icon").addEventListener('click', function() {
+    if(navbarstatus === 0) {
+      let anim1ShowNavBar = new TWEEN.Tween(navbar.style).to({height: '30em'}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+      submenu.style.display = "flex";
+      navbar.style.height= "26em"
+      navbarstatus = 1; 
+    } else if (navbarstatus === 1) {
+      submenu.style.display = "none";
+      navbar.style.height= "6em"
+      navbarstatus = 0; 
+    }
+	});
+
+
+  
+  document.getElementById("Twitter").addEventListener('click', function() {
+    elem1_1.style.display = "flex";
+    let anim1PulseHall = new TWEEN.Tween(hall_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("MintingApp").addEventListener('click', function() {
+    elem3_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(factory_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("Merchandise").addEventListener('click', function() {
+    elem2_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(mall_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("HappiTomodachi").addEventListener('click', function() {
+    elem4_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(arcade_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+  document.getElementById("Youtube").addEventListener('click', function() {
+    elem5_1.style.display = "flex";
+    let anim1PulseMall = new TWEEN.Tween(cinema_mat).to({emissiveIntensity: 0.2}, 800).easing(TWEEN.Easing.Quadratic.InOut).start();
+	});
+
+  // Add lights
+  let hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
+  hemiLight.position.set(0, 90, 0);
+  // Add hemisphere light to scene
+  scene.add(hemiLight);
+
+  let d = 8.25;
+  let dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
+  dirLight.position.set(-8, 12, 8);
+  dirLight.castShadow = true;
+  dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
+  dirLight.shadow.camera.near = 0.1;
+  dirLight.shadow.camera.far = 1500;
+  dirLight.shadow.camera.left = d * -1;
+  dirLight.shadow.camera.right = d;
+  dirLight.shadow.camera.top = d;
+  dirLight.shadow.camera.bottom = d * -1;
+  // Add directional Light to scene
+  scene.add(dirLight);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+  function updateLight() {
+  anchor2.updateMatrixWorld();
+  //light2.target.updateMatrixWorld();
+  //light3.target.updateMatrixWorld();
+  }
+
+  class ColorGUIHelper {
+  constructor(object, prop) {
+  this.object = object;
+  this.prop = prop;
+  }
+  get value() {
+  return `#${this.object[this.prop].getHexString()}`;
+  }
+  set value(hexString) {
+  this.object[this.prop].set(hexString);
+  }
+  }
+
+  function makeXYZGUI(gui, vector3, name, onChangeFn) {
+  const folder = gui.addFolder(name);
+  folder.add(vector3, 'x', -10, 10).onChange(onChangeFn);
+  folder.add(vector3, 'y', -10, 10).onChange(onChangeFn);
+  folder.add(vector3, 'z', -10, 10).onChange(onChangeFn);
+  folder.open();
+  }
+
+  const gui = new dat.GUI();
+  makeXYZGUI(gui, anchor1_1.position, 'position', updateLight);
+
+
+  */
+
+
+function update() {
+
+
+  delta = clock.getDelta()
+    if (mixer)
+      mixer.update(delta);
+    if (mixer2)
+      mixer2.update(delta);
+    if (mixer3)
+      mixer3.update(delta);
+    if (mixer4)
+      mixer4.update(delta);
+    if (mixer5)
+      mixer5.update(delta);
+    if (mixer6)
+      mixer6.update(delta);
+    if (mixer7)
+      mixer7.update(delta);
+    if (mixer8)
+      mixer8.update(delta);
+    if (mixer9)
+      mixer9.update(delta);
+    if (mixer_add1)
+      mixer_add1.update(delta);
+    if (mixer_add2)
+      mixer_add2.update(delta);
+    if (mixer_add3)
+      mixer_add3.update(delta);
+    if (mixer_add4)
+      mixer_add4.update(delta); 
+    if (mixer_add5)
+      mixer_add5.update(delta);   
+    if (mixer_add6)
+      mixer_add6.update(delta);   
+    if (mixer_add7)
+      mixer_add7.update(delta);      
+    if (mixer_add8)
+      mixer_add8.update(delta); 
+    if (mixer_add9)
+      mixer_add9.update(delta);   
+    if (mixer_add10)
+      mixer_add10.update(delta);   
+    if (mixer_add11)
+      mixer_add11.update(delta); 
+    if (mixer_add12)
+      mixer_add12.update(delta);      
+
+
+  if (resizeRendererToDisplaySize(renderer)) {
+  const canvas = renderer.domElement;
+  camera.aspect = canvas.clientWidth / canvas.clientHeight;
+  camera.updateProjectionMatrix();
+  }
+
+
+  if (anchor1) {
+			anchor1.updateWorldMatrix(true, false);
+			anchor1.getWorldPosition(tempVLEFT); 
+			tempVLEFT.project(camera);
+			const x = (tempVLEFT.x * .5 + .5) * canvas.clientWidth;
+			const y = (tempVLEFT.y * -.5 + .5) * canvas.clientHeight;
+			elem.style.transform = `translate(-50%, -50%) translate(${x}px,${y}px)`;
+  }
+  if (anchor1_1) {
+			anchor1_1.updateWorldMatrix(true, false);
+			anchor1_1.getWorldPosition(tempVLEFT1_1); 
+			tempVLEFT1_1.project(camera);
+			const x1_1 = (tempVLEFT1_1.x * .5 + .5) * canvas.clientWidth;
+			const y1_1 = (tempVLEFT1_1.y * -.5 + .5) * canvas.clientHeight;
+			elem1_1.style.transform = `translate(-50%, -50%) translate(${x1_1}px,${y1_1}px)`;
+  }
+
+  if (anchor2) {
+			anchor2.updateWorldMatrix(true, false);
+			anchor2.getWorldPosition(tempVLEFT2); 
+			tempVLEFT2.project(camera);
+			const x2 = (tempVLEFT2.x * .5 + .5) * canvas.clientWidth;
+			const y2 = (tempVLEFT2.y * -.5 + .5) * canvas.clientHeight;
+			elem2.style.transform = `translate(-50%, -50%) translate(${x2}px,${y2}px)`;
+  }
+  if (anchor2_1) {
+			anchor2_1.updateWorldMatrix(true, false);
+			anchor2_1.getWorldPosition(tempVLEFT2_1); 
+			tempVLEFT2_1.project(camera);
+			const x2_1 = (tempVLEFT2_1.x * .5 + .5) * canvas.clientWidth;
+			const y2_1 = (tempVLEFT2_1.y * -.5 + .5) * canvas.clientHeight;
+			elem2_1.style.transform = `translate(-50%, -50%) translate(${x2_1}px,${y2_1}px)`;
+  }
+
+  if (anchor3) {
+			anchor3.updateWorldMatrix(true, false);
+			anchor3.getWorldPosition(tempVLEFT3); 
+			tempVLEFT3.project(camera);
+			const x3 = (tempVLEFT3.x * .5 + .5) * canvas.clientWidth;
+			const y3 = (tempVLEFT3.y * -.5 + .5) * canvas.clientHeight;
+			elem3.style.transform = `translate(-50%, -50%) translate(${x3}px,${y3}px)`;
+  }
+  if (anchor3_1) {
+			anchor3_1.updateWorldMatrix(true, false);
+			anchor3_1.getWorldPosition(tempVLEFT3_1); 
+			tempVLEFT3_1.project(camera);
+			const x3_1 = (tempVLEFT3_1.x * .5 + .5) * canvas.clientWidth;
+			const y3_1 = (tempVLEFT3_1.y * -.5 + .5) * canvas.clientHeight;
+			elem3_1.style.transform = `translate(-50%, -50%) translate(${x3_1}px,${y3_1}px)`;
+  }
+
+
+  if (anchor4) {
+			anchor4.updateWorldMatrix(true, false);
+			anchor4.getWorldPosition(tempVLEFT4); 
+			tempVLEFT4.project(camera);
+			const x4 = (tempVLEFT4.x * .5 + .5) * canvas.clientWidth;
+			const y4 = (tempVLEFT4.y * -.5 + .5) * canvas.clientHeight;
+			elem4.style.transform = `translate(-50%, -50%) translate(${x4}px,${y4}px)`;
+  }
+  if (anchor4_1) {
+			anchor4_1.updateWorldMatrix(true, false);
+			anchor4_1.getWorldPosition(tempVLEFT4_1); 
+			tempVLEFT4_1.project(camera);
+			const x4_1 = (tempVLEFT4_1.x * .5 + .5) * canvas.clientWidth;
+			const y4_1 = (tempVLEFT4_1.y * -.5 + .5) * canvas.clientHeight;
+			elem4_1.style.transform = `translate(-50%, -50%) translate(${x4_1}px,${y4_1}px)`;
+  }
+
+
+  if (anchor5) {
+			anchor5.updateWorldMatrix(true, false);
+			anchor5.getWorldPosition(tempVLEFT5); 
+			tempVLEFT5.project(camera);
+			const x5 = (tempVLEFT5.x * .5 + .5) * canvas.clientWidth;
+			const y5 = (tempVLEFT5.y * -.5 + .5) * canvas.clientHeight;
+			elem5.style.transform = `translate(-50%, -50%) translate(${x5}px,${y5}px)`;
+  }
+  if (anchor5_1) {
+			anchor5_1.updateWorldMatrix(true, false);
+			anchor5_1.getWorldPosition(tempVLEFT5_1); 
+			tempVLEFT5_1.project(camera);
+			const x5_1 = (tempVLEFT5_1.x * .5 + .5) * canvas.clientWidth;
+			const y5_1 = (tempVLEFT5_1.y * -.5 + .5) * canvas.clientHeight;
+			elem5_1.style.transform = `translate(-50%, -50%) translate(${x5_1}px,${y5_1}px)`;
+  }
+
+
+  if (anchor6) {
+			anchor6.updateWorldMatrix(true, false);
+			anchor6.getWorldPosition(tempVLEFT6); 
+			tempVLEFT6.project(camera);
+			const x6 = (tempVLEFT6.x * .5 + .5) * canvas.clientWidth;
+			const y6 = (tempVLEFT6.y * -.5 + .5) * canvas.clientHeight;
+			elem6.style.transform = `translate(-50%, -50%) translate(${x6}px,${y6}px)`;
+  }
+  if (anchor6_1) {
+			anchor6_1.updateWorldMatrix(true, false);
+			anchor6_1.getWorldPosition(tempVLEFT6_1); 
+			tempVLEFT6_1.project(camera);
+			const x6_1 = (tempVLEFT6_1.x * .5 + .5) * canvas.clientWidth;
+			const y6_1 = (tempVLEFT6_1.y * -.5 + .5) * canvas.clientHeight;
+			elem6_1.style.transform = `translate(-50%, -50%) translate(${x6_1}px,${y6_1}px)`;
+  }
+  if (anchor6_2) {
+			anchor6_2.updateWorldMatrix(true, false);
+			anchor6_2.getWorldPosition(tempVLEFT6_2); 
+			tempVLEFT6_2.project(camera);
+			const x6_2 = (tempVLEFT6_2.x * .5 + .5) * canvas.clientWidth;
+			const y6_2 = (tempVLEFT6_2.y * -.5 + .5) * canvas.clientHeight;
+			elem6_2.style.transform = `translate(-50%, -50%) translate(${x6_2}px,${y6_2}px)`;
+  }
+
+  //	updateLight();
+  TWEEN.update();
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(update);
+
+  //console.log(camera.position.x, camera.position.y, camera.position.z)
+  }
+
+
+
+
+
+
+
+
+
+
+  function resizeRendererToDisplaySize(renderer) {
+  const canvas = renderer.domElement;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  let canvasPixelWidth = canvas.width / window.devicePixelRatio;
+  let canvasPixelHeight = canvas.height / window.devicePixelRatio;
+
+  const needResize =
+  canvasPixelWidth !== width || canvasPixelHeight !== height;
+  if (needResize) {
+  renderer.setSize(width, height, false);
+  }
+  return needResize;
+  }
+
+
+
+
+  update();
+
+
+
+
+  function nightVersion() {
+    document.getElementById("day_icon_jpg").src="icon/day_off.png";
+    document.getElementById("night_icon_jpg").src="icon/night_on.png";
+    document.body.style.background = "linear-gradient(180deg, rgba(40,37,93,1) 0%, rgba(35,42,48,1) 100%)";
+    main_mtl.map = nightMain_txt;
+    hall_mat.map = nightMain_txt;
+    mall_mat.map = nightMain_txt;
+    factory_mat.map = nightMain_txt;
+    arcade_mat.map = nightMain_txt;
+    cinema_mat.map = nightMain_txt;
+    flag_mat.map = nightMain_txt;
+    tree_mat.map = nightMain_txt;
+    cart_mat.map = nightMain_txt;
+  }
+
+
+
+  function dayVersion() {
+    document.getElementById("day_icon_jpg").src="icon/day_on.png";
+    document.getElementById("night_icon_jpg").src="icon/night_off.png";
+    document.body.style.backgroundImage = "url('img/clouds.jpg')";
+    document.body.style.backgroundRepeat = "repeat";
+    document.body.style.backgroundSize = "30%";
+    main_mtl.map = dayMain_txt;
+    hall_mat.map = dayMain_txt;
+    mall_mat.map = dayMain_txt;
+    factory_mat.map = dayMain_txt;
+    arcade_mat.map = dayMain_txt;
+    cinema_mat.map = dayMain_txt;
+    flag_mat.map = dayMain_txt;
+    tree_mat.map = dayMain_txt;
+    cart_mat.map = dayMain_txt;
+  }
+
+
+
+
+
+  </script>
+
+
+
+
+
+  <script>
+
+
+
+
+
+  $(document).ready(function() {
+  //Preloader
+  preloaderFadeOutTime = 13000;
+  function hidePreloader() {
+  var preloader = $('.spinner-wrapper');
+  preloader.fadeOut(preloaderFadeOutTime);
+  }
+  hidePreloader();
+  });
+
+
+  function openAdditionalImageWindow() {
+  overlayZ.style.display = "block";
+  overlayZ.style.animation = 'animationName 1s';
+  }
+
+
+
+
+  function closeAdditionalImageWindow() {
+  overlayZ.style.display = "none";
+  }
+
+</script>
+
+
+
+<script type="text/javascript"> // RELOADS WEBPAGE WHEN MOBILE ORIENTATION CHANGES  
+    window.onorientationchange = function() { 
+        var orientation = window.orientation; 
+            switch(orientation) { 
+                case 0:
+                case 90:
+                case -90: window.location.reload(); 
+                break; } 
+    };
+
+</script>
+
+
+
