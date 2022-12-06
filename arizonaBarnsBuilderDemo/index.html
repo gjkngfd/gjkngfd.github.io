@@ -1,0 +1,2735 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arizona Barns Builder, 3D Demo - 12141</title>
+    
+</head>
+<style>
+
+#secWidthsBlocker {
+position: absolute;
+width: 4.9em;
+height: 99.7vh;
+background: #b5b6af9e;
+opacity: 0.6;
+top: 0em;
+right: 0em;
+z-index: 999;
+display: none;
+/* -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+
+  background-color: rgb(101, 101, 101); */
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+* {
+  touch-action: manipulation;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  color: #1b052a;
+  font-size: 1em;
+  font-family:  sans-serif;
+  width: 100%;
+  height: 100vh;
+  /* ackground: rgb(2,0,36);
+  background: linear-gradient(350deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);  */
+  background: rgb(238,238,238);
+background: linear-gradient(0deg, rgba(238,238,238,1) 51%, rgba(0,212,255,1) 100%); 
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#c {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.loading {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#DefaultCustomizeTopBase {
+	position: absolute;
+	top: 0%;
+	display: block;
+	z-index: 10;
+	color: white;
+	margin-top: 1em;
+}
+
+
+
+
+
+.loader{
+  -webkit-perspective: 120px;
+  -moz-perspective: 120px;
+  -ms-perspective: 120px;
+  perspective: 120px;
+  width: 100px;
+  height: 100px;
+}
+
+.loader:before{
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  animation: flip 1s infinite;
+}
+
+
+
+
+.flexbox_1{
+  display:flex;
+  justify-content:center;
+
+}
+
+
+@keyframes flip {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(180deg)  rotateX(180deg);
+  }
+}
+
+#form1 {
+
+margin-top:-2em;
+margin-left:-22em;
+position: fixed;
+
+}
+
+</style>
+
+
+
+<body>
+
+<!--PRELOADER-->
+<!-- <div class="loading" id="js-loader">
+	<div class="loader"></div>
+</div>
+ -->
+
+<!--3D FRAME-->
+<div id="secWidthsBlocker"></div>
+<div class="wrapper">
+	<canvas id="c"></canvas>
+</div>
+
+
+<!--UI-->
+<!-- <div class="flexbox_1">
+<div align="center" id="DefaultCustomizeTopBase" >
+<form id="form1" method="post">
+<label style="color:black;font-family:sans;font-size:1em;">Section Width:</label>
+<select id="theSelector" onchange="setSelectorSource()"> 
+	<option value="iPhone12Pro">iPhone 12 Pro</option>
+	<option value="GooglePixel5">Google Pixel 5</option>  
+  <option value="AppleWatch6">Apple Watch 6 Solo Loop</option> 
+  <option value="iPhone11">iPhone 11 Pro</option> 
+  <option value="iPhoneSE">iPhone SE</option> 
+  <option value="iPadPro">iPad Pro</option> 
+</select>
+</form>
+</div>
+</div>
+ -->
+
+<!-- The main Three.js file -->
+<script src='three.min.js'></script>
+<script src='GLTFLoader.js'></script>
+<script src='OrbitControls.js'></script>
+<script src='Tween.js'></script>
+
+<!-- <script src="dat.gui.min.js"></script> -->
+
+
+<script>
+    
+
+
+
+
+
+
+/* eslint-disable */
+
+/* import { ca } from "date-fns/locale" */
+
+//#region 
+/* to remove and clear these later */
+let allRoof8Parts = []
+let allRoof12Parts = []
+let allBackPanels_metal = [];
+let allBackPanels = []
+let allFloor8Parts = []
+let allShedrowLeftSide = []
+let allBackWall12Parts = []
+/* to remove and clear these later */
+//#endregion
+
+
+/// important variables 
+let allShedrowSections = []
+let sectionShedrowWidth = 3
+let porchStatus = 12
+let sectionShedrowDepth = 12
+
+
+
+
+
+const canvas = document.querySelector('#c');
+//const backgroundColor = 0xFFFFFF;
+
+// Init the scene
+const scene = new THREE.Scene();
+//scene.background = new THREE.Color(0xffffff00);
+//scene.fog = new THREE.Fog(backgroundColor, 60, 100);
+
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.01, 1000)
+camera.position.set( 4, 0.3, 4);
+
+
+// Init the renderer
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true,  alpha: true  });
+renderer.setClearColor( 0x000000, 0 ); // the default
+renderer.shadowMap.enabled = true;
+renderer.shadowMapSoft = true;
+renderer.setPixelRatio(window.devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+
+
+
+
+
+/* const container = document.querySelector('#barns')
+
+const scene = new THREE.Scene()
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.01, 1000)
+camera.position.set( 4, 0.3, 4);
+
+
+const renderer = new THREE.WebGLRenderer({antialias:true})
+renderer.setSize(container.offsetWidth, container.offsetHeight)
+container.appendChild(renderer.domElement)
+
+
+renderer.autoClear = true;
+renderer.clearDepth();
+
+const whiteBack = new THREE.Color('#ffffff');
+scene.background = whiteBack;
+
+ */
+
+
+
+
+// orbit controls and its settings 
+const controls = new THREE.OrbitControls( camera, renderer.domElement);
+
+
+controls.minDistance = 0.2;
+controls.maxDistance = 2;
+controls.maxPolarAngle = Math.PI / 2;
+controls.target.set( 0, 0, -0.1);
+
+
+
+
+function changeCameraTargets() {
+
+    
+    switch (allShedrowSections.length) {
+        case 1:  
+            let controlsTarget1 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.1}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 2;
+            break;
+        case 2:  
+            let controlsTarget2 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.2}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 2.2;
+            break;
+        case 3:  
+            let controlsTarget3 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.3}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 2.4;
+            break;
+        case 4:  
+            let controlsTarget4 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.4}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 2.6;
+            break;
+        case 5:  
+            let controlsTarget5 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.5}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 2.8;
+            break;
+        case 6:  
+            let controlsTarget6 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.6}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 3;
+            break;
+        case 7:  
+            let controlsTarget7 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.7}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 3.2;
+            break;
+        case 8:  
+            let controlsTarget8 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.8}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 3.4;
+            break;
+        case 9:  
+            let controlsTarget9 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -0.9}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 3.6;
+            break;
+        case 10:  
+            let controlsTarget10 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -1}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 3.8;
+            break;
+        case 11:  
+            let controlsTarget11 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -1}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 4;
+            break;
+        case 12:  
+            let controlsTarget12 = new TWEEN.Tween(controls.target).to({x : 0, y :  0, z : -1.1}, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start();
+            controls.maxDistance = 4.2;
+            break;
+      }
+}
+
+
+
+
+
+
+
+
+
+//light sources in scene
+
+const color = 0xFFFFFF;
+const intensity = 0.4;
+const light = new THREE.DirectionalLight(color, intensity);
+light.position.set(35, 53, -30);
+light.target.position.set(13, 0, -50);
+scene.add(light);
+scene.add(light.target);
+const helper = new THREE.DirectionalLightHelper(light);
+//scene.add(helper);
+
+let hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.91);
+hemiLight.position.set(0, 90, 0);
+// Add hemisphere light to scene
+scene.add(hemiLight);
+
+
+
+
+
+
+
+
+//3D textures and models, parts objects - basics 
+
+const gltfLoader = new THREE.GLTFLoader();
+
+
+const textureCube = new THREE.CubeTextureLoader()
+	.load([
+	'3Dparts/textures/px.png',
+	'3Dparts/textures/nx.png',
+	'3Dparts/textures/py.png',
+	'3Dparts/textures/ny.png',
+	'3Dparts/textures/pz.png',
+	'3Dparts/textures/nz.png',
+]);
+const loader = new THREE.TextureLoader();
+
+const metal_disp = loader.load('./3Dparts/textures/Metal.jpg');
+metal_disp.wrapS = THREE.RepeatWrapping;
+metal_disp.wrapT = THREE.RepeatWrapping;
+metal_disp.flipY = false;
+
+const metal_nrm = loader.load('./3Dparts/textures/Metal_nrm.jpg');
+metal_nrm.wrapS = THREE.RepeatWrapping;
+metal_nrm.wrapT = THREE.RepeatWrapping;
+metal_nrm.flipY = false;
+
+const metalRoof = loader.load('./3Dparts/textures/MetalRoof.jpg');
+metalRoof.wrapS = THREE.RepeatWrapping;
+metalRoof.wrapT = THREE.RepeatWrapping;
+metalRoof.flipY = false;
+
+const metalRoof_nrm = loader.load('./3Dparts/textures/MetalRoof_nrm.jpg');
+metalRoof_nrm.wrapS = THREE.RepeatWrapping;
+metalRoof_nrm.wrapT = THREE.RepeatWrapping;
+metalRoof_nrm.flipY = false;
+
+const ground = loader.load('./3Dparts/textures/ground.jpg');
+ground.wrapS = THREE.RepeatWrapping;
+ground.wrapT = THREE.RepeatWrapping;
+ground.flipY = false;
+
+const concrete = loader.load('./3Dparts/textures/concrete.jpg');
+concrete.wrapS = THREE.RepeatWrapping;
+concrete.wrapT = THREE.RepeatWrapping;
+concrete.flipY = false;
+
+let groundGeo = new THREE.PlaneBufferGeometry(100, 100, 100, 1);
+let groundMat = new THREE.MeshBasicMaterial({ color: 0xeeeeee});
+let groundMesh = new THREE.Mesh(groundGeo, groundMat);
+//groundMesh.renderOrder = 0;
+groundMesh.rotateX( - Math.PI / 2);
+groundMesh.position.y = -0.4
+scene.add(groundMesh);
+
+
+const WallMat = new THREE.MeshPhongMaterial({ color: 0xF1E7D2 })
+const WallMatRoofParts = new THREE.MeshPhongMaterial({ color: 0xF1E7D0 })
+const MetalMat = new THREE.MeshPhysicalMaterial( { envMap: textureCube, metalnessMap: metal_disp, normalMap: metal_nrm, normalScale: new THREE.Vector2(0.1, 0.1), color: 0xE7E7E7, metalness: 1, roughness: 0.2, side: THREE.DoubleSide } );
+const RoofMat = new THREE.MeshPhongMaterial({ map: metalRoof, normalMap: metalRoof_nrm, normalScale: new THREE.Vector2(1, 1),  shininess: 100  })
+const FloorMat = new THREE.MeshBasicMaterial({  map: ground, side: THREE.DoubleSide })
+const ConcreteMat = new THREE.MeshBasicMaterial({  map: concrete})
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function dynamicUploaderType1(counter, sect, arrayType, name, material1, ) {
+
+    for (let x = 0; x <= counter; x++) {
+
+        gltfLoader.load('./3Dparts/'+name, (gltf) => {
+
+            window[name] = gltf.scene.children[0];
+            window[name].material = material1;
+
+            window[name].name = name;
+
+            sect.add(window[name]);
+          
+        })
+    }
+}
+
+
+
+
+
+function dynamicUploaderForParts(counter, sect, arrayType, name, material1, positionStep, whatStep) {
+
+    for (let x = 0; x <= counter; x++) {
+
+        gltfLoader.load('./3Dparts/'+name, (gltf) => {
+
+            window[name] = gltf.scene.children[0];
+            window[name].material = material1;
+            window[name].name = name;
+
+            window[name].position.z = positionStep
+            positionStep -= whatStep;
+
+            sect.add(window[name]);
+        })
+    }
+}
+
+
+
+function dynamicUploaderForPartsDepth(counter, sect, arrayType, name, material1, positionStep, whatStep, depthStep) {
+
+    for (let x = 0; x <= counter; x++) {
+
+        gltfLoader.load('./3Dparts/'+name, (gltf) => {
+
+            window[name] = gltf.scene.children[0];
+            window[name].material = material1;
+            window[name].name = name;
+
+            window[name].position.z = positionStep
+            positionStep -= whatStep;
+
+            window[name].position.x = depthStep
+
+            sect.add(window[name]);
+        })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// to remove 'step' attribute later 
+
+function createSectionShedrow(whatWidth, step, sectionName, depth, porch) {
+
+    window[sectionName] = new THREE.Object3D;
+
+    window[sectionName].name = 'GroupSectionShedrowBarn12x12'+sectionName;
+
+    allShedrowSections.push(window[sectionName]);
+
+    // these are for internal items of sections like doors or panels, it is ok to  have complex positioning like these there 
+    let positionStep = -0.02;
+    let whatStep = 0.062;
+    let positionStep2 =  0.1616;
+
+    switch (whatWidth) {
+
+        case 2: 
+            switch (depth)  { 
+                case 16:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'StallFront_titan_x8.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_8x16.glb', FloorMat, 0)
+                    //unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'separatedWall_16.glb', WallMat, 0.0435, 0.9)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x8.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.053, 0.53);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x8.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.053, 0.53);
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrow_RoomSide_16.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.152)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.152)
+
+                        if (porch === 12) {
+                            // roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat,  positionStep+0.1235, whatStep)
+                            // down roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep);
+                            window[sectionName].porch = 12;
+                        } else {
+                            // roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                            // down roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                            window[sectionName].porch = 8;
+                        }
+                    }
+                    window[sectionName].depthStatus = 16; 
+                break;
+
+                case 12:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'StallFront_titan_x8.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_8x12.glb', FloorMat, 0)
+                    // room wall inside unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'WallInside.glb', WallMat, 0.0435, 0.9)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x8.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.053, 0.53);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x8.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.053, 0.53)
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_RoomSide_12_1panel.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.092)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.092)
+
+                        if (porch === 12) {
+                            // roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                            // down roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep);
+                            window[sectionName].porch = 12;
+                        } else {
+                            // roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                            // down roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                            window[sectionName].porch = 8;
+                        }
+                    }
+                    window[sectionName].depthStatus = 12; 
+                break;
+
+                case 8:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'StallFront_titan_x8.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_8x8.glb', FloorMat, 0)
+                    // room wall inside unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'WallSeperation_8.glb', WallMat, 0.0435, 0.9)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x8.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.053, 0.53);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x8.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.053, 0.53);
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrow_RoomSide_8.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.034)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.034)
+
+                        if (porch === 12) {
+                            // roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                            // down roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                            window[sectionName].porch = 12;
+                        } else {
+                            // roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                            // down roof porch
+                            dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                            window[sectionName].porch = 8;
+                        }
+                    }
+                    window[sectionName].depthStatus = 8; 
+                break;
+            }
+            window[sectionName].sectWidth = 2; 
+        break;
+
+        case 3:
+            switch (depth) { 
+                case 16:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'TitanStall_12.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_12x16.glb', FloorMat, 0)
+                    //unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'separatedWall_16.glb', WallMat, -0.02, 0)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x12.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.113, 0)
+                        window[sectionName].porch = 12; 
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x12.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.113, 0)
+                        window[sectionName].porch = 8; 
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrow_RoomSide_16.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.152)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.152)
+
+                        switch (porch) {
+                            case 12:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 12; 
+                            break;
+                            case 8:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 8; 
+                            break;
+                        }
+                    }
+                    window[sectionName].depthStatus = 16;
+                break;
+
+                case 12:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'TitanStall_12.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_12x12.glb', FloorMat, 0)
+                    // room wall inside unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'WallInside.glb', WallMat, -0.02, 0)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x12.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.113, 0);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x12.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.113, 0)
+                        window[sectionName].porch = 8
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x < whatWidth; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_RoomSide_12_1panel.glb', RoofMat, positionStep+0.063, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.092)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.092)
+
+                        switch (porch) {
+
+                            case 12:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 12
+                            break;
+                            case 8:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep);
+                                window[sectionName].porch = 8;
+                            break;
+                        }
+                    }
+                    window[sectionName].depthStatus = 12
+                break;
+
+                case 8:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'TitanStall_12.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_12x8.glb', FloorMat, 0)
+                    // room wall inside unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'WallSeperation_8.glb', WallMat, -0.02, 0)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x12.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.113, 0);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x12.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.113, 0);
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrow_RoomSide_8.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.034)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.034)
+
+                        switch (porch) {
+
+                            case 12:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.124, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 12;
+                            break;
+                            case 8:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts,  positionStep+0.062, whatStep)
+                                window[sectionName].porch = 8;
+                            break;
+                        }
+                    }
+                    window[sectionName].depthStatus = 8;
+                break;
+            }
+            window[sectionName].sectWidth = 3; 
+        break;
+
+        case 4: 
+            switch (depth)  { 
+                case 16:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'StallFront_titan_x16.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_16x16.glb', FloorMat, 0)
+                    // wall inside unique positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'separatedWall_16.glb', WallMat, -0.081, 0)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x16.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.173, 0.24)
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x16.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.173, 0.24)
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrow_RoomSide_16.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.152)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.0635, whatStep, -0.152)
+
+                        switch (porch) {
+                            case 12:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 12;
+                            break;
+                            case 8:
+                                // roof porch 
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 8;
+                            break;
+                        }
+                    }
+                    window[sectionName].depthStatus = 16;
+                break;
+
+                case 12:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'StallFront_titan_x16.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_16x12.glb', FloorMat, 0)
+                    // room wall inside unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'WallInside.glb', WallMat, -0.081, 0)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x16.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.173, 0.24);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x16.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.173, 0.24);
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_RoomSide_12_1panel.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.092)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat, positionStep2+0.065, whatStep, -0.092)
+
+                        switch (porch) {
+                            case 12:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 12;
+                            break;
+                            case 8:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep)
+                                window[sectionName].porch = 8;
+                            break;
+                        }
+                    }
+                    window[sectionName].depthStatus = 12;
+                break;
+
+                case 8:
+                    // door
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'StallFront_titan_x16.glb', MetalMat, 0)
+                    // floor room
+                    dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'Floor_16x8.glb', FloorMat, 0)
+                    // room wall inside unique  positioning for size #2 ⬇️
+                    dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'WallSeperation_8.glb', WallMat, -0.081, 0)
+
+                    if (porch === 12) {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_12x16.glb', ConcreteMat, 0)
+                        // metal girder porch
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_12.glb', MetalMat, -0.173, 0.24);
+                        window[sectionName].porch = 12;
+                    } else {
+                        // floor porch
+                        dynamicUploaderType1(0, window[sectionName], allBackPanels_metal, 'ConcreteFloor_8x16.glb', ConcreteMat, 0)
+                        // metal girder
+                        dynamicUploaderForParts(0, window[sectionName], allBackPanels_metal, 'DividingMetall_ShedrowBarn_8.glb', MetalMat, -0.173, 0.24);
+                        window[sectionName].porch = 8;
+                    }
+
+                    // repetetive objects 
+                    for (let x = 0; x <= whatWidth-1; x++) {
+                        whatStep = whatStep + 0.062;
+                        positionStep -= 0.062;
+                        positionStep2 -= 0.063;
+                        // roof room
+                        dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrow_RoomSide_8.glb', RoofMat, positionStep+0.0635, whatStep)
+                        // wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_wall.glb', WallMat, positionStep+0.0635, whatStep, -0.034)
+                        // metal wall room
+                        dynamicUploaderForPartsDepth(0, window[sectionName], allRoof12Parts, 'SideWallShedrowBarn_metal.glb', MetalMat,  positionStep2+0.0635, whatStep, -0.034)
+
+                        switch (porch) {
+                            case 12:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel.glb', RoofMat, positionStep+0.1235, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_1panel_downpanel.glb', WallMatRoofParts, positionStep+0.062, whatStep);
+                                window[sectionName].porch = 12;
+                            break;
+                            case 8:
+                                // roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_roof.glb', RoofMat, positionStep+0.063, whatStep)
+                                // down roof porch
+                                dynamicUploaderForParts(0, window[sectionName], allRoof12Parts, 'RoofShedrowBarn_PorchSide_8x4_part.glb', WallMatRoofParts, positionStep+0.062, whatStep);
+                                window[sectionName].porch = 8;
+                            break;
+                        }
+                    }
+                    window[sectionName].depthStatus = 8;
+                break;
+            }
+            window[sectionName].sectWidth = 4; 
+        break; 
+    } 
+    scene.add(allShedrowSections[allShedrowSections.length - 1])
+}
+
+
+
+createSectionShedrow(3, 0, 'shedrowSection'+0, 12, 12);
+createSectionShedrow(3, 0, 'shedrowSection'+1, 12, 12);
+allShedrowSections[1].position.z -= 0.185
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// work in progress...
+
+function generateAccepter(whatSize) {
+    // 🔴 raycast accepter
+    window['raycastAccepterMat'+allShedrowSections[allShedrowSections.length - 1]] = new THREE.MeshBasicMaterial({
+    transparent: true, opacity: 0.5, color: 0xfdeffee,
+    });
+    window['raycastAccepterGeo'+allShedrowSections[allShedrowSections.length - 1]] = new THREE.BoxGeometry(0.38, 0.18, 0.18);
+    window['raycastAccepterMesh'+allShedrowSections[allShedrowSections.length - 1]] = new THREE.Mesh(window['raycastAccepterGeo'+allShedrowSections[allShedrowSections.length - 1]], window['raycastAccepterMat'+allShedrowSections[allShedrowSections.length - 1]]);
+    window['raycastAccepterMesh'+allShedrowSections[allShedrowSections.length - 1]].position.set(0, 0.02, -0.015);
+
+    window['raycastAccepterMesh'+allShedrowSections[allShedrowSections.length - 1]].name = 'raycastAccepterMesh'+allShedrowSections[allShedrowSections.length - 1];
+
+    scene.add(window['raycastAccepterMesh'+allShedrowSections[allShedrowSections.length - 1]]);
+
+}
+
+
+
+function cloneSectionShedrow() {
+
+    if (allShedrowSections.length < 12) {
+        
+        createSectionShedrow(3, 0, 'shedrowSection'+allShedrowSections.length, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 2].porch);
+
+        switch (allShedrowSections[allShedrowSections.length - 2].sectWidth) {
+            case 2:
+                allShedrowSections[allShedrowSections.length - 1].position.z = allShedrowSections[allShedrowSections.length - 2].position.z - 0.124
+                rightSideElemsAttach()
+            break;
+            case 3:
+                allShedrowSections[allShedrowSections.length - 1].position.z = allShedrowSections[allShedrowSections.length - 2].position.z - 0.186
+                rightSideElemsAttach()
+            break;
+            case 4:
+                allShedrowSections[allShedrowSections.length - 1].position.z = allShedrowSections[allShedrowSections.length - 2].position.z - 0.248
+                rightSideElemsAttach()
+            break;
+        }
+        
+        changeCameraTargets()    
+
+    } else {window.alert("Max size is Already selected!")};
+
+}
+
+
+// "Top View" to temporary hide roofs
+function hideObjectsInSection() {
+    for (let i = 0; i < allShedrowSections.length; i++) {
+        allShedrowSections[i].traverse( function( object ) {
+            // temporary workaround, will fix a bit later
+            for (let i = 0; i < 300; i++) {
+                if ( object.material === RoofMat || object.material === WallMatRoofParts ) {
+                    object.visible = false;
+                }
+            }
+        });
+    }
+}
+
+
+function showObjectsInSection() {
+
+    for (let i = 0; i < allShedrowSections.length; i++) {
+        allShedrowSections[i].traverse( function( object ) {
+            for (let i = 0; i < 999; i++) {
+                if ( object.material === RoofMat || object.material === WallMatRoofParts ) {
+                    object.visible = true;
+                }
+            }
+        });
+    }
+}
+
+
+
+function sectionRemoveParts(sect, counter, partName) {
+
+    for (let x = 0; x < counter; x++) {
+        var whatToDelete = sect.getObjectByName(partName)
+        sect.remove(whatToDelete);
+    } 
+}
+
+
+
+
+
+
+// I'll merge both block in one funcion to control porch&depth a bit later
+
+let depth_bufferReUsePrevInfoWidths = []
+let depth_bufferReUsePrevInfoPositios = []
+let depth_bufferReUsePrevInfoPorch = []
+let depth_bufferReUsePrevInfoDepth = []
+let depth_bufferReUsePrevInfoLength;
+
+function depth_getBufferDataSection4ReCre() {
+    for (let i = 0; i < allShedrowSections.length; i++) {
+        depth_bufferReUsePrevInfoWidths[i] = allShedrowSections[i].sectWidth
+        depth_bufferReUsePrevInfoPositios[i] = allShedrowSections[i].position.z
+        depth_bufferReUsePrevInfoPorch[i] = allShedrowSections[i].porch
+        depth_bufferReUsePrevInfoDepth[i] = allShedrowSections[i].depthStatus
+        depth_bufferReUsePrevInfoLength = allShedrowSections.length
+    }
+}
+
+
+
+function regenerateSecDepth(whatDepth) {
+    for (let i = 0; i < depth_bufferReUsePrevInfoLength; i++) {
+        createSectionShedrow(depth_bufferReUsePrevInfoWidths[i], '', 'shedrowSection'+i, whatDepth, depth_bufferReUsePrevInfoPorch[i]);
+        
+        allShedrowSections[i].position.z = depth_bufferReUsePrevInfoPositios[i]; 
+    } 
+}
+function prepareRebuild(whatDepth, regenerateSecDepth) {
+    for (let i = 0; i < allShedrowSections.length; i++) {
+        scene.remove(allShedrowSections[i])
+    }
+    allShedrowSections = []
+    regenerateSecDepth(whatDepth);
+}
+
+function changeDepthShedrow(whatDepth) {
+    depth_getBufferDataSection4ReCre() 
+    prepareRebuild(whatDepth, regenerateSecDepth);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let bufferReUsePrevInfoWidths = []
+let bufferReUsePrevInfoPositios = []
+let bufferReUsePrevInfoPorch = []
+let bufferReUsePrevInfoDepth = []
+let bufferReUsePrevInfoLength;
+
+function getBufferDataSection4ReCre() {
+    for (let i = 0; i < allShedrowSections.length; i++) {
+        bufferReUsePrevInfoWidths[i] = allShedrowSections[i].sectWidth
+        bufferReUsePrevInfoPositios[i] = allShedrowSections[i].position.z
+        bufferReUsePrevInfoPorch[i] = allShedrowSections[i].porch
+        bufferReUsePrevInfoDepth[i] = allShedrowSections[i].depthStatus
+        bufferReUsePrevInfoLength = allShedrowSections.length
+    }
+}
+
+function regenerateSecPorch(whatPorch) {
+    for (let i = 0; i < bufferReUsePrevInfoLength; i++) {
+        createSectionShedrow(bufferReUsePrevInfoWidths[i], '', 'shedrowSection'+i, bufferReUsePrevInfoDepth[i], whatPorch);
+        allShedrowSections[i].position.z = bufferReUsePrevInfoPositios[i]; 
+    } 
+}
+function prepareRebuildPorch(whatPorch, regenerateSecPorch) {
+    for (let i = 0; i < allShedrowSections.length; i++) {
+        scene.remove(allShedrowSections[i])
+    }
+    allShedrowSections = []
+    regenerateSecPorch(whatPorch);
+}
+
+function changePorchShedrow(whatPorch) {
+    getBufferDataSection4ReCre()
+    prepareRebuildPorch(whatPorch, regenerateSecPorch);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let sectionsAfterChangedOne = new THREE.Group;
+scene.add(sectionsAfterChangedOne);
+let whereToPutThisSec;
+
+let sect2testbuffer;
+function changeSectionSizeShedrowIndivid(whatSection, whatSize) {
+
+    whereToPutThisSec = allShedrowSections[whatSection].position.z;
+    thisSectWidthBuffer =  allShedrowSections[whatSection].sectWidth;
+
+    switch (whatSize) {
+        case 2: 
+            switch (thisSectWidthBuffer) {
+                case 2:
+                    window.alert('Already selected!');
+                break;
+                case 3:
+                    allShedrowSections[whatSection].traverse( function( object ) {
+                        if (object instanceof THREE.Mesh ) {
+                            object.geometry.dispose();
+                            object.material.dispose();
+                            scene.remove(object)
+                        }
+                    });
+                    scene.remove(allShedrowSections[whatSection]);
+                    allShedrowSections.splice(whatSection, 1);
+                    createSectionShedrow(whatSize, 0, 'shedrowSection'+whatSection, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 1].porch);
+                    allShedrowSections.splice(whatSection, 0, allShedrowSections[allShedrowSections.length -1]);
+                    allShedrowSections.pop(); 
+                    for (i = whatSection+1; i < allShedrowSections.length; i++ ) { 
+                        allShedrowSections[i].position.z += 0.062
+                    }
+                    allShedrowSections[whatSection].position.z = whereToPutThisSec
+                break;
+                case 4: 
+                    allShedrowSections[whatSection].traverse( function( object ) {
+                        if (object instanceof THREE.Mesh ) {
+                            object.geometry.dispose();
+                            object.material.dispose();
+                            scene.remove(object)
+                        }
+                    });
+                    scene.remove(allShedrowSections[whatSection]);
+                    allShedrowSections.splice(whatSection, 1);
+                    createSectionShedrow(whatSize, 0, 'shedrowSection'+whatSection, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 1].porch);
+                    allShedrowSections.splice(whatSection, 0, allShedrowSections[allShedrowSections.length -1]);
+                    allShedrowSections.pop(); 
+                    for (i = whatSection+1; i < allShedrowSections.length; i++ ) { 
+                        allShedrowSections[i].position.z += 0.124
+                    }
+                    allShedrowSections[whatSection].position.z = whereToPutThisSec
+                break;
+            }
+        break;
+        case 3:
+            switch (thisSectWidthBuffer) {
+                case 2:
+                    allShedrowSections[whatSection].traverse( function( object ) {
+                        if (object instanceof THREE.Mesh ) {
+                            object.geometry.dispose();
+                            object.material.dispose();
+                            scene.remove(object)
+                        }
+                    });
+                    scene.remove(allShedrowSections[whatSection]);
+                    allShedrowSections.splice(whatSection, 1);
+                    createSectionShedrow(whatSize, 0, 'shedrowSection'+whatSection, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 1].porch);
+                    allShedrowSections.splice(whatSection, 0, allShedrowSections[allShedrowSections.length -1]);
+                    allShedrowSections.pop(); 
+                    for (i = whatSection+1; i < allShedrowSections.length; i++ ) { 
+                        allShedrowSections[i].position.z -= 0.062
+                    }
+                    allShedrowSections[whatSection].position.z = whereToPutThisSec
+                break;
+                case 3:
+                    window.alert('Already selected!');
+                break;
+                case 4:
+                    allShedrowSections[whatSection].traverse( function( object ) {
+                        if (object instanceof THREE.Mesh ) {
+                            object.geometry.dispose();
+                            object.material.dispose();
+                            scene.remove(object)
+                        }
+                    });
+                    scene.remove(allShedrowSections[whatSection]);
+                    allShedrowSections.splice(whatSection, 1);
+                    createSectionShedrow(whatSize, 0, 'shedrowSection'+whatSection, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 1].porch);
+                    allShedrowSections.splice(whatSection, 0, allShedrowSections[allShedrowSections.length -1]);
+                    allShedrowSections.pop(); 
+                    for (i = whatSection+1; i < allShedrowSections.length; i++ ) { 
+                        allShedrowSections[i].position.z += 0.062
+                    }
+                    allShedrowSections[whatSection].position.z = whereToPutThisSec
+                break;
+            }
+        break;
+        case 4:
+            switch (thisSectWidthBuffer) {
+                case 2:
+                    allShedrowSections[whatSection].traverse( function( object ) {
+                        if (object instanceof THREE.Mesh ) {
+                            object.geometry.dispose();
+                            object.material.dispose();
+                            scene.remove(object)
+                        }
+                    });
+                    scene.remove(allShedrowSections[whatSection]);
+                    allShedrowSections.splice(whatSection, 1);
+                    createSectionShedrow(whatSize, 0, 'shedrowSection'+whatSection, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 1].porch);
+                    allShedrowSections.splice(whatSection, 0, allShedrowSections[allShedrowSections.length -1]);
+                    allShedrowSections.pop(); 
+                    for (i = whatSection+1; i < allShedrowSections.length; i++ ) { 
+                        allShedrowSections[i].position.z -= 0.124
+                    }
+                    allShedrowSections[whatSection].position.z = whereToPutThisSec
+                break;
+                case 3:
+                    allShedrowSections[whatSection].traverse( function( object ) {
+                        if (object instanceof THREE.Mesh ) {
+                            object.geometry.dispose();
+                            object.material.dispose();
+                            scene.remove(object)
+                        }
+                    });
+                    scene.remove(allShedrowSections[whatSection]);
+                    allShedrowSections.splice(whatSection, 1);
+                    createSectionShedrow(whatSize, 0, 'shedrowSection'+whatSection, allShedrowSections[allShedrowSections.length - 1].depthStatus, allShedrowSections[allShedrowSections.length - 1].porch);
+                    allShedrowSections.splice(whatSection, 0, allShedrowSections[allShedrowSections.length -1]);
+                    allShedrowSections.pop(); 
+                    for (i = whatSection+1; i < allShedrowSections.length; i++ ) { 
+                        allShedrowSections[i].position.z -= 0.062
+                    }
+                    allShedrowSections[whatSection].position.z = whereToPutThisSec
+                break;
+                case 4: 
+                    window.alert('Already selected!');
+                break;
+            }
+        break;
+    }  
+    // side
+    rightSideElemsAttach()
+}
+
+
+
+
+
+function rightSideElemsAttach() {
+    allShedrowSections[allShedrowSections.length - 1].remove(rightRoomSideShedrow,rightPorchSideShedrow);
+    allShedrowSections[allShedrowSections.length - 1].add(rightRoomSideShedrow,rightPorchSideShedrow);
+
+
+    switch (allShedrowSections[allShedrowSections.length - 1].sectWidth) {
+        case 2:
+            rightRoomSideShedrow.position.z = 0.247
+            rightPorchSideShedrow.position.z = 0.247
+        break;
+        case 3:
+            rightRoomSideShedrow.position.z = 0.185
+            rightPorchSideShedrow.position.z = 0.185
+        break;
+        case 4:
+            rightRoomSideShedrow.position.z = 0.124
+            rightPorchSideShedrow.position.z = 0.124
+        break;
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// RayCaster Object
+
+
+// User mouse catcher
+let mouseX = 0;
+let mouseY = 0;
+let mouse = new THREE.Vector2();
+
+const raycaster = new THREE.Raycaster();
+raycaster.setFromCamera( mouse, camera );
+
+
+function onPointerDown( event ) {
+
+    //event.preventDefault();
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    raycaster.setFromCamera( mouse, camera );
+
+    const intersects = raycaster.intersectObjects( scene.children );
+
+    for ( var i = 0; i < intersects.length; i++ ) {
+
+        //Object3d 1
+         if ( intersects[ i ].object.id === 22) {
+
+
+        }
+
+        //Floor
+         if ( intersects[ i ].object.id === 18) {
+        }   
+
+    } 
+}
+
+document.addEventListener( 'pointerdown', onPointerDown);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// left and right sides
+
+
+function leftSideRoom(roofGLB, wallGLB, metalGLB) {
+
+    leftRoomSideShedrow = new THREE.Object3D;
+
+    dynamicUploaderType1(0, leftRoomSideShedrow, allFloor8Parts, roofGLB, RoofMat)
+    dynamicUploaderType1(0, leftRoomSideShedrow, allFloor8Parts, wallGLB, WallMat )
+    dynamicUploaderType1(0, leftRoomSideShedrow, allFloor8Parts, metalGLB, MetalMat)
+
+    leftRoomSideShedrow.position.z -= 0;
+    scene.add(leftRoomSideShedrow);
+}
+
+function leftSidePorch(roofGLB, wallGLB, metalGLB) {
+
+    leftPorchSideShedrow = new THREE.Object3D;
+
+    dynamicUploaderType1(0, leftPorchSideShedrow, allFloor8Parts, roofGLB, RoofMat)
+    dynamicUploaderType1(0, leftPorchSideShedrow, allFloor8Parts, wallGLB, WallMat )
+    dynamicUploaderType1(0, leftPorchSideShedrow, allFloor8Parts, metalGLB, MetalMat)
+
+    leftPorchSideShedrow.position.z -= 0;
+    scene.add(leftPorchSideShedrow); 
+}
+
+let RightStepRoom = 0
+let RightStepPorch = 0
+
+function rightSideRoom(roofGLB, wallGLB) {
+
+    rightRoomSideShedrow = new THREE.Object3D;
+    
+    dynamicUploaderType1(0, rightRoomSideShedrow, allFloor8Parts, roofGLB, RoofMat)
+    dynamicUploaderType1(0, rightRoomSideShedrow, allFloor8Parts, wallGLB, MetalMat)
+
+
+    scene.add(rightRoomSideShedrow);
+}
+
+function rightSidePorch(roofGLB, wallGLB, metalGLB) {
+
+    rightPorchSideShedrow = new THREE.Object3D;
+
+    dynamicUploaderType1(0, rightPorchSideShedrow, allFloor8Parts, roofGLB, RoofMat)
+    dynamicUploaderType1(0, rightPorchSideShedrow, allFloor8Parts, wallGLB, WallMat )
+    dynamicUploaderType1(0, rightPorchSideShedrow, allFloor8Parts, metalGLB, MetalMat)
+
+
+    scene.add(rightPorchSideShedrow);
+}
+
+
+function changeDepthShedrowSideRoom16() {
+
+    scene.remove(leftRoomSideShedrow);
+    leftSideRoom('LeftRoomSide_roof_16.glb', 'LeftRoomSide_wall_16.glb', 'LeftRoomSide_metal_16.glb')
+
+    scene.remove(rightRoomSideShedrow);
+    rightSideRoom('RightRoomSide_roof_16.glb', 'RightRoomSide_metal_16.glb');
+    rightSideElemsAttach()
+    
+}
+
+function changeDepthShedrowSideRoom12() {
+
+    scene.remove(leftRoomSideShedrow);
+    leftSideRoom('LeftRoomSide_roof_12.glb', 'LeftRoomSide_wall_12.glb', 'LeftRoomSide_metal_12.glb')
+
+    scene.remove(rightRoomSideShedrow);
+    rightSideRoom('RightRoomSide_roof_12.glb', 'RightRoomSide_metal_12.glb');
+    rightSideElemsAttach()
+
+}
+
+function changeDepthShedrowSideRoom8() {
+
+    scene.remove(leftRoomSideShedrow);
+    leftSideRoom('LeftRoomSide_roof_8.glb', 'LeftRoomSide_wall_8.glb', 'LeftRoomSide_metal_8.glb')
+
+    scene.remove(rightRoomSideShedrow);
+    rightSideRoom('RightRoomSide_roof_8.glb', 'RightRoomSide_metal_8.glb'); 
+    rightSideElemsAttach()
+
+}
+
+function changeDepthShedrowSidePorch8() {
+
+    scene.remove(leftPorchSideShedrow);
+    leftSidePorch('LeftPorchSide_roof_8.glb', 'LeftPorchSide_wall_8.glb', 'LeftPorchSide_metal_8.glb');
+
+    scene.remove(rightPorchSideShedrow);
+    rightSidePorch('RightPorchSide_roof_8.glb', 'RightPorchSide_wall_8.glb', 'RightPorchSide_metal_8.glb');  
+    rightSideElemsAttach()
+}
+
+function changeDepthShedrowSidePorch12() {
+
+    scene.remove(leftPorchSideShedrow);
+    leftSidePorch('LeftPorchSide_roof_12.glb', 'LeftPorchSide_wall_12.glb', 'LeftPorchSide_metal_12.glb');
+
+    scene.remove(rightPorchSideShedrow);
+    rightSidePorch('RightPorchSide_roof_12.glb', 'RightPorchSide_wall_12.glb', 'RightPorchSide_metal_12.glb'); 
+    rightSideElemsAttach()
+
+}
+
+
+rightSideRoom('RightRoomSide_roof_12.glb', 'RightRoomSide_metal_12.glb');
+rightSidePorch('RightPorchSide_roof_12.glb', 'RightPorchSide_wall_12.glb', 'RightPorchSide_metal_12.glb');
+
+
+
+leftSideRoom('LeftRoomSide_roof_12.glb', 'LeftRoomSide_wall_12.glb', 'LeftRoomSide_metal_12.glb');
+leftSidePorch('LeftPorchSide_roof_12.glb', 'LeftPorchSide_wall_12.glb', 'LeftPorchSide_metal_12.glb');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let lookAtShedrowDepth16Button = document.createElement("lookAtShedrowDepth16");
+lookAtShedrowDepth16Button.id = "lookAtShedrowTopView_id"
+lookAtShedrowDepth16Button.style.zIndex = "9"
+lookAtShedrowDepth16Button.style.cursor = "pointer"
+lookAtShedrowDepth16Button.style.selection = "none"
+lookAtShedrowDepth16Button.style.top = "6em"
+lookAtShedrowDepth16Button.style.position = "absolute"
+lookAtShedrowDepth16Button.innerHTML = "Depth section 16"
+document.body.appendChild(lookAtShedrowDepth16Button)
+
+lookAtShedrowDepth16Button.addEventListener("click", function () {
+    changeDepthShedrow(16);
+    changeDepthShedrowSideRoom16()
+});
+
+
+
+
+
+
+
+
+
+
+let lookAtShedrowDepth12Button = document.createElement("lookAtShedrowDepth12");
+lookAtShedrowDepth12Button.id = "lookAtShedrowTopView_id"
+lookAtShedrowDepth12Button.style.zIndex = "9"
+lookAtShedrowDepth12Button.style.cursor = "pointer"
+lookAtShedrowDepth12Button.style.selection = "none"
+lookAtShedrowDepth12Button.style.top = "7em"
+lookAtShedrowDepth12Button.style.position = "absolute"
+lookAtShedrowDepth12Button.innerHTML = "Depth section 12"
+document.body.appendChild(lookAtShedrowDepth12Button)
+
+lookAtShedrowDepth12Button.addEventListener("click", function () {
+    changeDepthShedrow(12);
+    changeDepthShedrowSideRoom12()
+});
+
+
+
+let lookAtShedrowDepth8Button = document.createElement("lookAtShedrowDepth8");
+lookAtShedrowDepth8Button.id = "lookAtShedrowTopView_id"
+lookAtShedrowDepth8Button.style.zIndex = "9"
+lookAtShedrowDepth8Button.style.cursor = "pointer"
+lookAtShedrowDepth8Button.style.selection = "none"
+lookAtShedrowDepth8Button.style.top = "8em"
+lookAtShedrowDepth8Button.style.position = "absolute"
+lookAtShedrowDepth8Button.innerHTML = "Depth section 8"
+document.body.appendChild(lookAtShedrowDepth8Button)
+
+lookAtShedrowDepth8Button.addEventListener("click", function () {
+    changeDepthShedrow(8);
+    changeDepthShedrowSideRoom8()
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// HTML buttons for testing
+
+let addButton = document.createElement("add");
+addButton.id = "addButton_id"
+addButton.style.zIndex = "9"
+addButton.style.cursor = "pointer"
+addButton.style.selection = "none"
+addButton.style.fontSize = "1em"
+addButton.style.top = "0.5em"
+addButton.style.position = "absolute"
+addButton.innerHTML = "add"
+document.body.appendChild(addButton)
+addButton.addEventListener("click", function () {
+
+cloneSectionShedrow();
+
+window['sec'+allShedrowSections.length+'wid'+1+'Btn'].style.display = "block";
+window['sec'+allShedrowSections.length+'wid'+2+'Btn'].style.display = "block";
+window['sec'+allShedrowSections.length+'wid'+3+'Btn'].style.display = "block";
+
+
+});
+
+
+
+
+
+
+let removeButton = document.createElement("remove");
+removeButton.id = "removeButton_id"
+removeButton.style.zIndex = "9"
+removeButton.style.top = "0.5em"
+removeButton.style.left = "2em"
+removeButton.style.position = "absolute"
+removeButton.style.cursor = "pointer"
+removeButton.style.selection = "none"
+removeButton.innerHTML = "| remove"
+document.body.appendChild(removeButton)
+//section remover
+removeButton.addEventListener("click", function () {
+
+
+    if (allShedrowSections.length > 2) {
+
+        allShedrowSections[allShedrowSections.length - 1].traverse( function( object ) {
+            if (object instanceof THREE.Mesh ) {
+                object.geometry.dispose();
+                object.material.dispose();
+                scene.remove(object)
+            }
+        });
+
+        scene.remove(allShedrowSections[allShedrowSections.length - 1]);
+    
+        allShedrowSections[allShedrowSections.length - 1]--;
+        changeCameraTargets();
+
+        allShedrowSections.pop(allShedrowSections.length);
+        
+
+        switch (sectionShedrowWidth) {
+            case 2: 
+                rightRoomSideShedrow.position.z +=0.124;
+                rightPorchSideShedrow.position.z +=0.124;
+            break;
+            
+            case 3: 
+                rightRoomSideShedrow.position.z +=0.185;
+                rightPorchSideShedrow.position.z +=0.185;
+            break;
+    
+            case 4:  
+                rightRoomSideShedrow.position.z +=0.247;
+                rightPorchSideShedrow.position.z +=0.247;
+            break;
+        }
+
+        var counterTemp = allShedrowSections.length + 1;
+        window['sec'+counterTemp+'wid'+1+'Btn'].style.display = "none";
+        window['sec'+counterTemp+'wid'+2+'Btn'].style.display = "none";
+        window['sec'+counterTemp+'wid'+3+'Btn'].style.display = "none";
+
+
+
+        rightSideElemsAttach()
+        
+    } else {window.alert("Minimum size is already selected!")};  
+    
+    
+});
+
+
+
+
+let increasePorchSizeButton = document.createElement("increasePorchSize");
+increasePorchSizeButton.id = "increasePorchSize_id"
+increasePorchSizeButton.style.zIndex = "9"
+increasePorchSizeButton.style.cursor = "pointer"
+increasePorchSizeButton.style.selection = "none"
+increasePorchSizeButton.style.top = "2.9em"
+increasePorchSizeButton.style.position = "absolute"
+increasePorchSizeButton.innerHTML = "Porch Side 12"
+document.body.appendChild(increasePorchSizeButton)
+increasePorchSizeButton.addEventListener("click", function () {
+    changePorchShedrow(12);
+    changeDepthShedrowSidePorch12()
+});
+
+
+let decreasePorchSizeButton = document.createElement("decreasePorchSize");
+decreasePorchSizeButton.id = "decreasePorchSize_id"
+decreasePorchSizeButton.style.zIndex = "9"
+decreasePorchSizeButton.style.cursor = "pointer"
+decreasePorchSizeButton.style.selection = "none"
+decreasePorchSizeButton.style.top = "4em"
+decreasePorchSizeButton.style.position = "absolute"
+decreasePorchSizeButton.innerHTML ="Porch Side 8"
+document.body.appendChild(decreasePorchSizeButton)
+decreasePorchSizeButton.addEventListener("click", function () {
+    changePorchShedrow(8);
+    changeDepthShedrowSidePorch8()
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let topViewStatus = 0;
+// Top view  
+let lookAtShedrowTopViewButton = document.createElement("lookAtShedrowTopView");
+lookAtShedrowTopViewButton.style.zIndex = "9"
+lookAtShedrowTopViewButton.style.cursor = "pointer"
+lookAtShedrowTopViewButton.style.selection = "none"
+lookAtShedrowTopViewButton.style.bottom = "1em"
+lookAtShedrowTopViewButton.style.position = "absolute"
+lookAtShedrowTopViewButton.innerHTML = "<i>Top View</i>"
+document.body.appendChild(lookAtShedrowTopViewButton)
+lookAtShedrowTopViewButton.addEventListener("click", function () {
+
+    if ( topViewStatus === 0) {
+        var cameraTopView = new TWEEN.Tween(controls.object.position).to({ x: 0, y: 2, z: 0 }, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start().onComplete(() => {
+            controls.maxPolarAngle = Math.PI / 100;
+        });
+        camera.rotation.x = 90;
+        topViewStatus = 1;
+        document.getElementById('secWidthsBlocker').style.display = 'block';
+        lookAtShedrowTopViewButton.innerHTML = "<i>Default 360 View</i>"
+
+        hideObjectsInSection();
+    } else {
+        controls.maxPolarAngle = Math.PI / 2;
+        var cameraTopViewReturn2 = new TWEEN.Tween(camera.position).to({ x: 1.5, y: 0.3, z: 1.5 }, 1000).easing(TWEEN.Easing.Quadratic.Out).delay(0).start()
+        topViewStatus = 0
+        document.getElementById('secWidthsBlocker').style.display = 'none';
+
+        lookAtShedrowTopViewButton.innerHTML = "<i>Top View</i>"
+
+        showObjectsInSection();
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let sec1wid1Btn = document.createElement("sec1wid1");
+sec1wid1Btn.style.cursor = "pointer"
+sec1wid1Btn.style.selection = "none"
+sec1wid1Btn.style.right = "1em"
+sec1wid1Btn.style.top = "1em"
+sec1wid1Btn.style.fontSize = "0.5em"
+sec1wid1Btn.style.position = "absolute"
+sec1wid1Btn.innerHTML = "Section 1 Width 1"
+document.body.appendChild(sec1wid1Btn)
+sec1wid1Btn.addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(0,2)
+});
+
+
+
+
+
+let sec1wid2Btn = document.createElement("sec1wid2");
+sec1wid2Btn.style.cursor = "pointer"
+sec1wid2Btn.style.selection = "none"
+sec1wid2Btn.style.right = "1em"
+sec1wid2Btn.style.top = "2em"
+sec1wid2Btn.style.fontSize = "0.5em"
+sec1wid2Btn.style.position = "absolute"
+sec1wid2Btn.innerHTML = "Section 1 Width 2"
+document.body.appendChild(sec1wid2Btn)
+sec1wid2Btn.addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(0,3)
+});
+
+
+
+let sec1wid3Btn = document.createElement("sec1wid3");
+sec1wid3Btn.style.cursor = "pointer"
+sec1wid3Btn.style.selection = "none"
+sec1wid3Btn.style.right = "1em"
+sec1wid3Btn.style.top = "3em"
+sec1wid3Btn.style.fontSize = "0.5em"
+sec1wid3Btn.style.position = "absolute"
+sec1wid3Btn.innerHTML = "Section 1 Width 3"
+document.body.appendChild(sec1wid3Btn)
+sec1wid1Btn.style.paddingBottom = "1em"
+sec1wid3Btn.addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(0,4)
+});
+
+
+
+
+
+
+
+
+
+
+let sec2wid1Btn = document.createElement("sec2wid1");
+sec2wid1Btn.style.cursor = "pointer"
+sec2wid1Btn.style.selection = "none"
+sec2wid1Btn.style.right = "1em"
+sec2wid1Btn.style.top = "4.5em"
+sec2wid1Btn.style.fontSize = "0.5em"
+sec2wid1Btn.style.position = "absolute"
+sec2wid1Btn.innerHTML = "Section 2 Width 1"
+document.body.appendChild(sec2wid1Btn)
+sec2wid1Btn.addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(1,2)
+});
+
+
+
+
+let sec2wid2Btn = document.createElement("sec2wid2");
+sec2wid2Btn.style.cursor = "pointer"
+sec2wid2Btn.style.selection = "none"
+sec2wid2Btn.style.right = "1em"
+sec2wid2Btn.style.top = "5.5em"
+sec2wid2Btn.style.fontSize = "0.5em"
+sec2wid2Btn.style.position = "absolute"
+sec2wid2Btn.innerHTML = "Section 2 Width 2"
+document.body.appendChild(sec2wid2Btn)
+sec2wid2Btn.addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(1,3)
+});
+
+
+
+
+let sec2wid3Btn = document.createElement("sec2wid3");
+sec2wid3Btn.style.cursor = "pointer"
+sec2wid3Btn.style.selection = "none"
+sec2wid3Btn.style.right = "1em"
+sec2wid3Btn.style.top = "6.5em"
+sec2wid3Btn.style.fontSize = "0.5em"
+sec2wid3Btn.style.position = "absolute"
+sec2wid3Btn.innerHTML = "Section 3 Width 3"
+document.body.appendChild(sec2wid3Btn)
+sec2wid3Btn.addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(1,4)
+});
+
+
+
+
+
+window['sec3wid1Btn'] = document.createElement("sec3wid1");
+window['sec3wid1Btn'].style.cursor = "pointer"
+window['sec3wid1Btn'].style.selection = "none"
+window['sec3wid1Btn'].style.right = "1em"
+window['sec3wid1Btn'].style.top = "8em"
+window['sec3wid1Btn'].style.fontSize = "0.5em"
+window['sec3wid1Btn'].style.position = "absolute"
+window['sec3wid1Btn'].innerHTML = "Section 3 Width 1"
+document.body.appendChild(window['sec3wid1Btn'])
+window['sec3wid1Btn'].style.display = "none"
+window['sec3wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(2,2)
+});
+
+window['sec3wid2Btn'] = document.createElement("sec3wid2");
+window['sec3wid2Btn'].style.cursor = "pointer"
+window['sec3wid2Btn'].style.selection = "none"
+window['sec3wid2Btn'].style.right = "1em"
+window['sec3wid2Btn'].style.top = "9em"
+window['sec3wid2Btn'].style.fontSize = "0.5em"
+window['sec3wid2Btn'].style.position = "absolute"
+window['sec3wid2Btn'].innerHTML = "Section 3 Width 2"
+document.body.appendChild(window['sec3wid2Btn'])
+window['sec3wid2Btn'].style.display = "none"
+window['sec3wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(2,3)
+});
+
+window['sec3wid3Btn'] = document.createElement("sec3wid3");
+window['sec3wid3Btn'].style.cursor = "pointer"
+window['sec3wid3Btn'].style.selection = "none"
+window['sec3wid3Btn'].style.right = "1em"
+window['sec3wid3Btn'].style.top = "10em"
+window['sec3wid3Btn'].style.fontSize = "0.5em"
+window['sec3wid3Btn'].style.position = "absolute"
+window['sec3wid3Btn'].innerHTML = "Section 3 Width 3"
+window['sec3wid3Btn'].style.display = "none"
+document.body.appendChild(window['sec3wid3Btn'])
+window['sec3wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(2,4)
+})
+
+
+
+
+
+
+
+
+window['sec4wid1Btn'] = document.createElement("sec4wid1");
+window['sec4wid1Btn'].style.cursor = "pointer"
+window['sec4wid1Btn'].style.selection = "none"
+window['sec4wid1Btn'].style.right = "1em"
+window['sec4wid1Btn'].style.top = "11.5em"
+window['sec4wid1Btn'].style.fontSize = "0.5em"
+window['sec4wid1Btn'].style.position = "absolute"
+window['sec4wid1Btn'].innerHTML = "Section 4 Width 1"
+window['sec4wid1Btn'].style.display = "none"
+document.body.appendChild(window['sec4wid1Btn'])
+window['sec4wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(3,2)
+});
+
+window['sec4wid2Btn'] = document.createElement("sec4wid2");
+window['sec4wid2Btn'].style.cursor = "pointer"
+window['sec4wid2Btn'].style.selection = "none"
+window['sec4wid2Btn'].style.right = "1em"
+window['sec4wid2Btn'].style.top = "12.5em"
+window['sec4wid2Btn'].style.fontSize = "0.5em"
+window['sec4wid2Btn'].style.position = "absolute"
+window['sec4wid2Btn'].innerHTML = "Section 4 Width 2"
+document.body.appendChild(window['sec4wid2Btn'])
+window['sec4wid2Btn'].style.display = "none"
+window['sec4wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(3,3)
+});
+
+
+window['sec4wid3Btn'] = document.createElement("sec4wid3");
+window['sec4wid3Btn'].style.cursor = "pointer"
+window['sec4wid3Btn'].style.selection = "none"
+window['sec4wid3Btn'].style.right = "1em"
+window['sec4wid3Btn'].style.top = "13.5em"
+window['sec4wid3Btn'].style.fontSize = "0.5em"
+window['sec4wid3Btn'].style.position = "absolute"
+window['sec4wid3Btn'].innerHTML = "Section 4 Width 4"
+window['sec4wid3Btn'].style.display = "none"
+document.body.appendChild(window['sec4wid3Btn'])
+window['sec4wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(3,4)
+})
+
+
+
+
+window['sec5wid1Btn'] = document.createElement("sec5wid1");
+window['sec5wid1Btn'].style.cursor = "pointer"
+window['sec5wid1Btn'].style.selection = "none"
+window['sec5wid1Btn'].style.right = "1em"
+window['sec5wid1Btn'].style.top = "15em"
+window['sec5wid1Btn'].style.fontSize = "0.5em"
+window['sec5wid1Btn'].style.position = "absolute"
+window['sec5wid1Btn'].innerHTML = "Section 5 Width 1"
+document.body.appendChild(window['sec5wid1Btn'])
+window['sec5wid1Btn'].style.display = "none"
+window['sec5wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(4,2)
+});
+
+
+window['sec5wid2Btn'] = document.createElement("sec5wid2");
+window['sec5wid2Btn'].style.cursor = "pointer"
+window['sec5wid2Btn'].style.selection = "none"
+window['sec5wid2Btn'].style.right = "1em"
+window['sec5wid2Btn'].style.top = "16em"
+window['sec5wid2Btn'].style.fontSize = "0.5em"
+window['sec5wid2Btn'].style.position = "absolute"
+window['sec5wid2Btn'].innerHTML = "Section 5 Width 2"
+document.body.appendChild(window['sec5wid2Btn'])
+window['sec5wid2Btn'].style.display = "none"
+window['sec5wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(4,3)
+});
+
+window['sec5wid3Btn'] = document.createElement("sec5wid3");
+window['sec5wid3Btn'].style.cursor = "pointer"
+window['sec5wid3Btn'].style.selection = "none"
+window['sec5wid3Btn'].style.right = "1em"
+window['sec5wid3Btn'].style.top = "17em"
+window['sec5wid3Btn'].style.fontSize = "0.5em"
+window['sec5wid3Btn'].style.position = "absolute"
+window['sec5wid3Btn'].innerHTML = "Section 5 Width 3"
+document.body.appendChild(window['sec5wid3Btn'])
+window['sec5wid3Btn'].style.display = "none"
+window['sec5wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(4,4)
+})
+
+
+
+
+
+window['sec6wid1Btn'] = document.createElement("sec6wid1");
+window['sec6wid1Btn'].style.cursor = "pointer"
+window['sec6wid1Btn'].style.selection = "none"
+window['sec6wid1Btn'].style.right = "1em"
+window['sec6wid1Btn'].style.top = "18.5em"
+window['sec6wid1Btn'].style.fontSize = "0.5em"
+window['sec6wid1Btn'].style.position = "absolute"
+window['sec6wid1Btn'].innerHTML = "Section 6 Width 1"
+window['sec6wid1Btn'].style.display = "none"
+document.body.appendChild(window['sec6wid1Btn'])
+window['sec6wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(5,2)
+});
+
+
+window['sec6wid2Btn'] = document.createElement("sec6wid2");
+window['sec6wid2Btn'].style.cursor = "pointer"
+window['sec6wid2Btn'].style.selection = "none"
+window['sec6wid2Btn'].style.right = "1em"
+window['sec6wid2Btn'].style.top = "19.5em"
+window['sec6wid2Btn'].style.fontSize = "0.5em"
+window['sec6wid2Btn'].style.position = "absolute"
+window['sec6wid2Btn'].innerHTML = "Section 6 Width 2"
+window['sec6wid2Btn'].style.display = "none"
+document.body.appendChild(window['sec6wid2Btn'])
+window['sec6wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(5,3)
+});
+
+
+window['sec6wid3Btn'] = document.createElement("sec6wid3");
+window['sec6wid3Btn'].style.cursor = "pointer"
+window['sec6wid3Btn'].style.selection = "none"
+window['sec6wid3Btn'].style.right = "1em"
+window['sec6wid3Btn'].style.top = "20.5em"
+window['sec6wid3Btn'].style.fontSize = "0.5em"
+window['sec6wid3Btn'].style.position = "absolute"
+window['sec6wid3Btn'].innerHTML = "Section 6 Width 3"
+window['sec6wid3Btn'].style.display = "none"
+document.body.appendChild(window['sec6wid3Btn'])
+window['sec6wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(5,4)
+})
+
+
+
+
+
+
+window['sec7wid1Btn'] = document.createElement("sec7wid1");
+window['sec7wid1Btn'].style.cursor = "pointer"
+window['sec7wid1Btn'].style.selection = "none"
+window['sec7wid1Btn'].style.right = "1em"
+window['sec7wid1Btn'].style.top = "22em"
+window['sec7wid1Btn'].style.fontSize = "0.5em"
+window['sec7wid1Btn'].style.position = "absolute"
+window['sec7wid1Btn'].innerHTML = "Section 7 Width 1"
+window['sec7wid1Btn'].style.display = "none"
+document.body.appendChild(window['sec7wid1Btn'])
+window['sec7wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(6,2)
+});
+
+
+
+window['sec7wid2Btn'] = document.createElement("sec7wid2");
+window['sec7wid2Btn'].style.cursor = "pointer"
+window['sec7wid2Btn'].style.selection = "none"
+window['sec7wid2Btn'].style.right = "1em"
+window['sec7wid2Btn'].style.top = "23em"
+window['sec7wid2Btn'].style.fontSize = "0.5em"
+window['sec7wid2Btn'].style.position = "absolute"
+window['sec7wid2Btn'].innerHTML = "Section 7 Width 2"
+window['sec7wid2Btn'].style.display = "none"
+document.body.appendChild(window['sec7wid2Btn'])
+window['sec7wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(6,3)
+});
+
+
+window['sec7wid3Btn'] = document.createElement("sec7wid3");
+window['sec7wid3Btn'].style.cursor = "pointer"
+window['sec7wid3Btn'].style.selection = "none"
+window['sec7wid3Btn'].style.right = "1em"
+window['sec7wid3Btn'].style.top = "24em"
+window['sec7wid3Btn'].style.fontSize = "0.5em"
+window['sec7wid3Btn'].style.position = "absolute"
+window['sec7wid3Btn'].innerHTML = "Section 7 Width 3"
+window['sec7wid3Btn'].style.display = "none"
+document.body.appendChild(window['sec7wid3Btn'])
+window['sec7wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(6,4)
+})
+
+
+
+
+
+
+
+window['sec8wid1Btn'] = document.createElement("sec8wid1");
+window['sec8wid1Btn'].style.cursor = "pointer"
+window['sec8wid1Btn'].style.selection = "none"
+window['sec8wid1Btn'].style.right = "1em"
+window['sec8wid1Btn'].style.top = "25.5em"
+window['sec8wid1Btn'].style.fontSize = "0.5em"
+window['sec8wid1Btn'].style.position = "absolute"
+window['sec8wid1Btn'].innerHTML = "Section 8 Width 1"
+window['sec8wid1Btn'].style.display = "none"
+document.body.appendChild(window['sec8wid1Btn'])
+window['sec8wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(7,2)
+});
+
+
+window['sec8wid2Btn'] = document.createElement("sec8wid2");
+window['sec8wid2Btn'].style.cursor = "pointer"
+window['sec8wid2Btn'].style.selection = "none"
+window['sec8wid2Btn'].style.right = "1em"
+window['sec8wid2Btn'].style.top = "26.5em"
+window['sec8wid2Btn'].style.fontSize = "0.5em"
+window['sec8wid2Btn'].style.position = "absolute"
+window['sec8wid2Btn'].innerHTML = "Section 8 Width 2"
+document.body.appendChild(window['sec8wid2Btn'])
+window['sec8wid2Btn'].style.display = "none"
+window['sec8wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(7,3)
+});
+
+
+window['sec8wid3Btn'] = document.createElement("sec8wid3");
+window['sec8wid3Btn'].style.cursor = "pointer"
+window['sec8wid3Btn'].style.selection = "none"
+window['sec8wid3Btn'].style.right = "1em"
+window['sec8wid3Btn'].style.top = "27.5em"
+window['sec8wid3Btn'].style.fontSize = "0.5em"
+window['sec8wid3Btn'].style.position = "absolute"
+window['sec8wid3Btn'].innerHTML = "Section 8 Width 3"
+document.body.appendChild(window['sec8wid3Btn'])
+window['sec8wid3Btn'].style.display = "none"
+window['sec8wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(7,4)
+})
+
+
+
+
+
+
+
+
+window['sec9wid1Btn'] = document.createElement("sec9wid1");
+window['sec9wid1Btn'].style.cursor = "pointer"
+window['sec9wid1Btn'].style.selection = "none"
+window['sec9wid1Btn'].style.right = "1em"
+window['sec9wid1Btn'].style.top = "29em"
+window['sec9wid1Btn'].style.fontSize = "0.5em"
+window['sec9wid1Btn'].style.position = "absolute"
+window['sec9wid1Btn'].innerHTML = "Section 9 Width 1"
+document.body.appendChild(window['sec9wid1Btn'])
+window['sec9wid1Btn'].style.display = "none"
+window['sec9wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(8,2)
+});
+
+
+
+window['sec9wid2Btn'] = document.createElement("sec9wid2");
+window['sec9wid2Btn'].style.cursor = "pointer"
+window['sec9wid2Btn'].style.selection = "none"
+window['sec9wid2Btn'].style.right = "1em"
+window['sec9wid2Btn'].style.top = "30em"
+window['sec9wid2Btn'].style.fontSize = "0.5em"
+window['sec9wid2Btn'].style.position = "absolute"
+window['sec9wid2Btn'].innerHTML = "Section 9 Width 2"
+document.body.appendChild(window['sec9wid2Btn'])
+window['sec9wid2Btn'].style.display = "none"
+window['sec9wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(8,3)
+});
+
+
+window['sec9wid3Btn'] = document.createElement("sec9wid3");
+window['sec9wid3Btn'].style.cursor = "pointer"
+window['sec9wid3Btn'].style.selection = "none"
+window['sec9wid3Btn'].style.right = "1em"
+window['sec9wid3Btn'].style.top = "31em"
+window['sec9wid3Btn'].style.fontSize = "0.5em"
+window['sec9wid3Btn'].style.position = "absolute"
+window['sec9wid3Btn'].innerHTML = "Section 9 Width 3"
+document.body.appendChild(window['sec9wid3Btn'])
+window['sec9wid3Btn'].style.display = "none"
+window['sec9wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(8,4)
+})
+
+
+
+
+
+
+
+
+window['sec10wid1Btn'] = document.createElement("sec10wid1");
+window['sec10wid1Btn'].style.cursor = "pointer"
+window['sec10wid1Btn'].style.selection = "none"
+window['sec10wid1Btn'].style.right = "1em"
+window['sec10wid1Btn'].style.top = "32.5em"
+window['sec10wid1Btn'].style.fontSize = "0.5em"
+window['sec10wid1Btn'].style.position = "absolute"
+window['sec10wid1Btn'].innerHTML = "Section 10 Width 1"
+document.body.appendChild(window['sec10wid1Btn'])
+window['sec10wid1Btn'].style.display = "none"
+window['sec10wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(9,2)
+});
+
+window['sec10wid2Btn'] = document.createElement("sec10wid2");
+window['sec10wid2Btn'].style.cursor = "pointer"
+window['sec10wid2Btn'].style.selection = "none"
+window['sec10wid2Btn'].style.right = "1em"
+window['sec10wid2Btn'].style.top = "33.5em"
+window['sec10wid2Btn'].style.fontSize = "0.5em"
+window['sec10wid2Btn'].style.position = "absolute"
+window['sec10wid2Btn'].innerHTML = "Section 10 Width 2"
+document.body.appendChild(window['sec10wid2Btn'])
+window['sec10wid2Btn'].style.display = "none"
+window['sec10wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(9,3)
+});
+
+
+window['sec10wid3Btn'] = document.createElement("sec10wid3");
+window['sec10wid3Btn'].style.cursor = "pointer"
+window['sec10wid3Btn'].style.selection = "none"
+window['sec10wid3Btn'].style.right = "1em"
+window['sec10wid3Btn'].style.top = "34.5em"
+window['sec10wid3Btn'].style.fontSize = "0.5em"
+window['sec10wid3Btn'].style.position = "absolute"
+window['sec10wid3Btn'].innerHTML = "Section 10 Width 3"
+document.body.appendChild(window['sec10wid3Btn'])
+window['sec10wid3Btn'].style.display = "none"
+window['sec10wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(9,4)
+})
+
+
+
+
+
+
+
+
+window['sec11wid1Btn'] = document.createElement("sec11wid1");
+window['sec11wid1Btn'].style.cursor = "pointer"
+window['sec11wid1Btn'].style.selection = "none"
+window['sec11wid1Btn'].style.right = "1em"
+window['sec11wid1Btn'].style.top = "36em"
+window['sec11wid1Btn'].style.fontSize = "0.5em"
+window['sec11wid1Btn'].style.position = "absolute"
+window['sec11wid1Btn'].innerHTML = "Section 11 Width 1"
+document.body.appendChild(window['sec11wid1Btn'])
+window['sec11wid1Btn'].style.display = "none"
+window['sec11wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(10,2)
+});
+
+
+window['sec11wid2Btn'] = document.createElement("sec11wid2");
+window['sec11wid2Btn'].style.cursor = "pointer"
+window['sec11wid2Btn'].style.selection = "none"
+window['sec11wid2Btn'].style.right = "1em"
+window['sec11wid2Btn'].style.top = "37em"
+window['sec11wid2Btn'].style.fontSize = "0.5em"
+window['sec11wid2Btn'].style.position = "absolute"
+window['sec11wid2Btn'].innerHTML = "Section 11 Width 2"
+document.body.appendChild(window['sec11wid2Btn'])
+window['sec11wid2Btn'].style.display = "none"
+window['sec11wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(10,3)
+});
+
+
+
+window['sec11wid3Btn'] = document.createElement("sec11wid3");
+window['sec11wid3Btn'].style.cursor = "pointer"
+window['sec11wid3Btn'].style.selection = "none"
+window['sec11wid3Btn'].style.right = "1em"
+window['sec11wid3Btn'].style.top = "38em"
+window['sec11wid3Btn'].style.fontSize = "0.5em"
+window['sec11wid3Btn'].style.position = "absolute"
+window['sec11wid3Btn'].innerHTML = "Section 11 Width 3"
+document.body.appendChild(window['sec11wid3Btn'])
+window['sec11wid3Btn'].style.display = "none"
+window['sec11wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(10,4)
+})
+
+
+
+
+
+
+
+
+window['sec12wid1Btn'] = document.createElement("sec12wid1");
+window['sec12wid1Btn'].style.cursor = "pointer"
+window['sec12wid1Btn'].style.selection = "none"
+window['sec12wid1Btn'].style.right = "1em"
+window['sec12wid1Btn'].style.top = "39.5em"
+window['sec12wid1Btn'].style.fontSize = "0.5em"
+window['sec12wid1Btn'].style.position = "absolute"
+window['sec12wid1Btn'].innerHTML = "Section 12 Width 1"
+document.body.appendChild(window['sec12wid1Btn'])
+window['sec12wid1Btn'].style.display = "none"
+window['sec12wid1Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(11,2)
+});
+
+
+window['sec12wid2Btn'] = document.createElement("sec12wid2");
+window['sec12wid2Btn'].style.cursor = "pointer"
+window['sec12wid2Btn'].style.selection = "none"
+window['sec12wid2Btn'].style.right = "1em"
+window['sec12wid2Btn'].style.top = "40.5em"
+window['sec12wid2Btn'].style.fontSize = "0.5em"
+window['sec12wid2Btn'].style.position = "absolute"
+window['sec12wid2Btn'].innerHTML = "Section 12 Width 2"
+document.body.appendChild(window['sec12wid2Btn'])
+window['sec12wid2Btn'].style.display = "none"
+window['sec12wid2Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(11,3)
+});
+
+
+window['sec12wid3Btn'] = document.createElement("sec12wid3");
+window['sec12wid3Btn'].style.cursor = "pointer"
+window['sec12wid3Btn'].style.selection = "none"
+window['sec12wid3Btn'].style.right = "1em"
+window['sec12wid3Btn'].style.top = "41.5em"
+window['sec12wid3Btn'].style.fontSize = "0.5em"
+window['sec12wid3Btn'].style.position = "absolute"
+window['sec12wid3Btn'].innerHTML = "Section 12 Width 3"
+window['sec12wid3Btn'].style.display = "none"
+document.body.appendChild(window['sec12wid3Btn'])
+window['sec12wid3Btn'].addEventListener("click", function () {
+    changeSectionSizeShedrowIndivid(11,4)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function animate() {
+    requestAnimationFrame(animate)
+    controls.update(); 
+    TWEEN.update();
+    renderer.render(scene, camera)
+}
+
+animate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</script>
+
+<!-- <form id="form1" method="post">
+<label style="color:black;font-family:sans;font-size:1em;z-index:999">Section Width:</label>
+<select id="theSelector" onchange="setSelectorSource()"> 
+  <option value="iPhone12Pro">iPhone 12 Pro</option>
+  <option value="GooglePixel5">Google Pixel 5</option>  
+  <option value="AppleWatch6">Apple Watch 6 Solo Loop</option> 
+  <option value="iPhone11">iPhone 11 Pro</option> 
+  <option value="iPhoneSE">iPhone SE</option> 
+  <option value="iPadPro">iPad Pro</option> 
+</select>
+</form>
+ -->
+
+<!-- 
+<style>
+#guiiPhone11 {right:0em; top: 0em; position:absolute};
+#guiIPadPro {right:0em; top: 1.6em; position:absolute};
+#guiIphoneSE {right:0em; top: 1.6em; position:absolute};
+#guiiPhone12Pro {right:0em; top: 1.6em; position:absolute};
+#guiAppleWatch_6 {right:0em; top: 1.6em; position:absolute};
+#guiGoogle_Pixel5 {right:0em; top: 1.6em; position:absolute};
+</style>
+
+
+<div style="font: arial; position: fixed; size:2em; color:grey; cursor: pointer; margin-top:-2em;left:1em;" onclick="rotateDevice();">Rotate
+</div>
+
+
+<div style="font: arial; position: fixed; size:2em; color:grey; cursor: pointer; margin-top:-2em;left:7em;" onclick="resetAll();">Reset
+</div>
+ -->
+
+
+<!-- </div>
+</div>
+ -->
+
+
+<!--
+<script type="x-shader/x-vertex" id="vertexShader">
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+        gl_Position = vec4(uv * 2. - vec2(1, 1), 0., 1.);
+    }
+</script>
+<script type="x-shader/x-fragment" id="fragmentShader">
+    precision highp float;
+
+    varying vec2 vUv;
+    uniform sampler2D texture1;
+    void main() {
+        gl_FragColor = texture2D(texture1, vUv.xy);
+    }
+</script>
+-->
+
+</body>
+</html>
+

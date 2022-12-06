@@ -225,10 +225,10 @@ App.prototype = {
 
 
     objectsOptions: {
-        'Doors1': {path: 'Doors1/', scale: [10, 10, 10], offset: [0, 0, 0], rotation: [0, 0, 0]},
-        'Doors2': {path: 'Doors2/', scale: [10, 10, 10], offset: [0, 0, 0], rotation: [0, 0, 0]},
-        'Handle1': {path: 'Handle1/', scale: [10, 10, 10], offset: [-330, 800, 0], rotation: [0, 0, 0]},
-        'Handle1_2': {path: 'Handle1_2/', scale: [10, 10, 10], offset: [0, 800, 0], rotation: [0, 0, 0]},
+       /*  'Doors1': {path: 'Doors1/', scale: [10, 10, 10], offset: [0, 0, 0], rotation: [0, 0, 0]}, */
+        /* 'Doors2': {path: 'Doors2/', scale: [10, 10, 10], offset: [0, 0, 0], rotation: [0, 0, 0]},
+        'Handle1': {path: 'Handle1/', scale: [10, 10, 10], offset: [-330, 800, 0], rotation: [0, 0, 0]}, */
+       /*  'Handle1_2': {path: 'Handle1_2/', scale: [10, 10, 10], offset: [0, 800, 0], rotation: [0, 0, 0]},
         'Handle2': {path: 'Handle2/', scale: [5, 5, 5], offset: [-330, 800, 0], rotation: [0, 0, 0]},
         'Handle2_2': {path: 'Handle2_2/', scale: [5, 5, 5], offset: [0, 800, 0], rotation: [0, 0, 0]},
         'Handle3': {path: 'Handle3/', scale: [5, 5, 5], offset: [-330, 800, 0], rotation: [0, 0, 0]},
@@ -244,10 +244,10 @@ App.prototype = {
         'Handle8': {path: 'Handle8/', scale: [5, 5, 5], offset: [-330, 800, 0], rotation: [0, 0, 0]},
         'Handle8_2': {path: 'Handle8_2/', scale: [5, 5, 5], offset: [0, 800, 0], rotation: [0, 0, 0]},
         'Handle9': {path: 'Handle9/', scale: [5, 5, 5], offset: [-280, 800, 0], rotation: [0, 0, 0]},
-        'Handle9_2': {path: 'Handle9_2/', scale: [5, 5, 5], offset: [0, 800, 0], rotation: [0, 0, 0]},
+        'Handle9_2': {path: 'Handle9_2/', scale: [5, 5, 5], offset: [0, 800, 0], rotation: [0, 0, 0]}, */
         'Fitting3': {path: 'Fitting3/', scale: [10, 10, 10], offset: [200, 0, -250], rotation: [0, 0, 0]},
         'shelfWidth_fittings': {path: 'shelfWidth_fittings/', scale: [10, 10, 10], offset: [200, 0, -250], rotation: [0, 0, 0]},
-        'livreJava': {path: 'livreJava/', scale: [14, 14, 14], offset: [100, 1000, 700], rotation: [0, 0, 0]},
+        'livreJava': {path: 'livreJava/', scale: [14, 14, 14], offset: [100, 1000, 700], rotation: [0, 0, 0]}, 
     },
 
 
@@ -264,7 +264,7 @@ App.prototype = {
         
         this.scene = new THREE.Scene();
         this.engine = new THREE.WebGLRenderer({
-            antialias: false,
+            antialias: true,
             canvas: this.canvas,
         });
         
@@ -2536,7 +2536,7 @@ App.prototype = {
         this.createShelvingOnDemand_section2();
 
 
-        this.initGui();
+        //this.initGui();
         this.calculateOutput();
         this.run();
         return this;
@@ -3104,8 +3104,8 @@ App.prototype = {
         this.changeShelfTexture();
 
         // show controls
-        this.gui.domElement.hidden = false;
-        this.placeModels();
+        //this.gui.domElement.hidden = false;
+        //this.placeModels();
     },
 
 
@@ -3323,9 +3323,9 @@ App.prototype = {
 
         function render() {
             var deltaTime = Math.max(0.001, Math.min(self.clock.getDelta(), 1));
-            if (self.showFps) {
+           /*  if (self.showFps) {
                 self.fpsStats.begin();
-            }
+            } */
             self.controls.update(deltaTime);
             self.EventsControls1.update();
             self.composer.render(self.scene, self.camera);
