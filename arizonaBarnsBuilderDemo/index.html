@@ -174,45 +174,13 @@ position: fixed;
 	<canvas id="c"></canvas>
 </div>
 
-
-<!--UI-->
-<!-- <div class="flexbox_1">
-<div align="center" id="DefaultCustomizeTopBase" >
-<form id="form1" method="post">
-<label style="color:black;font-family:sans;font-size:1em;">Section Width:</label>
-<select id="theSelector" onchange="setSelectorSource()"> 
-	<option value="iPhone12Pro">iPhone 12 Pro</option>
-	<option value="GooglePixel5">Google Pixel 5</option>  
-  <option value="AppleWatch6">Apple Watch 6 Solo Loop</option> 
-  <option value="iPhone11">iPhone 11 Pro</option> 
-  <option value="iPhoneSE">iPhone SE</option> 
-  <option value="iPadPro">iPad Pro</option> 
-</select>
-</form>
-</div>
-</div>
- -->
-
-<!-- The main Three.js file -->
 <script src='three.min.js'></script>
 <script src='GLTFLoader.js'></script>
 <script src='OrbitControls.js'></script>
 <script src='Tween.js'></script>
 
-<!-- <script src="dat.gui.min.js"></script> -->
-
-
 <script>
     
-
-
-
-
-
-
-/* eslint-disable */
-
-/* import { ca } from "date-fns/locale" */
 
 //#region 
 /* to remove and clear these later */
@@ -224,16 +192,12 @@ let allFloor8Parts = []
 let allShedrowLeftSide = []
 let allBackWall12Parts = []
 /* to remove and clear these later */
-//#endregion
-
 
 /// important variables 
 let allShedrowSections = []
 let sectionShedrowWidth = 3
 let porchStatus = 12
 let sectionShedrowDepth = 12
-
-
 
 
 
@@ -250,41 +214,20 @@ camera.position.set( 4, 0.3, 4);
 
 
 // Init the renderer
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true,  alpha: true  });
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true,  alpha: true});
 renderer.setClearColor( 0x000000, 0 ); // the default
 renderer.shadowMap.enabled = true;
 renderer.shadowMapSoft = true;
+renderer.setSize(container.offsetWidth, container.offsetHeight)
+
 renderer.setPixelRatio(window.devicePixelRatio);
+	
 document.body.appendChild(renderer.domElement);
 
 
 
 
 
-/* const container = document.querySelector('#barns')
-
-const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.01, 1000)
-camera.position.set( 4, 0.3, 4);
-
-
-const renderer = new THREE.WebGLRenderer({antialias:true})
-renderer.setSize(container.offsetWidth, container.offsetHeight)
-container.appendChild(renderer.domElement)
-
-
-renderer.autoClear = true;
-renderer.clearDepth();
-
-const whiteBack = new THREE.Color('#ffffff');
-scene.background = whiteBack;
-
- */
-
-
-
-
-// orbit controls and its settings 
 const controls = new THREE.OrbitControls( camera, renderer.domElement);
 
 
