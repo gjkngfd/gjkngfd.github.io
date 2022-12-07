@@ -282,7 +282,8 @@ App.prototype = {
         
         this.engine.setSize(window.innerWidth, window.innerHeight, true);
         this.engine.setClearColor(0x000000);
-        
+        this.engine.setPixelRatio(window.devicePixelRatio);
+
         this.scene.background = new THREE.Color('#000000');
         this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 9000);
         this.camera.position.set(-332,1000,1827);
