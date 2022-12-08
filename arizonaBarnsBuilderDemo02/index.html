@@ -218,7 +218,7 @@ const renderer = new THREE.WebGLRenderer({ canvas, antialias: true,  alpha: true
 renderer.setClearColor( 0x000000, 0 ); // the default
 renderer.shadowMap.enabled = true;
 renderer.shadowMapSoft = true;
-renderer.setSize(container.offsetWidth, container.offsetHeight)
+renderer.setSize(canvas.offsetWidth, canvas.offsetHeight)
 
 renderer.setPixelRatio(window.devicePixelRatio);
 	
@@ -2550,29 +2550,6 @@ window['sec12wid3Btn'].addEventListener("click", function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function animate() {
     requestAnimationFrame(animate)
     controls.update(); 
@@ -2584,94 +2561,8 @@ animate()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 </script>
 
-<!-- <form id="form1" method="post">
-<label style="color:black;font-family:sans;font-size:1em;z-index:999">Section Width:</label>
-<select id="theSelector" onchange="setSelectorSource()"> 
-  <option value="iPhone12Pro">iPhone 12 Pro</option>
-  <option value="GooglePixel5">Google Pixel 5</option>  
-  <option value="AppleWatch6">Apple Watch 6 Solo Loop</option> 
-  <option value="iPhone11">iPhone 11 Pro</option> 
-  <option value="iPhoneSE">iPhone SE</option> 
-  <option value="iPadPro">iPad Pro</option> 
-</select>
-</form>
- -->
-
-<!-- 
-<style>
-#guiiPhone11 {right:0em; top: 0em; position:absolute};
-#guiIPadPro {right:0em; top: 1.6em; position:absolute};
-#guiIphoneSE {right:0em; top: 1.6em; position:absolute};
-#guiiPhone12Pro {right:0em; top: 1.6em; position:absolute};
-#guiAppleWatch_6 {right:0em; top: 1.6em; position:absolute};
-#guiGoogle_Pixel5 {right:0em; top: 1.6em; position:absolute};
-</style>
-
-
-<div style="font: arial; position: fixed; size:2em; color:grey; cursor: pointer; margin-top:-2em;left:1em;" onclick="rotateDevice();">Rotate
-</div>
-
-
-<div style="font: arial; position: fixed; size:2em; color:grey; cursor: pointer; margin-top:-2em;left:7em;" onclick="resetAll();">Reset
-</div>
- -->
-
-
-<!-- </div>
-</div>
- -->
-
-
-<!--
-<script type="x-shader/x-vertex" id="vertexShader">
-    varying vec2 vUv;
-
-    void main() {
-        vUv = uv;
-        gl_Position = vec4(uv * 2. - vec2(1, 1), 0., 1.);
-    }
-</script>
-<script type="x-shader/x-fragment" id="fragmentShader">
-    precision highp float;
-
-    varying vec2 vUv;
-    uniform sampler2D texture1;
-    void main() {
-        gl_FragColor = texture2D(texture1, vUv.xy);
-    }
-</script>
--->
 
 </body>
 </html>
