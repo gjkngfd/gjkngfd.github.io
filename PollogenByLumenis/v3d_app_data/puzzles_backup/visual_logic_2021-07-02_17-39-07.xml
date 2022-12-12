@@ -1,0 +1,537 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="555" scrolly="299.5000000000001" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="421.3178839426157" scrolly="209.13373611509428" scale="0.5384807091371837">
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenHovered" id="S6z|Yvm1DvRDNJmP4Jl8" x="-510" y="-470">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="PAD02)a6SeHg,q!F7e2s">
+          <field name="FIELDNAME">&lt;none&gt;</field>
+        </shadow>
+        <block type="objectList" id="uEqF,D;A}9IwlB?dCr(o">
+          <field name="FIELDNAME">Text</field>
+        </block>
+      </value>
+      <statement name="DO_OVER">
+        <block type="setHTMLElemStyle" id="{@?m%N`YAFYlFuN*6O3e">
+          <field name="PROPERTY">cursor</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text" id="kGWs%*ZItCx:KB`?|i,t">
+              <field name="TEXT">pointer</field>
+            </block>
+          </value>
+          <value name="ID">
+            <shadow type="text" id=";6*_f=n)_5Ix/QXA,,E4">
+              <field name="TEXT"/>
+            </shadow>
+            <block type="DOMObjectSelector" id="_XAKf(b{S`tss5HA7a/J">
+              <field name="DOM_OBJECT">BODY</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_OUT">
+        <block type="setHTMLElemStyle" id="B.eV62|dvopY({ku[@F*">
+          <field name="PROPERTY">cursor</field>
+          <field name="PARENT">FALSE</field>
+          <value name="VALUE">
+            <block type="text" id="FV:bg7_()aSVy@[_.BH,">
+              <field name="TEXT">default</field>
+            </block>
+          </value>
+          <value name="ID">
+            <shadow type="text" id="$vx:#pTwAPqz*@_JFAL^">
+              <field name="TEXT"/>
+            </shadow>
+            <block type="DOMObjectSelector" id="L~=}1EL%v5CXY1e7Q7!g">
+              <field name="DOM_OBJECT">BODY</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="stopAnimation" id="bBArY}E)XUc:=tdUFIq0" x="-510" y="-310">
+      <value name="VALUE">
+        <shadow type="animationList" id="N8[jlV#GAVM_TV!t2o^n">
+          <field name="FIELDNAME">Sun</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="stopAnimation" id="m^E-soZE64DitO.~WYsk">
+          <value name="VALUE">
+            <shadow type="animationList" id="_t@AI)A}al*}r].(AFG`">
+              <field name="FIELDNAME">Sun.001</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="stopAnimation" id="4H-_v+.C)m$FksI5f[Q%">
+              <value name="VALUE">
+                <shadow type="animationList" id=";_|`F!Z=^9q70`WCiuT[">
+                  <field name="FIELDNAME">Sun.002</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="stopAnimation" id=";C.]rh6oyG:cWQZl]VqN">
+                  <value name="VALUE">
+                    <shadow type="animationList" id="%rY(OcIs7a?e*vy;#3C!">
+                      <field name="FIELDNAME">Area_inside</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="stopAnimation" id="908pHBcO@H%dh^;ULVRE">
+                      <value name="VALUE">
+                        <shadow type="animationList" id="HzPFX*H[_=+w-s}9sX%F">
+                          <field name="FIELDNAME">Desire_low</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="hide" id="RAKx^P,;Qhe]a?H3v,==" x="10" y="-250">
+      <value name="VALUE">
+        <shadow type="objectList" id="$~Ce@J=ZTE2P@#1o:H|?">
+          <field name="FIELDNAME">CubeAnnotation1</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="hide" id="V}BJH_h!*T}70}X+7:U=">
+          <value name="VALUE">
+            <shadow type="objectList" id="KnCgRCXdIO8GePFS@?^h">
+              <field name="FIELDNAME">CubeAnnotation2</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="hide" id=")b7o]OSO9;o3BdVp`t?}">
+              <value name="VALUE">
+                <shadow type="objectList" id="NUmqGf4vF[UJfm[W|)F/">
+                  <field name="FIELDNAME">CubeAnnotation3</field>
+                </shadow>
+              </value>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="6nrPae-0b:Tm^;?~jvHs" x="-590" y="-10">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="feveq8H25f31P)J?a5c~">
+          <field name="FIELDNAME">&lt;none&gt;</field>
+        </shadow>
+        <block type="objectList" id="q}JO=ZnkXXdpGlm[Y{=g">
+          <field name="FIELDNAME">Text</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="hide" id="w#O|3o?x,?bNS5M:eC6_">
+          <value name="VALUE">
+            <shadow type="objectList" id="keg85;B58]Bl^zeC)tKm">
+              <field name="FIELDNAME">Text</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="playAnimationAdv" id="Bpx=UYvJ2S-O}]*Hn}HR">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <shadow type="animationList" id=")[ovZ1djm[3mBX)eqlW(">
+                  <field name="FIELDNAME">Area_inside</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="playAnimationAdv" id="F;fQzg)7Bx^_mqvC=box">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                  <field name="REVERSED">FALSE</field>
+                  <field name="LOOP">LoopOnce</field>
+                  <value name="VALUE">
+                    <shadow type="animationList" id="Eh1H#!;TD/$c7yX~=BCg">
+                      <field name="FIELDNAME">Desire_low</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="playAnimationAdv" id="u3l~~mrUiWjtGNaN{tHB">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                      <field name="REVERSED">FALSE</field>
+                      <field name="LOOP">LoopOnce</field>
+                      <value name="VALUE">
+                        <shadow type="animationList" id="vNp)QIB%BL;tXAUW~J^c">
+                          <field name="FIELDNAME">Sun</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="playAnimationAdv" id="z{?!CHmk]|bY.doZz8q(">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                          <field name="REVERSED">FALSE</field>
+                          <field name="LOOP">LoopOnce</field>
+                          <value name="VALUE">
+                            <shadow type="animationList" id="L#0awwlf]Kc))6hBo[@Z">
+                              <field name="FIELDNAME">Sun.001</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="playAnimationAdv" id="u1c`{REm1PXnjN9b^3?l">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                              <field name="REVERSED">FALSE</field>
+                              <field name="LOOP">LoopOnce</field>
+                              <value name="VALUE">
+                                <shadow type="animationList" id=")Di)(.w.v=];%2lB*9K#">
+                                  <field name="FIELDNAME">Sun.002</field>
+                                </shadow>
+                              </value>
+                              <statement name="DO">
+                                <block type="tweenCameraExt" id="xY[)L:zj3+Thr50Kr:_W">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                  <field name="MOVEMENT_TYPE">LINEAR</field>
+                                  <value name="POSITION">
+                                    <block type="objectList" id="N]b?gk9Wi}BT#2WqZpCS">
+                                      <field name="FIELDNAME">Camera.position2</field>
+                                    </block>
+                                  </value>
+                                  <value name="LOOKAT">
+                                    <block type="objectList" id="B7A.*,$jL$qJ6@Q5/l1W">
+                                      <field name="FIELDNAME">Desire_low</field>
+                                    </block>
+                                  </value>
+                                  <value name="DURATION">
+                                    <shadow type="math_number" id=")76F^.l9M+Ysy7b(.M]l">
+                                      <field name="NUM">3</field>
+                                    </shadow>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="tweenCameraExt" id="CD+Pk2?|JxpykW8K(P!J">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                      <field name="MOVEMENT_TYPE">LINEAR</field>
+                                      <value name="POSITION">
+                                        <block type="objectList" id="Dl:QTM2aVicfWaQ867ti">
+                                          <field name="FIELDNAME">Camera.position4stay</field>
+                                        </block>
+                                      </value>
+                                      <value name="LOOKAT">
+                                        <block type="objectList" id="aQF?t8B]R858g9D/2o@,">
+                                          <field name="FIELDNAME">Desire_low</field>
+                                        </block>
+                                      </value>
+                                      <value name="DURATION">
+                                        <shadow type="math_number" id="}+dqD}AyT[?9s#-Ebk}Q">
+                                          <field name="NUM">3</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="tweenCameraExt" id="Q31hJ~nbN4WK`O7W5jFH">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+                                          <field name="MOVEMENT_TYPE">LINEAR</field>
+                                          <value name="POSITION">
+                                            <block type="objectList" id="bxJ(cVJ%5:H$myHPYWK3">
+                                              <field name="FIELDNAME">Camera.position4stay</field>
+                                            </block>
+                                          </value>
+                                          <value name="LOOKAT">
+                                            <block type="objectList" id="0*N4}(7$UWuUtzc]z=tt">
+                                              <field name="FIELDNAME">Desire_low</field>
+                                            </block>
+                                          </value>
+                                          <value name="DURATION">
+                                            <shadow type="math_number" id="Abb?k[_xF`B83|C|5j#]">
+                                              <field name="NUM">3</field>
+                                            </shadow>
+                                          </value>
+                                          <next>
+                                            <block type="addAnnotation" id="ADm{19_rqKnwc@rl+5M0">
+                                              <value name="ANNOTATION">
+                                                <shadow type="text" id="!d$}`MQFc?;`c)3#eGJW">
+                                                  <field name="TEXT"/>
+                                                </shadow>
+                                              </value>
+                                              <value name="TARGET">
+                                                <shadow type="objectList" id="JRwh@N7Pta,yXLj4Yb:p">
+                                                  <field name="FIELDNAME">annotation1</field>
+                                                </shadow>
+                                              </value>
+                                              <value name="CONTENTS">
+                                                <shadow type="text" id="EI~I$bhy@NV$(%dgx,(.">
+                                                  <field name="TEXT">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum accumsan cursus. Maecenas luctus mattis purus facilisis consequat. Suspendisse imperdiet odio vel odio suscipit, a rutrum nibh scelerisque.</field>
+                                                </shadow>
+                                              </value>
+                                              <value name="ID">
+                                                <shadow type="text" id="9Y3!8nf^[_6mqikgYW`V">
+                                                  <field name="TEXT">an1</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="addAnnotation" id=",D3W:5,H#w]Q8*q9v_oq">
+                                                  <value name="ANNOTATION">
+                                                    <shadow type="text" id="#J[]GILG4PiIYle|B7_z">
+                                                      <field name="TEXT"/>
+                                                    </shadow>
+                                                  </value>
+                                                  <value name="TARGET">
+                                                    <shadow type="objectList" id="PKomhXp7]@iS_iSUxu-a">
+                                                      <field name="FIELDNAME">annotation2</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <value name="CONTENTS">
+                                                    <shadow type="text" id="RkZ$Xhj}%jfa%,Q7_8E{">
+                                                      <field name="TEXT">Aenean sit amet lectus non velit dictum maximus. Vivamus vel magna vel erat lobortis efficitur a eu sapien. In rhoncus odio id purus ultrices, sit amet tristique elit elementum.</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <value name="ID">
+                                                    <shadow type="text" id="*zPO7=rUQ3u7QD%)dn![">
+                                                      <field name="TEXT">an2</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <next>
+                                                    <block type="addAnnotation" id="|Pp+6pmlGY-iZNDbV[}x">
+                                                      <value name="ANNOTATION">
+                                                        <shadow type="text" id="@sF`p7AqV:rDY):d{EpR">
+                                                          <field name="TEXT"/>
+                                                        </shadow>
+                                                      </value>
+                                                      <value name="TARGET">
+                                                        <shadow type="objectList" id="?wFBnvF`Gt3:%vUo-.Nj">
+                                                          <field name="FIELDNAME">annotation3</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <value name="CONTENTS">
+                                                        <shadow type="text" id="+6^BcUfx=51.Y[wXdLf)">
+                                                          <field name="TEXT">Maecenas tincidunt felis faucibus, iaculis lectus a, elementum massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec lorem turpis, gravida imperdiet congue ac, rhoncus nec eros. Integer ac commodo felis, volutpat suscipit justo.</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <value name="ID">
+                                                        <shadow type="text" id="2t]}J+ka{EvxI@GR.[4F">
+                                                          <field name="TEXT">an3</field>
+                                                        </shadow>
+                                                      </value>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="whenClicked" id="#{d*cUvwQHbhfFDDDS9s">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                  <field name="X_RAY">FALSE</field>
+                                  <field name="DOUBLE_CLICK">FALSE</field>
+                                  <field name="LEFT_BUTTON">TRUE</field>
+                                  <field name="MIDDLE_BUTTON">TRUE</field>
+                                  <field name="RIGHT_BUTTON">TRUE</field>
+                                  <value name="VALUE">
+                                    <shadow type="objectList" id="kFXcU,dD:!|DVtg7j|]`">
+                                      <field name="FIELDNAME">annotation1</field>
+                                    </shadow>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="openAnnotation" id="])#QIfX-yd,6a.*aI;gM">
+                                      <value name="VALUE">
+                                        <shadow type="text" id="0KVJ@otT}}qeG5Z,~e+)">
+                                          <field name="TEXT">1</field>
+                                        </shadow>
+                                      </value>
+                                      <next>
+                                        <block type="tweenCameraExt" id="z1K3LHz|s^YV%x4}Qwso">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+                                          <field name="MOVEMENT_TYPE">LINEAR</field>
+                                          <value name="POSITION">
+                                            <block type="objectList" id="ufP3Gc;db){U`(`W6[?C">
+                                              <field name="FIELDNAME">Camera.positionAnnotation1</field>
+                                            </block>
+                                          </value>
+                                          <value name="LOOKAT">
+                                            <block type="objectList" id="FZiwX^7wp6WYwuvJbhJE">
+                                              <field name="FIELDNAME">Desire_low</field>
+                                            </block>
+                                          </value>
+                                          <value name="DURATION">
+                                            <shadow type="math_number" id="s183T)6-TWZKJyMXet3u">
+                                              <field name="NUM">3</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                  <next>
+                                    <block type="whenClicked" id="f1qZD@DEu+.U;m!qu7O~">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                      <field name="X_RAY">FALSE</field>
+                                      <field name="DOUBLE_CLICK">FALSE</field>
+                                      <field name="LEFT_BUTTON">TRUE</field>
+                                      <field name="MIDDLE_BUTTON">TRUE</field>
+                                      <field name="RIGHT_BUTTON">TRUE</field>
+                                      <value name="VALUE">
+                                        <shadow type="objectList" id="oaGXB0DXCDXxG_x]q%M|">
+                                          <field name="FIELDNAME">2</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="openAnnotation" id="Fw(+3;9$PCEL-R.s`lB^">
+                                          <value name="VALUE">
+                                            <shadow type="text" id="dxs8^My;7c:-=otZ$Wi8">
+                                              <field name="TEXT">2</field>
+                                            </shadow>
+                                          </value>
+                                          <next>
+                                            <block type="playAnimationAdv" id="qZVEJDlfGl0TF.oWo1:U">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                                              <field name="REVERSED">FALSE</field>
+                                              <field name="LOOP">LoopOnce</field>
+                                              <value name="VALUE">
+                                                <shadow type="animationList" id="y,rl;%/*,6LvVV[fQok1">
+                                                  <field name="FIELDNAME">Desire_low</field>
+                                                </shadow>
+                                              </value>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                      <next>
+                                        <block type="whenClicked" id="q|9FPMoP:+XiDQ,2D9Z}">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                          <field name="X_RAY">FALSE</field>
+                                          <field name="DOUBLE_CLICK">FALSE</field>
+                                          <field name="LEFT_BUTTON">TRUE</field>
+                                          <field name="MIDDLE_BUTTON">TRUE</field>
+                                          <field name="RIGHT_BUTTON">TRUE</field>
+                                          <value name="VALUE">
+                                            <shadow type="objectList" id="};x=SC9gK}[#?h)Jd[]k">
+                                              <field name="FIELDNAME">3</field>
+                                            </shadow>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="tweenCameraExt" id="ovo{;IIK*F;o~oBo$Zj!">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+                                              <field name="MOVEMENT_TYPE">LINEAR</field>
+                                              <value name="POSITION">
+                                                <block type="objectList" id="kW3vIp$s/}@t`L#}b}4t">
+                                                  <field name="FIELDNAME">Camera.positionAnnotation3</field>
+                                                </block>
+                                              </value>
+                                              <value name="LOOKAT">
+                                                <block type="objectList" id="K6~__ISHXJXf^Z~5G|.j">
+                                                  <field name="FIELDNAME">Desire_low</field>
+                                                </block>
+                                              </value>
+                                              <value name="DURATION">
+                                                <shadow type="math_number" id="@=kVFfs,StsA[o}E;,!x">
+                                                  <field name="NUM">3</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="openAnnotation" id="Q1=9ldfE@6kju1k9(exY">
+                                                  <value name="VALUE">
+                                                    <shadow type="text" id="W*biQ+C~P7~;K|V|$3jr">
+                                                      <field name="TEXT">3</field>
+                                                    </shadow>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </statement>
+                                          <next>
+                                            <block type="whenClicked" id="`;T+vpY2![TpRjkWgno8">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                              <field name="X_RAY">FALSE</field>
+                                              <field name="DOUBLE_CLICK">FALSE</field>
+                                              <field name="LEFT_BUTTON">TRUE</field>
+                                              <field name="MIDDLE_BUTTON">TRUE</field>
+                                              <field name="RIGHT_BUTTON">TRUE</field>
+                                              <value name="VALUE">
+                                                <shadow type="objectList" id="cp1ca9)Y%.{uQ=7**dIo">
+                                                  <field name="FIELDNAME">Area_inside</field>
+                                                </shadow>
+                                                <block type="objectList" id="Enq,GL5@vf(LQTW~4@f5">
+                                                  <field name="FIELDNAME">sphere_studio</field>
+                                                </block>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="tweenCameraExt" id="|bwEVh%V]gedGQjExAM?">
+                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+                                                  <field name="MOVEMENT_TYPE">LINEAR</field>
+                                                  <value name="POSITION">
+                                                    <block type="objectList" id="t[#BS:k|KyYYXnT#Ch4k">
+                                                      <field name="FIELDNAME">Camera.position4stay</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="LOOKAT">
+                                                    <block type="objectList" id="b`d=@ZAj4]6We=#:9TWp">
+                                                      <field name="FIELDNAME">Desire_low</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="DURATION">
+                                                    <shadow type="math_number" id="ev02(#qC$v]j?G1+_Ehp">
+                                                      <field name="NUM">3</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <next>
+                                                    <block type="closeAnnotation" id="dcQZ?[~-.wt7@q!=G7oP">
+                                                      <value name="VALUE">
+                                                        <shadow type="text" id="R2l(0$:qLJrdNyg{+3Hi">
+                                                          <field name="TEXT">1</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <next>
+                                                        <block type="closeAnnotation" id="WDZY?rvpBV)fmeq4W%TA">
+                                                          <value name="VALUE">
+                                                            <shadow type="text" id="JBfr{J`p#{C~n1FW%d6,">
+                                                              <field name="TEXT">2</field>
+                                                            </shadow>
+                                                          </value>
+                                                          <next>
+                                                            <block type="closeAnnotation" id="`YdVOxE])7+3omrDX_XO">
+                                                              <value name="VALUE">
+                                                                <shadow type="text" id=".$p}Zn_o#^(sS,O=6S0g">
+                                                                  <field name="TEXT">3</field>
+                                                                </shadow>
+                                                              </value>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <tab name="post" type="SecondaryTab" active="false" scrollx="0" scrolly="0" scale="0.9"></tab>
+  <editorsettings viewport-x="1043" viewport-y="76" viewport-w="511.9971923828125" viewport-h="322.497314453125" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

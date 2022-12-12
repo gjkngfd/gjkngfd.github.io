@@ -1,0 +1,364 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="288.9999999999998" scrolly="443" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id="$y1Ol51hr@{jK#kycEAj" x="-270" y="-470">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">TRUE</field>
+      <field name="BKG_TRANSPARENCY">FALSE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="loadFont" id="W0BbS@tqEFq!4Xh*KMcy" x="-250" y="-210">
+      <value name="URL">
+        <shadow type="text" id="}r*(LM$ME*5Y*1,p]R05">
+          <field name="TEXT">./fonts/DaysOne-Regular.ttf</field>
+        </shadow>
+      </value>
+      <value name="FONTFAMILY">
+        <shadow type="text" id="EAyr40+bT#1|X(I^gQ[B">
+          <field name="TEXT">days-one</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="loadFont" id="Je]yzYu^5`y*bP,((b=]">
+          <value name="URL">
+            <shadow type="text" id="YJ||UC*z$/p~(hXzxKFO">
+              <field name="TEXT">./fonts/Bellefair-Regular.ttf</field>
+            </shadow>
+          </value>
+          <value name="FONTFAMILY">
+            <shadow type="text" id="rrF?)=+mYwc7$Zc]3%yN">
+              <field name="TEXT">bellefair</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="loadFont" id="(^9.V?hy4]ydaf(?[RjO">
+              <value name="URL">
+                <shadow type="text" id="X_Fovx3`#kfarRBd7Jwu">
+                  <field name="TEXT">./fonts/Caveat-Regular.ttf</field>
+                </shadow>
+              </value>
+              <value name="FONTFAMILY">
+                <shadow type="text" id="w4/xSN5bl6#qePc-{Jd(">
+                  <field name="TEXT">caveat</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="loadFont" id="$beiE[a+([?)%t4{P?W(">
+                  <value name="URL">
+                    <shadow type="text" id="MvAQ^4Q`NQF7#e9kQm1e">
+                      <field name="TEXT">./fonts/GreatVibes-Regular.ttf</field>
+                    </shadow>
+                  </value>
+                  <value name="FONTFAMILY">
+                    <shadow type="text" id="eEack!~3Ru7ZQ]xv`zC,">
+                      <field name="TEXT">great_vibes</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="loadFont" id="j_5rR^{~2#VvbuqKp`n+">
+                      <value name="URL">
+                        <shadow type="text" id="gQ+-7{43e8/U{9Yis}{*">
+                          <field name="TEXT">./fonts/Lobster-Regular.ttf</field>
+                        </shadow>
+                      </value>
+                      <value name="FONTFAMILY">
+                        <shadow type="text" id="x@NYrlJg4@lvSo53A}F_">
+                          <field name="TEXT">lobster</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <tab name="Main" type="MainTab" active="true" scrollx="310.5884980175224" scrolly="674.0317056490323" scale="0.764393313063097">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="PAB5}w:wQjoi[(P}3T:/" type="">engraving_ao</variable>
+      <variable id="^N$P3Hf[T)dF5(+ef-b:" type="">engaving_normal</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="45s_BLfzb#LJonD{5]}u" x="-370" y="-870">
+      <field name="NAME">update_engraving</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="replaceTexture" id="YCjqROT+#|6CTAXZ!k5M">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" enabledoslot="false" flextexinput="false"></mutation>
+          <field name="OLD_TEX_NAME">engrave_ao</field>
+          <value name="MATERIAL">
+            <block type="materialList" id="M0FgOD)p/6KEjz{i5Hn!">
+              <field name="FIELDNAME">metall</field>
+            </block>
+          </value>
+          <value name="NEW_TEX_URL">
+            <shadow type="text" id="qun1=M]lM[CaipzEuMQi">
+              <field name="TEXT">./newTexture.png</field>
+            </shadow>
+            <block type="variables_get" id=")(*[2bHoo/|u7rWgs!;t">
+              <field name="VAR" id="PAB5}w:wQjoi[(P}3T:/">engraving_ao</field>
+            </block>
+          </value>
+          <next>
+            <block type="replaceTexture" id="6@8m7sAcbHk?T(i7GzPF">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" enabledoslot="false" flextexinput="false"></mutation>
+              <field name="OLD_TEX_NAME">engrave_normal</field>
+              <value name="MATERIAL">
+                <block type="materialList" id="Wh8q|+NK^n%,oEr7dd-}">
+                  <field name="FIELDNAME">metall</field>
+                </block>
+              </value>
+              <value name="NEW_TEX_URL">
+                <shadow type="text" id="N^7[^6C6-j+4gC5rqF,d">
+                  <field name="TEXT">./newTexture.png</field>
+                </shadow>
+                <block type="variables_get" id="df/]ky0+N,#?IW;uk]9v">
+                  <field name="VAR" id="^N$P3Hf[T)dF5(+ef-b:">engaving_normal</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="Dc5x5T0zoSi~*|3_pjg$" x="-90" y="-730">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="2i~Rv`wXwIw/1QhZvbr%">
+          <field name="TEXT">add</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="controls_ifelse" id="!-,4oH.uPU9F5?.^d)=b">
+          <value name="IF0">
+            <block type="logic_compare" id="LP+0h%nwP,##RIDTK}RE">
+              <field name="OP">LT</field>
+              <value name="A">
+                <block type="text_length" id="qNEYCSZU${M:sode7^:f">
+                  <value name="VALUE">
+                    <block type="getHTMLElemAttribute" id="[+.F54PjzU@UQ@0lPgRm">
+                      <field name="ATTRIBUTE">value</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="ID">
+                        <block type="text" id="l`f0*CQkvt=NuDCf]%G~">
+                          <field name="TEXT">engrave_text</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="Q}yiw$UFp(rBBeS9HEBd">
+                  <field name="NUM">12</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="variables_set" id="2KFS1yCnD)E29j+AiQGb">
+              <field name="VAR" id="PAB5}w:wQjoi[(P}3T:/">engraving_ao</field>
+              <value name="VALUE">
+                <block type="textureFromText" id="ZK;YT*l0+J2C{1-X|]%j">
+                  <field name="ALIGN">CENTER</field>
+                  <value name="TEXT">
+                    <shadow type="text" id="#_C?jUF/vC+bc%A=]vUQ">
+                      <field name="TEXT">Hello, Verge!</field>
+                    </shadow>
+                    <block type="getHTMLElemAttribute" id="6#Q`40Y#m!CWw}`Ev~jF">
+                      <field name="ATTRIBUTE">value</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="ID">
+                        <block type="text" id="1cW?()ZpKaV/Zbh^v/DY">
+                          <field name="TEXT">engrave_text</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="WIDTH">
+                    <shadow type="math_number" id="rI7@?UrRbbCrF.7$6+66">
+                      <field name="NUM">1024</field>
+                    </shadow>
+                  </value>
+                  <value name="HEIGHT">
+                    <shadow type="math_number" id="]3pcgR]B$)^#*OT~{Hk9">
+                      <field name="NUM">256</field>
+                    </shadow>
+                  </value>
+                  <value name="FONTFAMILY">
+                    <shadow type="text" id="l47aNiMg$QWxo6[%Xx!D">
+                      <field name="TEXT">Arial</field>
+                    </shadow>
+                    <block type="getHTMLElemAttribute" id="#IeOi0AA,*UwRfP,Q1)z">
+                      <field name="ATTRIBUTE">value</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="ID">
+                        <block type="text" id="VhP2oVKW2(Q,7%}0.ruG">
+                          <field name="TEXT">engrave_font</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="FONTSIZE">
+                    <shadow type="math_number" id=";@jlWw5hb;*^VbN+IcJ|">
+                      <field name="NUM">100</field>
+                    </shadow>
+                  </value>
+                  <value name="OFFSET">
+                    <shadow type="math_number" id="r]0yQEi$sF3Ted6[kNi]">
+                      <field name="NUM">5</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id="F*C4s17|1Mu0^k@f;f:I">
+                  <field name="VAR" id="^N$P3Hf[T)dF5(+ef-b:">engaving_normal</field>
+                  <value name="VALUE">
+                    <block type="generateNormalMap" id="aSBP+tx@d*EQo]5B/+~#">
+                      <field name="FILTER">Sobel</field>
+                      <field name="INVERT_R">FALSE</field>
+                      <field name="INVERT_G">FALSE</field>
+                      <field name="INVERT_HEIGHT">FALSE</field>
+                      <value name="SRCURL">
+                        <shadow type="text" id="MU$_BRIen@Ys#3#`rCs=">
+                          <field name="TEXT">./sourceImage.png</field>
+                        </shadow>
+                        <block type="variables_get" id="u.,KbGYa2*|@k/1mt+k#">
+                          <field name="VAR" id="PAB5}w:wQjoi[(P}3T:/">engraving_ao</field>
+                        </block>
+                      </value>
+                      <value name="STRENGTH">
+                        <shadow type="math_number" id="rql7AzhF3XLLBZtv$=R|">
+                          <field name="NUM">0.002</field>
+                        </shadow>
+                      </value>
+                      <value name="LEVEL">
+                        <shadow type="math_number" id="TL/v2Lc)7^B{NcXo*;/K">
+                          <field name="NUM">0.002</field>
+                        </shadow>
+                      </value>
+                      <value name="BLUR">
+                        <shadow type="math_number" id="Uu:Qoi0siL?N;jH}lkOn">
+                          <field name="NUM">-1</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="procedures_callnoreturn" id="Qb?SuZuAhQ|yZi}ey`6B">
+                      <mutation name="update_engraving"/>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <statement name="ELSE">
+            <block type="variables_set" id="x}sp}?ac|^+I{.Lp2L@!">
+              <field name="VAR" id="PAB5}w:wQjoi[(P}3T:/">engraving_ao</field>
+              <value name="VALUE">
+                <block type="textureFromText" id="{g8YR*QP|m[U3@n+SYGt">
+                  <field name="ALIGN">FIT</field>
+                  <value name="TEXT">
+                    <shadow type="text">
+                      <field name="TEXT">Hello, Verge!</field>
+                    </shadow>
+                    <block type="getHTMLElemAttribute" id="Pn-2e.jxyYg5`MuFcBPy">
+                      <field name="ATTRIBUTE">value</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="ID">
+                        <block type="text" id="hW%_]KX`kmm)nj).h^+:">
+                          <field name="TEXT">engrave_text</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="WIDTH">
+                    <shadow type="math_number" id="9UZfY#,gpeb_#4[jAA]2">
+                      <field name="NUM">1024</field>
+                    </shadow>
+                  </value>
+                  <value name="HEIGHT">
+                    <shadow type="math_number" id="#jVY]I^_V?rV6,c2.dZm">
+                      <field name="NUM">256</field>
+                    </shadow>
+                  </value>
+                  <value name="FONTFAMILY">
+                    <shadow type="text">
+                      <field name="TEXT">Arial</field>
+                    </shadow>
+                    <block type="getHTMLElemAttribute" id="Ku3XL?=?Mw9T*IvAu7tI">
+                      <field name="ATTRIBUTE">value</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="ID">
+                        <block type="text" id="Fs2CY7[YLpaM+{6jbkpM">
+                          <field name="TEXT">engrave_font</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="FONTSIZE">
+                    <shadow type="math_number" id="}EZ7_|D~xiLUDtoL.^P(">
+                      <field name="NUM">100</field>
+                    </shadow>
+                  </value>
+                  <value name="OFFSET">
+                    <shadow type="math_number" id="!9MZnW9CWXAJWc/O(.jg">
+                      <field name="NUM">5</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id="g5U=1hw9G!fb_qRkhexd">
+                  <field name="VAR" id="^N$P3Hf[T)dF5(+ef-b:">engaving_normal</field>
+                  <value name="VALUE">
+                    <block type="generateNormalMap" id="hnfVUc{_8f]~^c*!]j`9">
+                      <field name="FILTER">Sobel</field>
+                      <field name="INVERT_R">FALSE</field>
+                      <field name="INVERT_G">FALSE</field>
+                      <field name="INVERT_HEIGHT">FALSE</field>
+                      <value name="SRCURL">
+                        <shadow type="text">
+                          <field name="TEXT">./sourceImage.png</field>
+                        </shadow>
+                        <block type="variables_get" id="`LT13q2(j*iD()Y@]2],">
+                          <field name="VAR" id="PAB5}w:wQjoi[(P}3T:/">engraving_ao</field>
+                        </block>
+                      </value>
+                      <value name="STRENGTH">
+                        <shadow type="math_number" id="YC(tH:?ol!Ku@z-oxsff">
+                          <field name="NUM">0.002</field>
+                        </shadow>
+                      </value>
+                      <value name="LEVEL">
+                        <shadow type="math_number" id=")y#1nZ%PE!^*(0:0Y)|Z">
+                          <field name="NUM">0.002</field>
+                        </shadow>
+                      </value>
+                      <value name="BLUR">
+                        <shadow type="math_number" id="9_zCfawrgL`7sEs9K+^#">
+                          <field name="NUM">-1</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="procedures_callnoreturn" id="Nm,FwOnE{LFA!@`G(^z-">
+                      <mutation name="update_engraving"/>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings width="1398" height="916"></editorsettings>
+</xml>

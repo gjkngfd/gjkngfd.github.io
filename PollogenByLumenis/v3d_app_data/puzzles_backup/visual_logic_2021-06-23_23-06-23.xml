@@ -1,0 +1,116 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="555" scrolly="299.5" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="514" scrolly="298.5" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="stopAnimation" id="bBArY}E)XUc:=tdUFIq0" x="-490" y="-270">
+      <value name="VALUE">
+        <shadow type="animationList" id="N8[jlV#GAVM_TV!t2o^n">
+          <field name="FIELDNAME">Sun</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="stopAnimation" id="m^E-soZE64DitO.~WYsk">
+          <value name="VALUE">
+            <shadow type="animationList" id="_t@AI)A}al*}r].(AFG`">
+              <field name="FIELDNAME">Sun.001</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="stopAnimation" id="4H-_v+.C)m$FksI5f[Q%">
+              <value name="VALUE">
+                <shadow type="animationList" id=";_|`F!Z=^9q70`WCiuT[">
+                  <field name="FIELDNAME">Sun.002</field>
+                </shadow>
+              </value>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="6nrPae-0b:Tm^;?~jvHs" x="-510" y="90">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="feveq8H25f31P)J?a5c~">
+          <field name="FIELDNAME">&lt;none&gt;</field>
+        </shadow>
+        <block type="objectList" id="q}JO=ZnkXXdpGlm[Y{=g">
+          <field name="FIELDNAME">Text</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="tweenCameraExt" id="xY[)L:zj3+Thr50Kr:_W">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+          <field name="MOVEMENT_TYPE">SPHERICAL</field>
+          <value name="POSITION">
+            <block type="objectList" id="N]b?gk9Wi}BT#2WqZpCS">
+              <field name="FIELDNAME">Camera.001</field>
+            </block>
+          </value>
+          <value name="LOOKAT">
+            <block type="objectList" id="sW3]n9Wy+ek-~7v2#h)}">
+              <field name="FIELDNAME">Desire_low</field>
+            </block>
+          </value>
+          <value name="DURATION">
+            <shadow type="math_number" id=")76F^.l9M+Ysy7b(.M]l">
+              <field name="NUM">3</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="playAnimationAdv" id="BuyIqV]H/.A~7X!MG1zf">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <shadow type="animationList" id="G]lt=C]IPa/C^l?Elb:{">
+                  <field name="FIELDNAME">Desire_low</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="playAnimationAdv" id="u3l~~mrUiWjtGNaN{tHB">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                  <field name="REVERSED">FALSE</field>
+                  <field name="LOOP">LoopOnce</field>
+                  <value name="VALUE">
+                    <shadow type="animationList" id="vNp)QIB%BL;tXAUW~J^c">
+                      <field name="FIELDNAME">Sun</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="playAnimationAdv" id="z{?!CHmk]|bY.doZz8q(">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                      <field name="REVERSED">FALSE</field>
+                      <field name="LOOP">LoopOnce</field>
+                      <value name="VALUE">
+                        <shadow type="animationList" id="L#0awwlf]Kc))6hBo[@Z">
+                          <field name="FIELDNAME">Sun.001</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="playAnimationAdv" id="u1c`{REm1PXnjN9b^3?l">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                          <field name="REVERSED">FALSE</field>
+                          <field name="LOOP">LoopOnce</field>
+                          <value name="VALUE">
+                            <shadow type="animationList" id=")Di)(.w.v=];%2lB*9K#">
+                              <field name="FIELDNAME">Sun.002</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="750" viewport-y="28" viewport-w="512" viewport-h="337.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

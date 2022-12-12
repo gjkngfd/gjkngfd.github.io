@@ -1,0 +1,2810 @@
+ 
+ @keyframes animationName {
+/*  transition: all 0.4s ease-out;*/
+  0%   { opacity:0;    }
+  100%  { opacity:1;}
+	
+}
+
+@keyframes shadow-pulse
+{
+  0% {
+      opacity: 1;
+
+    box-shadow: 0 0 0 0px white;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+  }
+}
+
+
+@font-face {
+	font-family: hassans;
+	src: url('SourceHanSansCN-Regular.otf');
+}
+
+body.custom_font{
+	font-family: hassans; /* no .ttf */
+
+}
+
+
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: #073c82;
+}
+
+/* selected link */
+a:active {
+  color: #0074ff;
+}  
+
+body {
+	font-family: hassans;
+	font-size: 12px;
+	
+
+
+}
+
+
+
+
+
+#rightPanelZoom1 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+    	    cursor: url("default.png"), auto;
+
+}
+
+#rightPanelZoom1TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+  color:white;
+    text-align: center;
+}
+#rightPanelZoom1TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+white-space: nowrap;
+}
+
+#rightPanelZoom1ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom1ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom1ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 90%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom1ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+
+}
+
+#rightPanelZoom1ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom1ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 95%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom1ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom1ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom1ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 95%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom2 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom2TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom2TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+white-space: nowrap;
+}
+
+#rightPanelZoom2ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom2ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom2ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom2ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom2ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom2ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom2ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom2ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom2ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+#rightPanelZoom3 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom3TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom3TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom3ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom3ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom3ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom3ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom3ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom3ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+#rightPanelZoom3ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom3ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom3ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+#rightPanelZoom4 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom4TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom4TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom4ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom4ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom4ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom4ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom4ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom4ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom4ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom4ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom4ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+#rightPanelZoom5 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom5TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom5TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom5ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom5ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom5ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom5ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom5ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom5ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom5ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom5ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom5ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom6 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom6TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom6TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom6ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom6ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom6ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom6ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom6ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom6ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom6ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom6ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom6ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+
+#rightPanelZoom7 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom7TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom7TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom7ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom7ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom7ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom7ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom7ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom7ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom7ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom7ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom7ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom8 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom8TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom8TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom8ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom8ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom8ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom8ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom8ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom8ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom8ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom8ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom8ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom9 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom9TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom9TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom9ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom9ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom9ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom9ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom9ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom9ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom9ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom9ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom9ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom10 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom10TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom10TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom10ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom10ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom10ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom10ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom10ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom10ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom10ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom10ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom10ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+
+#rightPanelZoom11 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom11TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom11TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom11ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom11ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom11ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom11ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom11ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom11ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom11ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom11ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom11ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom12 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom12TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom12TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom12ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom12ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom12ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom12ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom12ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom12ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom12ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom12ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom12ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom13 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom13TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom13TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 5%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom13ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom13ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom13ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom13ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom13ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom13ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom13ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom13ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom13ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom14 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom14TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom14TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom14ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom14ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom14ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom14ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom14ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom14ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom14ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom14ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom14ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+
+
+
+#rightPanelZoom15 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom15TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom15TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom15ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom15ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom15ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+#rightPanelZoom15ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom15ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom15ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+#rightPanelZoom15ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom15ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom15ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+#rightPanelZoom16 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom16TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom16TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom16ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom16ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom16ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom16ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom16ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom16ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+#rightPanelZoom16ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom16ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom16ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+#rightPanelZoom17 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom17TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom17TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom17ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom17ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom17ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom17ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom17ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom17ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+
+}
+#rightPanelZoom17ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom17ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom17ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+
+
+
+
+#rightPanelZoom18 {
+  position: fixed;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  width: 390px;
+  height: 315px;
+  margin-right: 0%;
+  /*background: linear-gradient(to right, rgba(0, 0, .255, .2), rgba(0, 0, 166, .6));*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+#rightPanelZoom18TopTitleSection {
+	position: relative;
+  top: 5%;
+  right: 5%;
+	left: 5%;
+  display: flex;
+  width: 250px;
+  height: 150px;
+}
+#rightPanelZoom18TopTitleSectionFontBlock {
+	position: relative;
+	font-weight: bold;
+  top: 22%;
+
+	height: 20%;
+  right: 5%;
+	left: 14%;
+	font-size: 25px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom18ButtomInfoRowTitle1 {
+	position: absolute;
+  display: flex;
+  width: 55px;
+  height: 25px;
+  top: 60%;
+	left: 7%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom18ButtomInfoRowTitle1Shape {
+	position: relative;
+  top:15%;
+	left: 3%;
+  height: 3px;
+  width: 25%;
+  background: #0074ff;
+}
+
+#rightPanelZoom18ButtomInfoRowTitle1Text {
+  text-align: left;
+	position: absolute;
+  display: flex;
+  width: 92%;
+  height: 30%	;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+/*overflow-y: ;*/
+overflow-x: hidden;
+
+}
+
+
+
+#rightPanelZoom18ButtomInfoRowTitle2 {
+	position: absolute;
+  display: flex;
+  width: 80px;
+  height: 25px;
+  top: 60%;
+	left: 37.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom18ButtomInfoRowTitle2Shape {
+	position: relative;
+  top:14%;
+	left: 38%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+#rightPanelZoom18ButtomInfoRowTitle2Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+
+}
+#rightPanelZoom18ButtomInfoRowTitle3 {
+	position: absolute;
+  display: flex;
+  width: 65px;
+  height: 25px;
+  top: 60%;
+	left: 76.5%;
+  margin-top: 0%;
+	font-size: 12px;
+
+white-space: nowrap;
+}
+
+#rightPanelZoom18ButtomInfoRowTitle3Shape {
+	position: relative;
+  top: 13%;
+	left: 72%;
+  height: 3px;
+  width: 25%;
+background: grey;
+}
+
+
+#rightPanelZoom18ButtomInfoRowTitle3Text {
+  text-align: left;
+	position: absolute;
+  display: none;
+  width: 92%;
+  height: 30%;
+  top: 70%;
+	left: 5%;
+	font-size: 12px;
+white-space: pre-line;
+overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.html-embed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  
+
+}
+
+
+.progess-bar {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+}
+
+.loader-text {
+  display: block;
+  overflow: hidden;
+  width: auto;
+}
+
+.div-block-9 {
+  position: relative;
+  display: block;
+  overflow: hidden;
+    font-size: 18px;
+
+}
+
+
+
+
+
+
