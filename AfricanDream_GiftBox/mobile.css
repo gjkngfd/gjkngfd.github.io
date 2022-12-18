@@ -1,0 +1,883 @@
+ @keyframes animationName {
+/*  transition: all 0.4s ease-out;*/
+  0%   { opacity:0;    }
+  100%  { opacity:1;}
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+html, body {
+margin: 0;
+height: 100%;
+width: 100%;
+font-family: arial, sans-serif;
+background-color: black;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Old versions of Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+overflow-y: scroll;
+overflow-x: hidden;
+}
+
+#c {
+width: 100%;  
+height: 100%;
+display: block;
+}
+
+#container {
+position: relative;  
+width: 100vw;
+height: 100vh;
+overflow: hidden;
+}
+
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: black;
+	/*background: url('img/loader.gif') center no-repeat #fff;*/
+}
+
+#overlayZ {
+padding-left: 5px;
+padding-right: 30px;
+padding-top: 3px;
+display: none;
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0px;
+left:0px;
+margin: 0 auto;
+background-color: rgba(0,0,0,.4);
+z-index: 15;
+}
+
+.flexbox_4 {
+display:flex;
+justify-content:center;
+z-index: 19;
+}
+
+.flexbox_5 {
+display:flex;
+justify-content:center;
+margin-top:15%;
+z-index: 19;
+}
+
+#afterScreenImages {
+position:absolute;
+display: none;
+top: 25%;
+z-index: 19;
+border-style: solid;
+border-width: 0px;
+border-color: dimgrey;
+}
+
+
+
+#labels {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+#labels>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+#labels2 {
+position: absolute;  
+left: 0;          
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+
+}
+#labels2>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+}
+#labels3 {
+position: absolute;  
+left: 0;          
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+
+}
+#labels3>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+}
+
+#labels4 {
+position: absolute;  
+left: 0;          
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+
+}
+#labels4>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+}
+
+
+#labels5 {
+position: absolute;  
+left: 0;          
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+
+}
+#labels5>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+}
+
+#labels6 {
+position: absolute;  
+left: 0;          
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+
+}
+#labels6>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+}
+#labels7 {
+position: absolute;  
+left: 0;          
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+
+}
+#labels7>div {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+margin-left: 15px;
+margin-top: 15px;
+padding: 1em;
+color: #fff;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 20%;
+font-size: 12px;
+line-height: 0.5;
+opacity: 1;
+transition: opacity .5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#DefaultCustomizeTopBase {
+position:absolute;
+top: 0%;
+bottom: 0px;
+display: block;
+width: 100%;
+height: 10%;
+z-index: 10;
+}
+#top1_titles {
+  display:flex;
+  justify-content:center;
+  margin-right: 35px;
+  top: -5px;
+  position: absolute;
+z-index: 1;
+background-color: rgba(0, 0, .0, .9);
+}
+#toparea_img {
+z-index:2;
+}
+*/
+
+
+
+.flexbox_1{
+  display:flex;
+  justify-content:center;
+
+}
+.flexbox_2{
+  display:flex;
+  justify-content:center;
+  margin-right: 35px;
+}
+
+.flexbox_3{
+  display:flex;
+  justify-content:center;
+  margin-right: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#DefaultCustomizeTopBase {
+position:absolute;
+top: 0%;
+display: block;
+z-index: 10;
+color: white;
+}
+#top1_titles {
+display:flex;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width:55%;
+height: 95%;
+background-color: rgba(0, 0, .0, .0	);
+}
+#topMenuImg {
+width: 851px;
+}
+#toparea_img {
+z-index:2;
+}
+
+#top_default_title {
+position: absolute;
+display: flex;
+margin-left:7.9em;
+margin-top:0.1em;
+font-size: 1.4em;
+background-color: rgba(0, 0, .0, .0);
+}
+
+#top_customize_title {
+position: absolute;
+display: flex;
+margin-left: 16.6em;
+margin-top:0.1em;
+font-size: 1.4em;
+background-color: rgba(0, 0, .0, .0); 
+}
+
+#top2_component_title {
+position: absolute;
+display: flex;
+margin-left: 6.8em;
+margin-top:3.1em;
+font-size: 1em;
+background-color: rgba(0, 0, .0, .0); 
+display: none;
+
+}
+	#top2_1_component {
+	position: absolute;
+	display: flex;
+	margin-left: 8.4em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	display: none;
+	color: black;
+	cursor: pointer;
+	z-index:10;
+	}
+	#top2_2_component {
+	position: absolute;
+	display: flex;
+	margin-left: 20.1em;
+	margin-top: 7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;
+	z-index:10;
+	display: none;
+	color: black;
+	}
+	#top2_3_component {
+	position: absolute;
+	display: flex;
+	margin-left: 14.2em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	display: none;
+	cursor: pointer;
+	z-index:10;
+	color: black;
+	}
+	#top2_4_component {
+	position: absolute;
+	display: flex;
+	margin-left: 26.2em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;
+	z-index:10;
+	display: none;
+	color: black;
+	}
+	#top2_5_component {
+	position: absolute;
+	display: flex;
+	margin-left: 31.9em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;
+	z-index:10;
+	display: none;
+	color: black;
+	}
+	#top2_6_component {
+	position: absolute;
+	display: flex;
+	margin-left: 35.8em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;
+	z-index:10;
+	display: none;
+	color: black;
+	}
+	
+	
+
+#top2_carsign_title {
+position: absolute;
+display: flex;
+margin-left: 14.3em;
+margin-top:3.1em;
+font-size: 1em;
+background-color: rgba(0, 0, .0, .0); 
+cursor: point;
+display: none;
+}
+	#top2_1_carsign {
+	position: absolute;
+	display: flex;
+	margin-left: 11em;
+	margin-top: 7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	#top2_2_carsign {
+	position: absolute;
+	display: flex;
+	margin-left: 17em;
+	margin-top: 7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	#top2_3_carsign {
+	position: absolute;
+	display: flex;
+	margin-left: 22.9em;
+	margin-top: 7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	#top2_4_carsign {
+	position: absolute;
+	display: flex;
+	margin-left: 28.9em;
+	margin-top: 7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;
+	display: none;
+	color: black;
+	}
+	#top2_5_carsign {
+	position: absolute;
+	display: flex;
+	margin-left: 34.5em;
+	margin-top: 7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	
+
+#top2_technology_title {
+position: absolute;
+display: flex;
+margin-left: 20.6em;
+margin-top:3.1em;
+font-size: 1em;
+background-color: rgba(0, 0, .0, .0); 
+display: none;
+
+}
+	#top2_1_technology {
+	position: absolute;
+	display: flex;
+	margin-left: 9.7em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;
+	display: none;
+	color: black;
+	}
+	#top2_2_technology {
+	position: absolute;
+	display: flex;
+	margin-left: 17em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	#top2_3_technology {
+	position: absolute;
+	display: flex;
+	margin-left: 23.4em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	#top2_4_technology {
+	position: absolute;
+	display: flex;
+	margin-left: 31.7em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+		cursor: pointer;
+
+	display: none;
+	color: black;
+	}
+	
+#top2_protection_title {
+position: absolute;
+display: flex;
+margin-left: 27.5em;
+margin-top:3.1em;
+font-size: 1em;
+background-color: rgba(0, 0, .0, .0); 
+
+display: none;
+}
+	#top2_1_protection {
+	position: absolute;
+	display: flex;
+	margin-left: 12em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	display: none;
+	color: black;
+		cursor: pointer;
+
+	}
+	#top2_2_protection {
+	position: absolute;
+	display: flex;
+	margin-left: 22em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	display: none;
+	color: black;
+		cursor: pointer;
+
+	}
+	#top2_3_protection {
+	position: absolute;
+	display: flex;
+	margin-left: 31em;
+	margin-top:7.3em;
+	font-size: 0.8em;
+	background-color: rgba(0, 0, .0, .0); 
+	cursor: pointer;	
+	display: none;
+	color: black;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu_Exterior {
+position:absolute;
+bottom: 80px;
+display: block;
+width: 100px;
+margin-left: -90px;
+color: white;
+height: 30px;
+font-size: 16px;
+background-color: rgba(45, 62, 78, .9);
+border-style: solid;
+border-color: white;
+border-width: 1.5px;
+
+
+}
+#exteriorIcon {
+margin-top: 7px;
+margin-left: 2px;
+
+}
+#exteriorText {
+margin-top: 5px;
+margin-left: -10px;
+}
+#menu_Interior {
+position:absolute;
+bottom: 80px;
+display: block;
+width: 100px;
+margin-right: -160px;
+color: white;
+height: 30px;
+font-size: 16px;
+background-color: rgba(45, 62, 78, .5);
+border-style: solid;
+border-color: white;
+border-width: 1.5px;
+
+}
+#interiorIcon {
+margin-top: 3px;
+width: 24px;
+margin-left: 3px;
+}
+#interiorText {
+margin-top: 5px;
+margin-left: -9px;
+}
+
+#menu_centerBack {
+position:absolute;
+bottom: 140px;
+display: block;
+width: 112px;
+background-color: lightgrey;
+margin-right: -40px;
+color: white;
+height: 42px;
+font-size: 16px;
+background-color: rgba(45, 62, 78, .6);
+border-style: solid;
+border-color: white;
+border-width: 1.5px;
+
+display: none;
+}
+#menu_centerBackText {
+margin-top: 11px;
+margin-left: -3px;
+}
+
+
+
+
+
+
+
+
+#center-bottom-area {
+position:absolute;
+margin:0 auto;
+bottom: 0px;
+display: block;
+width: 230px;
+height: 70px;
+z-index: 0;
+background-color: rgba(0, 0, .0, .0);
+}
+
+#center-bottom-areaTitle {
+position:absolute;
+top: 45px;
+bottom: 0px;
+display: block;
+width: 271px;
+height: 25px;
+z-index: 10;
+background-color: rgba(0, 0, .0, .0);
+}
+
+#circleWhiteContainer {
+position: absolute;
+display: flex;
+width: 45px;
+left: 0%;
+}
+#circleWhite {
+height: 17px;
+width: 17px;
+background-color: #eeeeee;
+border-radius: 50%;
+display: inline-block;
+    border: double 10px rgba(238,238,238,0);
+    background: rgba(238,238,238,0.7);
+    background-clip: padding-box;
+}
+#circleWhiteTitle {
+position: absolute;
+display: flex;
+margin-left: 0%;
+margin-top:0%;
+font-size: 13px;
+}
+
+
+#circleDarkRedContainer {
+position: absolute;
+display: flex;
+left: 25%;
+}
+#circleDarkRed {
+height: 17px;
+width: 17px;
+border-radius: 50%;
+display: inline-block;
+    border: double 10px rgba(64,32,35,0);
+    background: rgba(64,32,35,0.7);
+    background-clip: padding-box;
+}
+#circleDarkRedTitle {
+position: absolute;
+display: flex;
+margin-left: 19.5%;
+margin-top:0%;
+font-size: 13px;
+}
+
+
+#circleDimBlueContainer {
+position: absolute;
+display: flex;
+width: 45px;
+left: 50%;
+}
+#circleDimBlue {
+height: 17px;
+width: 17px;
+border-radius: 50%;
+    border: double 10px rgba(0,94,132,0.7);
+    background: rgba(0,94,132,0.7);
+    background-clip: padding-box;
+}
+#circleDimBlueTitle {
+position: absolute;
+display: flex;
+margin-left: 45%;
+margin-top:0%;
+font-size: 13px;
+}
+
+
+#circleSilverContainer {
+position: absolute;
+display: flex;
+width: 45px;
+left: 75%;
+}
+#circleSilver {
+height: 17px;
+width: 17px;
+border-radius: 50%;
+display: inline-block;
+    border: double 10px rgba(189,197,218,0);
+    background: rgba(189,197,218,0.7);
+    background-clip: padding-box;
+}
+#circleSilverTitle {
+position: absolute;
+display: flex;
+margin-left: 64.8%;
+margin-top:0%;
+font-size: 13px;
+}
+
+
+#circleGreyContainer {
+position: absolute;
+display: flex;
+width: 45px;
+	left: 100%;
+}
+#circleGrey{
+height: 17px;
+width: 17px;
+border-radius: 50%;
+display: inline-block;
+    border: double 10px rgba(139,144,147,0);
+    background: rgba(139,144,147,0.7);
+    background-clip: padding-box;
+}
+#circleGreyrTitle {
+position: absolute;
+display: flex;
+margin-left: 87%;
+margin-top:0%;
+font-size: 13px;
+}

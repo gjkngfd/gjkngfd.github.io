@@ -1,0 +1,497 @@
+
+
+#c {
+width: 100%;  
+height: 100%;
+display: block;
+}
+
+#container {
+position: relative;  
+width: 100vw;
+height: 100vh;
+overflow: hidden;
+}
+
+#my_iframe {
+    position: absolute;
+    margin-top: 2.5em;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: grey; 
+}
+
+
+
+
+#idApplic {
+	font-family: metriz2;
+	color: #403f3f;
+	font-size: 14px;
+	top: 2.8em;
+	left: 5em;
+	position: absolute;
+}
+
+
+
+#textWithout {
+	font-family: metriz;
+	color: #403f3f;
+	font-size: 14.5px;
+	top: 0.4em;
+    left: 5em;
+    position: absolute;
+}
+
+#textWith {
+	font-family: metriz;
+	color: #403f3f;
+	font-size: 14.5px;
+	top: 0.5em;
+    left: 5em;
+    position: absolute;
+}
+
+
+#textWith2 {
+	font-family: metriz;
+	color: #403f3f;
+	font-size: 14.5px;
+	top: 0.5em;
+    left: 5em;
+    position: absolute;
+}
+
+
+
+
+#AdditionalMenu {
+	top: 3em;
+	left: 0em;
+	position: absolute;
+	cursor: pointer;
+	width: 17em;
+	background: #ffffff00;
+	height: 16.8em;
+	opacity: 1;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-color: white;
+}
+
+
+
+
+
+
+
+#AdditionalMenu {
+	top: 3em;
+	left: 0em;
+	position: absolute;
+	cursor: pointer;
+	width: 15em;
+	height: 10.3em;
+	opacity: 1;
+}
+
+
+#csw2800_withoutRack {
+	top: -0.5em;
+    left: 0em;
+    position: absolute;
+    width: 15em;
+	background: #ffffff00;
+	height: 4em;
+}
+
+
+#csw2800_withRack {
+	top: 3.4em;
+	left: 0em;
+    position: absolute;
+    width: 15em;
+	background: #ffffff00;
+	height: 4em;
+    
+}
+
+
+#csw2800_withRack2 {
+
+	top: 7.4em;
+	left: 0em;
+    position: absolute;
+        width: 15em;
+	background: #ffffff00;
+	height: 4em;
+    
+}
+
+
+img {
+    width: 70px;
+    height: 70px;
+    top: -0.1m;
+    left: -0.3em;
+    position: absolute;
+
+}
+
+
+#hamburgerIcon {
+    top: 0.8em;
+    left: 0.5em;
+}
+
+#png_withoutRack{
+	top: -0.1m;
+}
+
+
+.fullscreen-button {
+	position: fixed;
+	margin-top: 1.9em;
+	right: 0.5em;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: pointer;
+	background-size:  100%;
+	display: block;
+}
+
+
+.fullscreen-button-close {
+	position: fixed;
+	margin-top: 1.9em;
+	right: 0.5em;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: pointer;
+	background-size:  100%;
+	display: none;
+}
+
+
+
+
+
+#annotationButton {
+	position: fixed;
+	margin-top: 1.9em;
+	right: 3em;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: pointer;
+	background-size:  100%;
+	display: block;
+}
+.annotation-open {
+    background-image: url('../icon/annotation-open.png');
+}
+
+
+#annotationButton2 {
+	position: fixed;
+	margin-top: 1.9em;
+	right: 3em;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: pointer;
+	background-size:  100%;
+	display: none;
+}
+.annotation-open2 {
+    background-image: url('../icon/annotation-open.png');
+}
+
+
+
+#annotationButton3 {
+	position: fixed;
+	margin-top: 1.9em;
+	right: 3em;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: pointer;
+	background-size:  100%;
+	display: none;
+}
+.annotation-open3 {
+    background-image: url('../icon/annotation-open.png');
+}
+
+
+
+.fullscreen-open {
+    background-image: url('../icon/fullscreen-open.png');
+}
+
+.fullscreen-close {
+    background-image: url('../icon/fullscreen_close.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#labels1 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels1>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width:auto;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+
+
+#labels2 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels2>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width:6.9em;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+
+
+
+#labels3 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels3>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width: auto;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+
+
+#labels5 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels5>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width: 8em;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+#labels6 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels6>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width: 7.7em;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+
+
+#labels7 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels7>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width:6.9em;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+
+
+
+#labels8 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels8>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width: auto;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+
+
+#labels9 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels9>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width: 8em;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+#labels10 {
+position: absolute; 
+left: 0;        
+top: 0;
+color: blue;
+opacity: 1;
+display: none;
+}
+
+#labels10>div {
+position: absolute;
+z-index: 1;
+padding:0.5em;
+color: #fff;
+font-family:metriz;
+background: rgba(0, 0, 0, 0.4);
+font-size: 1em;
+width: 7.7em;
+text-align: center;
+opacity: 1;
+transition: opacity .5s;
+user-select: none; 
+/*cursor: pointer;*/
+}
+
+
+

@@ -1,0 +1,117 @@
+@font-face {
+	font-family: metriz;
+	src: url('../Metric-Medium.otf');
+}
+
+body.custom_font{
+	font-family: metriz; /* no .ttf */
+}
+
+@font-face {
+	font-family: metriz2;
+	src: url('../Metric-Semibold.otf');
+}
+
+body.custom_font{
+	font-family: metriz2; /* no .ttf */
+}
+
+	
+#my_iframe {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    right: 25%;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+ h1 {
+	font-family: metriz2;
+	color: #3E3839;
+	font-size: 16px;
+	top: -0.3em;
+    left: 2.2em;
+    position: absolute;
+}
+
+ h2 {
+	font-family: metriz;
+	color: #3E3839;
+	font-size: 11px;
+	top: 0.1em;
+    left: 4em;
+    position: absolute;
+}
+
+ h3 {
+	font-family: metriz;
+	color: #3E3839;
+	font-size: 11px;
+    left: 4em;
+     top: -0.2em;
+      width: 130px;
+    position: absolute;
+}
+
+
+#subMenuYouNeedToOpen {
+    top: 1em;
+    left: 1em;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+#AdditionalMenu {
+    top: 2.8em;
+    left: 1.7em;
+    position: absolute;
+    cursor: pointer;
+}
+
+#csw2800_withoutRack {
+	border: 10px;
+	top: 0.2em;
+    left: -0.5em;
+    position: absolute;
+
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+
+#csw2800_withRack {
+	border: 10px;
+	top: 2em;
+	left: -0.5em;
+    position: absolute;
+}
+
+
+#csw2800_withRack2 {
+	border: 10px;
+	top: 4em;
+	left: -0.5em;
+    position: absolute;
+}
+
+html, body {
+margin: 0;
+height: 100%;
+font-family: arial, sans-serif;
+background-color: black;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Old versions of Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+
+
