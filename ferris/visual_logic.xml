@@ -1,0 +1,811 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="true" scrollx="289" scrolly="301.4999999999998" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="loadFont" id="B:Pz`5Qjw#/PoWlXz2t[" x="-270" y="-230">
+      <value name="URL">
+        <shadow type="text" id="mx8$43G,4haDa9EUAF]Z">
+          <field name="TEXT">font/COPRGTB.ttf</field>
+        </shadow>
+      </value>
+      <value name="FONTFAMILY">
+        <shadow type="text" id="v:+5?i#$0GE[uBFIxgEv">
+          <field name="TEXT">COPRGTB</field>
+        </shadow>
+      </value>
+    </block>
+  </tab>
+  <tab name="Main" type="MainTab" active="false" scrollx="-230.62821872255057" scrolly="337.6572108413652" scale="0.4355193943870226">
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="5spqy|T]R*)?GY?lr3Hy" x="-310" y="-1070">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="B@;H)SuGDaAj:/6P1Ibm">
+          <field name="TEXT">mirrors2</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="setHTMLElemStyle" id="*8vvA.wv;P#R^x=3vA@w">
+          <field name="PROPERTY">display</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text" id="SOakSn:2|[vXz3+#vSlJ">
+              <field name="TEXT">block</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="C(F%0lo:om)%wVD@|b%z">
+              <field name="TEXT">center-bottom-area_Mirrors</field>
+            </block>
+          </value>
+          <next>
+            <block type="setHTMLElemStyle" id="Ld1YLSh=-;uJ]0)8qq:9">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="s]y:7e,we*kkZGpPS-Ps">
+                  <field name="TEXT">none</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="oFE@}6SBhu{CoG=,_SU8">
+                  <field name="TEXT">center-bottom-area_PaintWork</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id="!OJ]hc)vInt,;F(Pp(`B">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="=4$2ZL-vW+tO$W!]kh3;">
+                      <field name="TEXT">none</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="%JL/N_}P^VqM^hv[!n7v">
+                      <field name="TEXT">center-bottom-area_Wheels</field>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id="wd/Yt|57.wY3kSTY9HHq">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="1ug-*4.giA{k5e/kJL!9">
+              <field name="TEXT">mirrors1</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="setHTMLElemStyle" id="x_0whNBk6}PEGm[mC8;m">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="_%HeuwM}s+y10=b,[r.S">
+                  <field name="TEXT">block</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="CLKsM0DsqSui1tha]Us6">
+                  <field name="TEXT">center-bottom-area_Mirrors</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id="5Nxgr[IrP:o5];aflBZd">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id=".be}GX24D)Qz=$`KZJ@m">
+                      <field name="TEXT">none</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="XKzGa-pwNv,BraSSe:(k">
+                      <field name="TEXT">center-bottom-area_PaintWork</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemStyle" id="}@a|m?-eg9_%!(taUb4c">
+                      <field name="PROPERTY">display</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id="yChQ[}9i2B|q|W_F(zmS">
+                          <field name="TEXT">none</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <block type="text" id="5;woc#{xazSaS4?sf)br">
+                          <field name="TEXT">center-bottom-area_Wheels</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <next>
+            <block type="eventHTMLElem" id=":/l9QLgB5[$SAZl@msW5">
+              <field name="EVENT">click</field>
+              <field name="PARENT">TRUE</field>
+              <value name="ID">
+                <block type="text" id="~9ibG;!;VyG4Y5bW{jHz">
+                  <field name="TEXT">mirrors3</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="setHTMLElemStyle" id="IvkJg,RCTWXL?ZTPQ5xZ">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="eD^bp~Jh/8WD0fxnn0?d">
+                      <field name="TEXT">block</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="3_dUtE+QI,[Ke2OxbhYa">
+                      <field name="TEXT">center-bottom-area_Mirrors</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemStyle" id="sA,Zv8{Gs+R_owd7po_O">
+                      <field name="PROPERTY">display</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id="9A`[K4.k5#rf7`[[7nD.">
+                          <field name="TEXT">none</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <block type="text" id="P86rqYDBbvLveQ-,KZ{$">
+                          <field name="TEXT">center-bottom-area_PaintWork</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="setHTMLElemStyle" id="|Z@~7BdduP7jU~QKszt-">
+                          <field name="PROPERTY">display</field>
+                          <field name="PARENT">TRUE</field>
+                          <value name="VALUE">
+                            <block type="text" id="K3wWXUWy#Eo7_0W%1:_A">
+                              <field name="TEXT">none</field>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <block type="text" id="ayb-0[a8O5kFIQTbH0-q">
+                              <field name="TEXT">center-bottom-area_Wheels</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="@v87[[bL^:{INuE+%(_V" x="690" y="-1070">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="Wb_{[:30orA:5OV9-}69">
+          <field name="TEXT">paint_work1</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="setHTMLElemStyle" id="qfKM]Qj/26P{uBo!W8=L">
+          <field name="PROPERTY">display</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text" id="{q)`xWS5x{-bal+istu,">
+              <field name="TEXT">block</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="b*8SQX5C?{wvWhml!eCR">
+              <field name="TEXT">center-bottom-area_PaintWork</field>
+            </block>
+          </value>
+          <next>
+            <block type="setHTMLElemStyle" id="Eo8Nqr)SODvQ9[gZGQmF">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="+IsiRd}QWNn}Q1mG)l%G">
+                  <field name="TEXT">none</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="ILVI4r~_ne[+6UPd0^nI">
+                  <field name="TEXT">center-bottom-area_Mirrors</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id="g;`|MMXLo5tt.H-2G4XF">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="G|fd.C=DVSQ_u.^h@5:9">
+                      <field name="TEXT">none</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="X,*m:mUajvDS;vE:?)+,">
+                      <field name="TEXT">center-bottom-area_Wheels</field>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id="/WtC!J^vvrb1lhOs7xq9">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="3KW*(joK8+eRCtY)/o%q">
+              <field name="TEXT">paint_work2</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="setHTMLElemStyle" id="2W`^PeM2*li6]E+zP8Z[">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="B+Ai2@b-B.ni_3iUs{),">
+                  <field name="TEXT">block</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="-1/y|cS@Q/g!f-uFR|V+">
+                  <field name="TEXT">center-bottom-area_PaintWork</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id="aL;Yu_thQ2U|HPv?I|YL">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="}?n`6Qf:P0q_Cfh3Dakc">
+                      <field name="TEXT">none</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="H*EN[Lj@6wqPs:Yd(r[d">
+                      <field name="TEXT">center-bottom-area_Mirrors</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemStyle" id="z,+?$kWoGj9va|krC6kw">
+                      <field name="PROPERTY">display</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id="srOeOVW5,Jy]9sQq]lsu">
+                          <field name="TEXT">none</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <block type="text" id="-27o(REX@e+*UVIj-;+b">
+                          <field name="TEXT">center-bottom-area_Wheels</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <next>
+            <block type="eventHTMLElem" id="qs]VtF8YfW*bT(1%+xB!">
+              <field name="EVENT">click</field>
+              <field name="PARENT">TRUE</field>
+              <value name="ID">
+                <block type="text" id=",66ba^;*~o6h9K}sleO@">
+                  <field name="TEXT">paint_work3</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="setHTMLElemStyle" id="SchO,5naDMX67bcq/}OJ">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="*WJNUIJjf}P{_]-Ky55~">
+                      <field name="TEXT">block</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="2q8~X}z6hhHdkBrVq*.f">
+                      <field name="TEXT">center-bottom-area_PaintWork</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemStyle" id="(6KC%kbjK|h/KK)UZ|_`">
+                      <field name="PROPERTY">display</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id="1}I-;z*8(R{GQmdPGaD$">
+                          <field name="TEXT">none</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <block type="text" id="{T7(*1zD`Z;(`rv!1ZO+">
+                          <field name="TEXT">center-bottom-area_Mirrors</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="setHTMLElemStyle" id="1{.B:6[oPxRWtmC$KJTF">
+                          <field name="PROPERTY">display</field>
+                          <field name="PARENT">TRUE</field>
+                          <value name="VALUE">
+                            <block type="text" id="vNOU`su9u!LPYC}tmFq[">
+                              <field name="TEXT">none</field>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <block type="text" id="Qw4LT*,_;G%eCO+Ev=8F">
+                              <field name="TEXT">center-bottom-area_Wheels</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="H}-$9%i.73~~`)aI]ZD]" x="1590" y="-1090">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="I)Z8ouh0SL.|KY.0yMjl">
+          <field name="TEXT">wheels1</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="setHTMLElemStyle" id="Pjn*NzN=6b^eiN,8K3VZ">
+          <field name="PROPERTY">display</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text" id="Ofm~TuQB/Fz]d,3E7+#|">
+              <field name="TEXT">block</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="_pA:V|e`wLv`QAGvqOg-">
+              <field name="TEXT">center-bottom-area_Wheels</field>
+            </block>
+          </value>
+          <next>
+            <block type="setHTMLElemStyle" id="q|K~Xz1?4KsU]7%ylhPl">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="CC2]4UxUF?;L~Oc^wM2v">
+                  <field name="TEXT">none</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="Vcg30CSMPEzg]2KRU[ot">
+                  <field name="TEXT">center-bottom-area_Mirrors</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id=",H?*!Y,VI4h1YW=mX.[S">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="zfm@??.[(UfnxK)`n_ZP">
+                      <field name="TEXT">none</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="70A+secz!^2{v#moE+t]">
+                      <field name="TEXT">center-bottom-area_PaintWork</field>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id="mKdghtrf~ZD$-s%?K(5S">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="/oRj9U0rI@R{b`jO7i:B">
+              <field name="TEXT">wheels2</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="setHTMLElemStyle" id="-evA!TV,RZviaR,Q`Y#(">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="|;k:TWOOai^~l#s5[{6@">
+                  <field name="TEXT">block</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="hg]bR.1,ZcO5xx[/$dH(">
+                  <field name="TEXT">center-bottom-area_Wheels</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id="A(uYToN4^/HMEYIpss:0">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="TWSt$jToP0NY8BPa]-LS">
+                      <field name="TEXT">none</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="0}IY/n3V5m(sps6RoqPP">
+                      <field name="TEXT">center-bottom-area_Mirrors</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemStyle" id="{MkA?$Ta/FZ-Mp[.Yt4c">
+                      <field name="PROPERTY">display</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id="Sby%ca)Ez-yz0fCy#1f{">
+                          <field name="TEXT">none</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <block type="text" id="H9y^h{f/Q)^T`WTxPEjf">
+                          <field name="TEXT">center-bottom-area_PaintWork</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <next>
+            <block type="eventHTMLElem" id="}r*bVk][wZ:skAe~p4N$">
+              <field name="EVENT">click</field>
+              <field name="PARENT">TRUE</field>
+              <value name="ID">
+                <block type="text" id="fif|OR[`ndSP~GUjUfQ|">
+                  <field name="TEXT">wheels3</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="setHTMLElemStyle" id="5R=#:^a8QcO=mO@@{bGU">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="}gzJ|i]6xtjey|$h0*3=">
+                      <field name="TEXT">block</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="wwUA0C{t3:3BX@iuU*jy">
+                      <field name="TEXT">center-bottom-area_Wheels</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemStyle" id="1U~2[m{ye5]:mAcw1XtQ">
+                      <field name="PROPERTY">display</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id="M2ud?:Z%l|e?~4sog;Rp">
+                          <field name="TEXT">none</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <block type="text" id="TXbQ/IhoI;^@ET:9)y/z">
+                          <field name="TEXT">center-bottom-area_Mirrors</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="setHTMLElemStyle" id="vJ9![=-W$p-wq9ItFGmp">
+                          <field name="PROPERTY">display</field>
+                          <field name="PARENT">TRUE</field>
+                          <value name="VALUE">
+                            <block type="text" id="]7+T*~rR|0D;d)yZL`jH">
+                              <field name="TEXT">none</field>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <block type="text" id="GaAcr`.)M,;QSvC.:zcJ">
+                              <field name="TEXT">center-bottom-area_PaintWork</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="~Tq|{G*prbuJA).a:.,!" x="690" y="-470">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="(=6hs:FQYz6N)je3jaIS">
+          <field name="TEXT">circleRed</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="assignMaterial" id="@_Zxsd|t@oFOQzX}.BSH">
+          <value name="VALUE2">
+            <block type="materialList" id="VNN/T0f2wQo`8_VT)AL*">
+              <field name="FIELDNAME">outside_PBR_red</field>
+            </block>
+          </value>
+          <value name="VALUE1">
+            <block type="objectList" id="9qL659qffq0Yew69RtgB">
+              <field name="FIELDNAME">outside_low</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id="tH/7Nq4fU1w!HQ#s.hL!">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="45_9`sTzrjfG@5J_S.ZB">
+              <field name="TEXT">circleYellow</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="assignMaterial" id="S$|.A-9q!/vElyLSF`pm">
+              <value name="VALUE2">
+                <block type="materialList" id="5p;H5b(DQNc=QRtcb!CM">
+                  <field name="FIELDNAME">outside_PBR_yellow</field>
+                </block>
+              </value>
+              <value name="VALUE1">
+                <block type="objectList" id="suNd|;Wu@{%}O9jShwe]">
+                  <field name="FIELDNAME">outside_low</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <next>
+            <block type="eventHTMLElem" id="!}/_jM)vEI/awV*Ig}F@">
+              <field name="EVENT">click</field>
+              <field name="PARENT">TRUE</field>
+              <value name="ID">
+                <block type="text" id="rb*zd[lrau9jN.6q:;m.">
+                  <field name="TEXT">circleGray</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="assignMaterial" id="fDySscs@OY4yxn9;60[+">
+                  <value name="VALUE2">
+                    <block type="materialList" id="SdJ=SG[Fvvra:EocD~C+">
+                      <field name="FIELDNAME">outside_PBR_gray</field>
+                    </block>
+                  </value>
+                  <value name="VALUE1">
+                    <block type="objectList" id="z/6+~ov8Tq4?b)*is07*">
+                      <field name="FIELDNAME">outside_low</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <next>
+                <block type="eventHTMLElem" id="[|_A^o*g*^F0ip_@C683">
+                  <field name="EVENT">click</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="ID">
+                    <block type="text" id="~8a4rn(jNO=#Ts[1F(MV">
+                      <field name="TEXT">circleWhite</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="assignMaterial" id="5YNyG=(QC.:D)vW|b|,B">
+                      <value name="VALUE2">
+                        <block type="materialList" id="#_PqAwBA(J{dhQ#oOmsY">
+                          <field name="FIELDNAME">outside_PBR</field>
+                        </block>
+                      </value>
+                      <value name="VALUE1">
+                        <block type="objectList" id="bqisuEqtKVQwZZTcW,Vf">
+                          <field name="FIELDNAME">outside_low</field>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="FcBcbOg}7r-@,kSb;+Z*" x="-290" y="-390">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="7japIU0h8|,TiNU9-l9F">
+          <field name="TEXT">circleBlack_M</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="assignMaterial" id="7#*IRnIA,LUZJxv]N?]f">
+          <value name="VALUE2">
+            <block type="materialList" id="^[iP+MqcJE%KwH%!MUbP">
+              <field name="FIELDNAME">mirrors</field>
+            </block>
+          </value>
+          <value name="VALUE1">
+            <block type="objectList" id="[$0^y@~wkG#h-!eO)ft5">
+              <field name="FIELDNAME">outside_low.003</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id="!j5t7Q{92h`FAI,CUCw1">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="$/8iI0$Z;C7Xa:Z/;lpH">
+              <field name="TEXT">circleWhite_M</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="assignMaterial" id="m;%M*C6Y@!^`wlX6=d$?">
+              <value name="VALUE2">
+                <block type="materialList" id="@9pt4+br^1TY~Ri?0u!?">
+                  <field name="FIELDNAME">mirrors.white</field>
+                </block>
+              </value>
+              <value name="VALUE1">
+                <block type="objectList" id="4v1;x00|tJ|xzW{XM`O{">
+                  <field name="FIELDNAME">outside_low.003</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="3s-k{szg[hbF2Vc7%nr)" x="1630" y="-470">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="Grj=sUonJig5e@5zJh3V">
+          <field name="TEXT">circleBlack_W</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="assignMaterial" id="XCrCyCIV,SrgG`VpW{P;">
+          <value name="VALUE2">
+            <block type="materialList" id="mvrka[;Pjb)R`I`NUDx/">
+              <field name="FIELDNAME">wheel_black</field>
+            </block>
+          </value>
+          <value name="VALUE1">
+            <block type="objectList" id="S7)#+]lfEw[%I0Q[w5pO">
+              <field name="FIELDNAME">wheels</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id="0Ln$z/W*bfWDYt!uV=k=">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="2aG~A*2d^8{5ARe3#-yh">
+              <field name="TEXT">circleGold_W</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="assignMaterial" id="Vc=uxo3?oFwFA:q/nu(o">
+              <value name="VALUE2">
+                <block type="materialList" id=".F_dg3JNH8,`;A;V(FIC">
+                  <field name="FIELDNAME">wheel_gold</field>
+                </block>
+              </value>
+              <value name="VALUE1">
+                <block type="objectList" id="9,Ol7evL*q,gu0s9y0c)">
+                  <field name="FIELDNAME">wheels</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <next>
+            <block type="eventHTMLElem" id="(gipD1o|jwZ3I%Upa7Ku">
+              <field name="EVENT">click</field>
+              <field name="PARENT">TRUE</field>
+              <value name="ID">
+                <block type="text" id="m1Odj3x/Ln3T``!78]kV">
+                  <field name="TEXT">circleGray_W</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="assignMaterial" id="J6acTHH*Df7M/*(b*VQ`">
+                  <value name="VALUE2">
+                    <block type="materialList" id="Exuw#qCm)wu5T3?|4HB]">
+                      <field name="FIELDNAME">wheel_gray</field>
+                    </block>
+                  </value>
+                  <value name="VALUE1">
+                    <block type="objectList" id="@YE0uHlB3uSOepCAc#7!">
+                      <field name="FIELDNAME">wheels</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="b%nLW@Z!M=lV]3XtjH?." x="690" y="170">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="EG9QjLVV!f#J_p?D2~+r">
+          <field name="TEXT">world_dark</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="assignMaterial" id="UG1m4:M)ZW.uZ92}HCaS">
+          <value name="VALUE2">
+            <block type="materialList" id="(^4tN=OXftWJQ226b,DT">
+              <field name="FIELDNAME">ground.002</field>
+            </block>
+          </value>
+          <value name="VALUE1">
+            <block type="objectList" id="QWs$]bJVD^MvY+Ujx)G}">
+              <field name="FIELDNAME">sphere_studio</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="eventHTMLElem" id=";1-wA5GcOgJ]HtWsuw}O">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <block type="text" id="lDOBwr|q;X?Xq)?@m9]u">
+              <field name="TEXT">world_light</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="assignMaterial" id="PT=qC:7*=TTRE1X%vZfm">
+              <value name="VALUE2">
+                <block type="materialList" id="_~}El)zLW7i}f@.5e|Go">
+                  <field name="FIELDNAME">ground.001</field>
+                </block>
+              </value>
+              <value name="VALUE1">
+                <block type="objectList" id="QdjU/E7:a}#QK@*~Po2S">
+                  <field name="FIELDNAME">sphere_studio</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings width="700" height="603"></editorsettings>
+</xml>
